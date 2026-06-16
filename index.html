@@ -197,61 +197,47 @@
 
         <div class="grid grid--4 mt-lg">
 
-          <article class="work reveal" data-delay="0">
-            <div class="work__thumb work--simonta" role="img" aria-label="Voorbeeldweergave van het project Simonta">
-              <span class="work__glyph" aria-hidden="true">🥕</span>
-              <div class="work__thumb-foot">
-                <span class="work__name">Simonta</span>
-                <span class="work__tag">B2B Groothandel</span>
-              </div>
-            </div>
-            <div class="work__body">
-              <h3>Simonta</h3>
+          <!-- To use a real screenshot: set --shot to a local/base64 image, e.g.
+               style="--shot:url('images/simonta.jpg')". The branded gradient is a fallback. -->
+          <article class="work work--simonta reveal" data-delay="0">
+            <div class="work__shot" role="img" aria-label="Homepagina van Simonta"></div>
+            <div class="work__scrim" aria-hidden="true"></div>
+            <span class="work__tag">B2B Groothandel</span>
+            <div class="work__content">
+              <h3 class="work__name">Simonta</h3>
               <p>Groothandel in verse wortelen, B2B, levering in heel Europa.</p>
               <a href="https://simonta.eu" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
             </div>
           </article>
 
-          <article class="work reveal" data-delay="80">
-            <div class="work__thumb work--mergel" role="img" aria-label="Voorbeeldweergave van het project Mergelgrotten Zichen">
-              <span class="work__glyph" aria-hidden="true">🕯️</span>
-              <div class="work__thumb-foot">
-                <span class="work__name">Mergelgrotten Zichen</span>
-                <span class="work__tag">Toerisme &amp; Cultuur</span>
-              </div>
-            </div>
-            <div class="work__body">
-              <h3>Mergelgrotten Zichen</h3>
+          <article class="work work--mergel reveal" data-delay="80">
+            <div class="work__shot" role="img" aria-label="Homepagina van Mergelgrotten Zichen"></div>
+            <div class="work__scrim" aria-hidden="true"></div>
+            <span class="work__tag">Toerisme &amp; Cultuur</span>
+            <div class="work__content">
+              <h3 class="work__name">Mergelgrotten Zichen</h3>
               <p>Toeristische grottenrondleidingen, sfeervol &amp; historisch.</p>
               <a href="https://mergelgrottenzichen.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
             </div>
           </article>
 
-          <article class="work reveal" data-delay="160">
-            <div class="work__thumb work--tuin" role="img" aria-label="Voorbeeldweergave van het project Tuinwerken Stas">
-              <span class="work__glyph" aria-hidden="true">🌿</span>
-              <div class="work__thumb-foot">
-                <span class="work__name">Tuinwerken Stas</span>
-                <span class="work__tag">Tuin &amp; Landschap</span>
-              </div>
-            </div>
-            <div class="work__body">
-              <h3>Tuinwerken Stas</h3>
+          <article class="work work--tuin reveal" data-delay="160">
+            <div class="work__shot" role="img" aria-label="Homepagina van Tuinwerken Stas"></div>
+            <div class="work__scrim" aria-hidden="true"></div>
+            <span class="work__tag">Tuin &amp; Landschap</span>
+            <div class="work__content">
+              <h3 class="work__name">Tuinwerken Stas</h3>
               <p>Tuinaanleg &amp; onderhoud, elegant en groen.</p>
               <a href="https://tuinwerkenstas.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
             </div>
           </article>
 
-          <article class="work reveal" data-delay="240">
-            <div class="work__thumb work--fadim" role="img" aria-label="Voorbeeldweergave van het project Fadim Official">
-              <span class="work__glyph" aria-hidden="true">♪</span>
-              <div class="work__thumb-foot">
-                <span class="work__name">Fadim Official</span>
-                <span class="work__tag">Artiest &amp; Events</span>
-              </div>
-            </div>
-            <div class="work__body">
-              <h3>Fadim Official</h3>
+          <article class="work work--fadim reveal" data-delay="240">
+            <div class="work__shot" role="img" aria-label="Homepagina van Fadim Official"></div>
+            <div class="work__scrim" aria-hidden="true"></div>
+            <span class="work__tag">Artiest &amp; Events</span>
+            <div class="work__content">
+              <h3 class="work__name">Fadim Official</h3>
               <p>Artiest/zanger met agenda, fanshop &amp; boekingen.</p>
               <a href="https://fadimofficial.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
             </div>
@@ -289,6 +275,8 @@
               </div>
               <div class="mock__cards"><b></b><b></b><b></b></div>
             </div>
+            <span class="ba__metric ba__metric--good ba__metric--speed"><i data-lucide="zap"></i> 0,9s laadtijd</span>
+            <span class="ba__metric ba__metric--good ba__metric--leads"><i data-lucide="trending-up"></i> +47% aanvragen</span>
           </div>
           <!-- BEFORE (dated) — clipped on top -->
           <div class="ba__before" id="baBefore">
@@ -306,6 +294,8 @@
               </div>
               <div class="mock__cards mock__cards--old"><b></b><b></b></div>
             </div>
+            <span class="ba__metric ba__metric--bad ba__metric--speed"><i data-lucide="clock"></i> 8,2s laadtijd</span>
+            <span class="ba__metric ba__metric--bad ba__metric--leads"><i data-lucide="trending-down"></i> Bezoekers haken af</span>
           </div>
 
           <span class="ba__label ba__label--before">Voor</span>
@@ -315,6 +305,38 @@
                   aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
             <i data-lucide="chevrons-left-right"></i>
           </button>
+        </div>
+
+        <!-- USP comparison -->
+        <div class="cmp">
+          <div class="cmp__col cmp__col--before reveal" data-delay="0">
+            <span class="cmp__head"><i data-lucide="x"></i> Voor — wat u tegenhoudt</span>
+            <ul>
+              <li><i data-lucide="x"></i> Traag &amp; verouderd design</li>
+              <li><i data-lucide="x"></i> Niet leesbaar op smartphone</li>
+              <li><i data-lucide="x"></i> Onvindbaar in Google</li>
+              <li><i data-lucide="x"></i> Bezoekers haken af zonder contact</li>
+              <li><i data-lucide="x"></i> Wekt geen vertrouwen</li>
+            </ul>
+          </div>
+          <div class="cmp__col cmp__col--after reveal" data-delay="90">
+            <span class="cmp__head cmp__head--good"><i data-lucide="check"></i> Na — wat u wint</span>
+            <ul>
+              <li><i data-lucide="check"></i> Bliksemsnel &amp; modern design</li>
+              <li><i data-lucide="check"></i> Perfect op elk scherm</li>
+              <li><i data-lucide="check"></i> Hoger in Google gevonden</li>
+              <li><i data-lucide="check"></i> Bezoekers worden klanten</li>
+              <li><i data-lucide="check"></i> Straalt professionaliteit uit</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- result metrics -->
+        <div class="cmp__stats reveal" data-delay="120">
+          <div class="cmp__stat"><span class="cmp__stat-num" data-count="2" data-suffix="x">0x</span><span class="cmp__stat-label">snellere laadtijd</span></div>
+          <div class="cmp__stat"><span class="cmp__stat-num" data-count="47" data-suffix="%">0%</span><span class="cmp__stat-label">meer aanvragen</span></div>
+          <div class="cmp__stat"><span class="cmp__stat-num" data-count="100" data-suffix="%">0%</span><span class="cmp__stat-label">mobiel-vriendelijk</span></div>
+          <div class="cmp__stat"><span class="cmp__stat-num" data-count="14" data-suffix=" dagen">0 dagen</span><span class="cmp__stat-label">tot live</span></div>
         </div>
       </div>
     </section>

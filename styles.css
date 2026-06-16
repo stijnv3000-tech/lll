@@ -598,3 +598,73 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
   .marquee__row { animation: none; }
   .scroll-progress { display: none; }
 }
+
+/* ==========================================================================
+   PORTFOLIO — full-bleed screenshot tiles (screenshot-ready via --shot)
+   ========================================================================== */
+.work { position: relative; height: 100%; min-height: 430px; border-radius: 1rem; overflow: hidden;
+  border: 1px solid var(--navy-line); box-shadow: 0 24px 50px -28px rgba(14,28,58,0.5); display: block; isolation: isolate; }
+.work__shot { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: top center;
+  transition: transform 0.7s var(--ease); }
+.work:hover .work__shot { transform: scale(1.07); }
+.work__shot::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(115deg, rgba(255,255,255,0.10), transparent 40%); }
+.work__scrim { position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(10,21,48,0.94) 4%, rgba(10,21,48,0.62) 34%, rgba(10,21,48,0.10) 66%, rgba(10,21,48,0.18) 100%); }
+.work__tag { position: absolute; top: 1rem; left: 1rem; z-index: 2; }
+.work__content { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 1.6rem; }
+.work__content .work__name { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: #fff;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.5); }
+.work__content p { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.55; color: rgba(241,235,223,0.82); }
+.work__content .work__link { margin-top: 1rem; color: var(--gold); }
+.work__content .work__link [data-lucide] { width: 15px; height: 15px; }
+
+/* branded fallbacks — replaced the moment a real --shot screenshot is set */
+.work--simonta .work__shot { background-image: var(--shot,
+  radial-gradient(120% 80% at 70% 95%, #e58a26 0%, #c2701c 30%, transparent 60%),
+  linear-gradient(180deg, #8fb9dd 0%, #a7cba4 34%, #5c7d3f 62%, #3c5a2a 100%)); }
+.work--mergel .work__shot { background-image: var(--shot,
+  radial-gradient(90% 70% at 50% 40%, rgba(231,194,122,0.35), transparent 60%),
+  linear-gradient(160deg, #3a2a17 0%, #6b4a22 48%, #241910 100%)); }
+.work--tuin .work__shot { background-image: var(--shot,
+  radial-gradient(100% 80% at 30% 90%, #2f7d4f 0%, transparent 55%),
+  linear-gradient(165deg, #0c2417 0%, #1f5235 45%, #143b28 100%)); }
+.work--fadim .work__shot { background-image: var(--shot,
+  radial-gradient(80% 70% at 75% 35%, rgba(159,194,240,0.45), transparent 55%),
+  linear-gradient(160deg, #0b1733 0%, #1d3a72 55%, #2c508f 100%)); }
+
+/* ==========================================================================
+   BEFORE / AFTER — metric badges + USP comparison
+   ========================================================================== */
+.ba__metric { position: absolute; z-index: 4; display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.01em; padding: 0.4rem 0.65rem; border-radius: 999px;
+  white-space: nowrap; box-shadow: 0 6px 18px -6px rgba(0,0,0,0.5); }
+.ba__metric [data-lucide] { width: 13px; height: 13px; }
+.ba__metric--good { background: var(--gold); color: var(--navy); }
+.ba__metric--bad { background: #a32a23; color: #fff; }
+.ba__metric--good.ba__metric--speed { top: 4.5rem; right: 1rem; }
+.ba__metric--good.ba__metric--leads { bottom: 1.4rem; right: 1rem; }
+.ba__metric--bad.ba__metric--speed { top: 4.5rem; left: 1rem; }
+.ba__metric--bad.ba__metric--leads { bottom: 1.4rem; left: 1rem; }
+@media (max-width: 480px) { .ba__metric { font-size: 0.62rem; padding: 0.3rem 0.5rem; } }
+
+.cmp { margin: 2.75rem auto 0; max-width: 60rem; display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .cmp { grid-template-columns: 1fr 1fr; } }
+.cmp__col { border-radius: 1rem; padding: 1.6rem 1.75rem; border: 1px solid var(--navy-line); background: rgba(255,255,255,0.02); }
+.cmp__col--before { border-color: rgba(163,42,35,0.4); background: rgba(163,42,35,0.07); }
+.cmp__col--after { border-color: rgba(201,162,74,0.45); background: rgba(201,162,74,0.07); }
+.cmp__head { display: flex; align-items: center; gap: 0.55rem; font-size: 0.95rem; font-weight: 700;
+  color: #e3938c; margin-bottom: 1.1rem; }
+.cmp__head [data-lucide] { width: 20px; height: 20px; }
+.cmp__head--good { color: var(--gold); }
+.cmp__col ul { display: flex; flex-direction: column; gap: 0.7rem; }
+.cmp__col li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; line-height: 1.45; color: rgba(241,235,223,0.82); }
+.cmp__col li [data-lucide] { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
+.cmp__col--before li [data-lucide] { color: #d9756e; }
+.cmp__col--after li [data-lucide] { color: var(--gold); }
+
+.cmp__stats { margin: 2.25rem auto 0; max-width: 60rem; display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; text-align: center; }
+@media (min-width: 768px) { .cmp__stats { grid-template-columns: repeat(4, 1fr); } }
+.cmp__stat-num { display: block; font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.5rem); color: var(--gold); line-height: 1; }
+.cmp__stat-label { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: rgba(241,235,223,0.6); }
