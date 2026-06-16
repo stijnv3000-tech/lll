@@ -298,6 +298,134 @@
     });
   }
 
+  /* ---- Services carousel: draggable + auto-rotating ---- */
+  function initCarousel() {
+    document.querySelectorAll("[data-carousel]").forEach(function (root) {
+      var viewport = root.querySelector(".carousel__viewport");
+      var track = root.querySelector(".carousel__track");
+      var cards = Array.prototype.slice.call(track.children);
+      var dotsWrap = root.querySelector(".carousel__dots");
+      var arrows = root.querySelectorAll(".carousel__arrow");
+      if (!viewport || !track || !cards.length) return;
+
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+      var index = 0, perView = 3, maxIndex = 0, step = 0;
+      var autoplay = parseInt(root.getAttribute("data-autoplay") || "0", 10);
+      var timer = null;
+
+      function calcPerView() {
+        var w = viewport.clientWidth;
+        var n = w >= 1024 ? 3 : w >= 640 ? 2 : 1;
+        return Math.min(n, cards.length);
+      }
+
+      function layout() {
+        perView = calcPerView();
+        maxIndex = Math.max(0, cards.length - perView);
+        var cw = (viewport.clientWidth - gap * (perView - 1)) / perView;
+        step = cw + gap;
+        cards.forEach(function (c) { c.style.width = cw + "px"; });
+        buildDots();
+        if (index > maxIndex) index = maxIndex;
+        goTo(index, true);
+      }
+
+      function buildDots() {
+        if (!dotsWrap) return;
+        dotsWrap.innerHTML = "";
+        for (var i = 0; i <= maxIndex; i++) {
+          (function (i) {
+            var d = document.createElement("button");
+            d.className = "carousel__dot" + (i === index ? " is-active" : "");
+            d.setAttribute("aria-label", "Ga naar groep " + (i + 1));
+            d.addEventListener("click", function () { stop(); goTo(i); });
+            dotsWrap.appendChild(d);
+          })(i);
+        }
+      }
+
+      function updateDots() {
+        if (!dotsWrap) return;
+        Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
+          d.classList.toggle("is-active", i === index);
+        });
+      }
+
+      function goTo(i, instant) {
+        index = Math.max(0, Math.min(i, maxIndex));
+        if (instant) track.style.transition = "none";
+        track.style.transform = "translateX(" + (-index * step) + "px)";
+        if (instant) { void track.offsetWidth; track.style.transition = ""; }
+        updateDots();
+      }
+
+      arrows.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          stop();
+          var dir = parseInt(btn.getAttribute("data-dir"), 10);
+          var next = index + dir;
+          if (next < 0) next = maxIndex;
+          if (next > maxIndex) next = 0;
+          goTo(next);
+        });
+      });
+
+      /* drag / swipe */
+      var dragging = false, startX = 0, base = 0, moved = false;
+      function down(e) {
+        dragging = true; moved = false;
+        startX = e.clientX != null ? e.clientX : (e.touches && e.touches[0].clientX);
+        base = -index * step;
+        if (autoplay) stop();
+      }
+      function move(e) {
+        if (!dragging) return;
+        var x = e.clientX != null ? e.clientX : (e.touches && e.touches[0].clientX);
+        var dx = x - startX;
+        if (Math.abs(dx) > 6 && !moved) { moved = true; root.classList.add("is-dragging"); }
+        if (moved) { track.style.transition = "none"; track.style.transform = "translateX(" + (base + dx) + "px)"; }
+      }
+      function up(e) {
+        if (!dragging) return;
+        dragging = false;
+        if (moved) {
+          var x = (e.clientX != null ? e.clientX : (e.changedTouches && e.changedTouches[0].clientX));
+          var dx = x - startX;
+          track.style.transition = "";
+          goTo(Math.round((-base - dx) / step));
+          setTimeout(function () { root.classList.remove("is-dragging"); }, 0);
+        }
+      }
+
+      viewport.addEventListener("pointerdown", down);
+      window.addEventListener("pointermove", move, { passive: true });
+      window.addEventListener("pointerup", up);
+
+      /* autoplay */
+      function play() {
+        if (!autoplay || REDUCED) return;
+        stop();
+        timer = setInterval(function () { goTo(index >= maxIndex ? 0 : index + 1); }, autoplay);
+      }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", play);
+      root.addEventListener("focusin", stop);
+      root.addEventListener("focusout", play);
+      document.addEventListener("visibilitychange", function () { document.hidden ? stop() : play(); });
+
+      var rid = null;
+      window.addEventListener("resize", function () {
+        if (rid) cancelAnimationFrame(rid);
+        rid = requestAnimationFrame(layout);
+      });
+
+      layout();
+      play();
+    });
+  }
+
   /* ---- Contact form (no <form> tag) ---- */
   function initContactForm() {
     var btn = document.getElementById("submitBtn");
@@ -346,6 +474,7 @@
     initTilt();
     initBeforeAfter();
     initFaq();
+    initCarousel();
     initContactForm();
   }
 

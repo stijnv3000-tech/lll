@@ -681,6 +681,47 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .cmp__stat-num { display: block; font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.5rem); color: var(--gold); line-height: 1; }
 .cmp__stat-label { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: rgba(241,235,223,0.6); }
 
+/* ==========================================================================
+   SERVICES CAROUSEL — draggable + auto-rotating
+   ========================================================================== */
+.carousel { position: relative; }
+.carousel__viewport { overflow: hidden; cursor: grab; }
+.carousel.is-dragging .carousel__viewport { cursor: grabbing; }
+.carousel__track { display: flex; gap: 1.5rem; will-change: transform;
+  transition: transform 0.6s var(--ease); }
+.carousel.is-dragging .carousel__track { transition: none; }
+
+.svc-card { flex: 0 0 auto; box-sizing: border-box; border-radius: 1rem; padding: 2.25rem 2rem;
+  background: rgba(255,255,255,0.025); border: 1px solid var(--navy-line);
+  display: flex; flex-direction: column; min-height: 340px;
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease), transform 0.3s var(--ease); }
+.svc-card:hover { border-color: rgba(201,162,74,0.5); background: rgba(201,162,74,0.05); transform: translateY(-4px); }
+.svc-card h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: var(--cream); margin-top: 1.5rem; }
+.svc-card > p { margin-top: 0.75rem; font-size: 0.9375rem; line-height: 1.6; color: rgba(241,235,223,0.66); }
+.svc-card__list { margin-top: 1.4rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.svc-card__list li { display: flex; align-items: center; gap: 0.55rem; font-size: 0.875rem; color: rgba(241,235,223,0.82); }
+.svc-card__list [data-lucide] { width: 15px; height: 15px; stroke-width: 2.6; color: var(--gold); flex-shrink: 0; }
+.svc-card__link { margin-top: auto; padding-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.45rem;
+  font-size: 0.875rem; font-weight: 600; color: var(--gold); transition: gap 0.2s ease; }
+.svc-card__link [data-lucide] { width: 15px; height: 15px; stroke-width: 2.2; }
+.svc-card__link:hover { gap: 0.8rem; }
+/* drag guard: don't trigger link navigation mid-drag */
+.carousel.is-dragging a { pointer-events: none; }
+
+.carousel__controls { margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 1.25rem; }
+.carousel__arrow { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem;
+  border-radius: 999px; border: 1px solid var(--navy-line); color: var(--cream); background: rgba(255,255,255,0.03);
+  transition: all 0.25s var(--ease); }
+.carousel__arrow:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.carousel__arrow [data-lucide] { width: 20px; height: 20px; }
+.carousel__dots { display: flex; align-items: center; gap: 0.5rem; }
+.carousel__dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(241,235,223,0.25);
+  transition: all 0.3s var(--ease); }
+.carousel__dot.is-active { width: 26px; background: var(--gold); }
+.carousel__viewport { touch-action: pan-y; }
+.carousel.is-dragging { user-select: none; }
+@media (prefers-reduced-motion: reduce) { .carousel__track { transition: none; } }
+
   </style>
 </head>
 <body>
@@ -830,27 +871,66 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
           </p>
         </div>
 
-        <div class="grid grid--2 mt-lg">
-          <article class="card card--navy reveal" data-delay="0">
-            <span class="card__icon card__icon--gold"><i data-lucide="layout"></i></span>
-            <h3>Bedrijfswebsites</h3>
-            <p>Strakke, professionele websites die vertrouwen wekken en leads genereren.</p>
-          </article>
-          <article class="card card--navy reveal" data-delay="90">
-            <span class="card__icon card__icon--gold"><i data-lucide="mouse-pointer-click"></i></span>
-            <h3>Landingpagina's</h3>
-            <p>Enkelvoudige pagina's ontworpen voor één doel: conversies. Perfect voor campagnes en productlanceringen.</p>
-          </article>
-          <article class="card card--navy reveal" data-delay="0">
-            <span class="card__icon card__icon--gold"><i data-lucide="shopping-cart"></i></span>
-            <h3>Webshops</h3>
-            <p>Verkoop online met een webshop gebouwd om te converteren — mooie productpagina's en naadloos afrekenen.</p>
-          </article>
-          <article class="card card--navy reveal" data-delay="90">
-            <span class="card__icon card__icon--gold"><i data-lucide="sparkles"></i></span>
-            <h3>Redesigns</h3>
-            <p>Transformeer uw bestaande website in iets waar u trots op bent. Zelfde inhoud, compleet nieuwe indruk.</p>
-          </article>
+        <div class="carousel mt-lg reveal" data-carousel data-autoplay="4500" data-delay="0">
+          <div class="carousel__viewport">
+            <div class="carousel__track">
+
+              <article class="svc-card">
+                <span class="card__icon card__icon--gold"><i data-lucide="layout"></i></span>
+                <h3>Bedrijfswebsites</h3>
+                <p>Strakke, professionele websites die vertrouwen wekken en leads genereren.</p>
+                <ul class="svc-card__list">
+                  <li><i data-lucide="check"></i> Vertrouwenwekkend design</li>
+                  <li><i data-lucide="check"></i> SEO-klaar opgebouwd</li>
+                  <li><i data-lucide="check"></i> Slimme leadformulieren</li>
+                </ul>
+                <a href="#contact" class="svc-card__link">Vraag offerte <i data-lucide="arrow-right"></i></a>
+              </article>
+
+              <article class="svc-card">
+                <span class="card__icon card__icon--gold"><i data-lucide="mouse-pointer-click"></i></span>
+                <h3>Landingpagina's</h3>
+                <p>Enkelvoudige pagina's ontworpen voor één doel: conversies. Perfect voor campagnes en productlanceringen.</p>
+                <ul class="svc-card__list">
+                  <li><i data-lucide="check"></i> Eén duidelijk doel</li>
+                  <li><i data-lucide="check"></i> Gebouwd voor conversie</li>
+                  <li><i data-lucide="check"></i> Ideaal voor campagnes</li>
+                </ul>
+                <a href="#contact" class="svc-card__link">Vraag offerte <i data-lucide="arrow-right"></i></a>
+              </article>
+
+              <article class="svc-card">
+                <span class="card__icon card__icon--gold"><i data-lucide="shopping-cart"></i></span>
+                <h3>Webshops</h3>
+                <p>Verkoop online met een webshop gebouwd om te converteren — mooie productpagina's en naadloos afrekenen.</p>
+                <ul class="svc-card__list">
+                  <li><i data-lucide="check"></i> Mooie productpagina's</li>
+                  <li><i data-lucide="check"></i> Naadloos afrekenen</li>
+                  <li><i data-lucide="check"></i> Veilige betalingen</li>
+                </ul>
+                <a href="#contact" class="svc-card__link">Vraag offerte <i data-lucide="arrow-right"></i></a>
+              </article>
+
+              <article class="svc-card">
+                <span class="card__icon card__icon--gold"><i data-lucide="sparkles"></i></span>
+                <h3>Redesigns</h3>
+                <p>Transformeer uw bestaande website in iets waar u trots op bent. Zelfde inhoud, compleet nieuwe indruk.</p>
+                <ul class="svc-card__list">
+                  <li><i data-lucide="check"></i> Frisse, moderne look</li>
+                  <li><i data-lucide="check"></i> Behoud uw inhoud</li>
+                  <li><i data-lucide="check"></i> Sneller &amp; mobiel</li>
+                </ul>
+                <a href="#contact" class="svc-card__link">Vraag offerte <i data-lucide="arrow-right"></i></a>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="carousel__controls">
+            <button class="carousel__arrow" data-dir="-1" aria-label="Vorige diensten"><i data-lucide="chevron-left"></i></button>
+            <div class="carousel__dots" role="tablist" aria-label="Diensten navigatie"></div>
+            <button class="carousel__arrow" data-dir="1" aria-label="Volgende diensten"><i data-lucide="chevron-right"></i></button>
+          </div>
         </div>
       </div>
     </section>
@@ -1651,6 +1731,134 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
     });
   }
 
+  /* ---- Services carousel: draggable + auto-rotating ---- */
+  function initCarousel() {
+    document.querySelectorAll("[data-carousel]").forEach(function (root) {
+      var viewport = root.querySelector(".carousel__viewport");
+      var track = root.querySelector(".carousel__track");
+      var cards = Array.prototype.slice.call(track.children);
+      var dotsWrap = root.querySelector(".carousel__dots");
+      var arrows = root.querySelectorAll(".carousel__arrow");
+      if (!viewport || !track || !cards.length) return;
+
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+      var index = 0, perView = 3, maxIndex = 0, step = 0;
+      var autoplay = parseInt(root.getAttribute("data-autoplay") || "0", 10);
+      var timer = null;
+
+      function calcPerView() {
+        var w = viewport.clientWidth;
+        var n = w >= 1024 ? 3 : w >= 640 ? 2 : 1;
+        return Math.min(n, cards.length);
+      }
+
+      function layout() {
+        perView = calcPerView();
+        maxIndex = Math.max(0, cards.length - perView);
+        var cw = (viewport.clientWidth - gap * (perView - 1)) / perView;
+        step = cw + gap;
+        cards.forEach(function (c) { c.style.width = cw + "px"; });
+        buildDots();
+        if (index > maxIndex) index = maxIndex;
+        goTo(index, true);
+      }
+
+      function buildDots() {
+        if (!dotsWrap) return;
+        dotsWrap.innerHTML = "";
+        for (var i = 0; i <= maxIndex; i++) {
+          (function (i) {
+            var d = document.createElement("button");
+            d.className = "carousel__dot" + (i === index ? " is-active" : "");
+            d.setAttribute("aria-label", "Ga naar groep " + (i + 1));
+            d.addEventListener("click", function () { stop(); goTo(i); });
+            dotsWrap.appendChild(d);
+          })(i);
+        }
+      }
+
+      function updateDots() {
+        if (!dotsWrap) return;
+        Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
+          d.classList.toggle("is-active", i === index);
+        });
+      }
+
+      function goTo(i, instant) {
+        index = Math.max(0, Math.min(i, maxIndex));
+        if (instant) track.style.transition = "none";
+        track.style.transform = "translateX(" + (-index * step) + "px)";
+        if (instant) { void track.offsetWidth; track.style.transition = ""; }
+        updateDots();
+      }
+
+      arrows.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          stop();
+          var dir = parseInt(btn.getAttribute("data-dir"), 10);
+          var next = index + dir;
+          if (next < 0) next = maxIndex;
+          if (next > maxIndex) next = 0;
+          goTo(next);
+        });
+      });
+
+      /* drag / swipe */
+      var dragging = false, startX = 0, base = 0, moved = false;
+      function down(e) {
+        dragging = true; moved = false;
+        startX = e.clientX != null ? e.clientX : (e.touches && e.touches[0].clientX);
+        base = -index * step;
+        if (autoplay) stop();
+      }
+      function move(e) {
+        if (!dragging) return;
+        var x = e.clientX != null ? e.clientX : (e.touches && e.touches[0].clientX);
+        var dx = x - startX;
+        if (Math.abs(dx) > 6 && !moved) { moved = true; root.classList.add("is-dragging"); }
+        if (moved) { track.style.transition = "none"; track.style.transform = "translateX(" + (base + dx) + "px)"; }
+      }
+      function up(e) {
+        if (!dragging) return;
+        dragging = false;
+        if (moved) {
+          var x = (e.clientX != null ? e.clientX : (e.changedTouches && e.changedTouches[0].clientX));
+          var dx = x - startX;
+          track.style.transition = "";
+          goTo(Math.round((-base - dx) / step));
+          setTimeout(function () { root.classList.remove("is-dragging"); }, 0);
+        }
+      }
+
+      viewport.addEventListener("pointerdown", down);
+      window.addEventListener("pointermove", move, { passive: true });
+      window.addEventListener("pointerup", up);
+
+      /* autoplay */
+      function play() {
+        if (!autoplay || REDUCED) return;
+        stop();
+        timer = setInterval(function () { goTo(index >= maxIndex ? 0 : index + 1); }, autoplay);
+      }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", play);
+      root.addEventListener("focusin", stop);
+      root.addEventListener("focusout", play);
+      document.addEventListener("visibilitychange", function () { document.hidden ? stop() : play(); });
+
+      var rid = null;
+      window.addEventListener("resize", function () {
+        if (rid) cancelAnimationFrame(rid);
+        rid = requestAnimationFrame(layout);
+      });
+
+      layout();
+      play();
+    });
+  }
+
   /* ---- Contact form (no <form> tag) ---- */
   function initContactForm() {
     var btn = document.getElementById("submitBtn");
@@ -1699,6 +1907,7 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
     initTilt();
     initBeforeAfter();
     initFaq();
+    initCarousel();
     initContactForm();
   }
 
