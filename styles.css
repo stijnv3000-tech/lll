@@ -753,3 +753,9 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .carousel--portfolio .work__cta { margin-top: 1.4rem; }
 /* larger arrows for the showcase slider */
 .carousel--portfolio .carousel__arrow { width: 3.25rem; height: 3.25rem; }
+
+/* ==========================================================================
+   PORTFOLIO SLIDER — 2 tiles per view (previous tile design)
+   ========================================================================== */
+.carousel--works .carousel__track { align-items: stretch; }
+.carousel--works .work { flex: 0 0 auto; min-height: 440px; }

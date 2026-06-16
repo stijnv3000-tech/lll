@@ -316,7 +316,10 @@
 
       function calcPerView() {
         var forced = parseInt(root.getAttribute("data-per-view") || "0", 10);
-        if (forced > 0) return Math.min(forced, cards.length);
+        if (forced > 0) {
+          // forced count is for tablet/desktop; show 1 on small screens
+          return Math.min(viewport.clientWidth < 640 ? 1 : forced, cards.length);
+        }
         var w = viewport.clientWidth;
         var n = w >= 1024 ? 3 : w >= 640 ? 2 : 1;
         return Math.min(n, cards.length);
