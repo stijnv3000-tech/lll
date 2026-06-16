@@ -209,6 +209,7 @@
   function initTilt() {
     var cards = document.querySelectorAll(".card, .work, .price");
     cards.forEach(function (card) {
+      if (card.closest(".carousel--portfolio")) return; // no tilt on full-width slides
       card.addEventListener("mousemove", function (e) {
         var r = card.getBoundingClientRect();
         var px = (e.clientX - r.left) / r.width;
@@ -314,6 +315,8 @@
       var timer = null;
 
       function calcPerView() {
+        var forced = parseInt(root.getAttribute("data-per-view") || "0", 10);
+        if (forced > 0) return Math.min(forced, cards.length);
         var w = viewport.clientWidth;
         var n = w >= 1024 ? 3 : w >= 640 ? 2 : 1;
         return Math.min(n, cards.length);

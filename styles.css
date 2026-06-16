@@ -734,3 +734,22 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
   border-radius: 0.6rem; background: rgba(201,162,74,0.14); flex-shrink: 0; }
 .about__ico [data-lucide] { width: 17px; height: 17px; color: #9A8246; }
 .about__body .btn { margin-top: 2rem; }
+
+/* ==========================================================================
+   PORTFOLIO SLIDER — one website per slide (large showcase)
+   ========================================================================== */
+.carousel--portfolio .carousel__track { align-items: stretch; }
+.carousel--portfolio .work { flex: 0 0 auto; min-height: clamp(380px, 56vh, 600px);
+  border-radius: 1.25rem; border-color: var(--beige-line); }
+.carousel--portfolio .work__shot { background-position: top center; }
+.carousel--portfolio .work__scrim {
+  background: linear-gradient(to top, rgba(10,21,48,0.95) 2%, rgba(10,21,48,0.55) 30%, rgba(10,21,48,0.05) 60%); }
+.carousel--portfolio .work__content { padding: 2rem 2rem 2.25rem; max-width: 40rem; }
+@media (min-width: 768px) { .carousel--portfolio .work__content { padding: 3rem; } }
+.carousel--portfolio .work__index { display: inline-block; margin-bottom: 0.6rem; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.22em; color: var(--gold-soft); }
+.carousel--portfolio .work__name { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
+.carousel--portfolio .work__content p { font-size: 1rem; max-width: 34rem; color: rgba(241,235,223,0.86); }
+.carousel--portfolio .work__cta { margin-top: 1.4rem; }
+/* larger arrows for the showcase slider */
+.carousel--portfolio .carousel__arrow { width: 3.25rem; height: 3.25rem; }

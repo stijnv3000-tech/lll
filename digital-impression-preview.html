@@ -747,6 +747,25 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .about__ico [data-lucide] { width: 17px; height: 17px; color: #9A8246; }
 .about__body .btn { margin-top: 2rem; }
 
+/* ==========================================================================
+   PORTFOLIO SLIDER — one website per slide (large showcase)
+   ========================================================================== */
+.carousel--portfolio .carousel__track { align-items: stretch; }
+.carousel--portfolio .work { flex: 0 0 auto; min-height: clamp(380px, 56vh, 600px);
+  border-radius: 1.25rem; border-color: var(--beige-line); }
+.carousel--portfolio .work__shot { background-position: top center; }
+.carousel--portfolio .work__scrim {
+  background: linear-gradient(to top, rgba(10,21,48,0.95) 2%, rgba(10,21,48,0.55) 30%, rgba(10,21,48,0.05) 60%); }
+.carousel--portfolio .work__content { padding: 2rem 2rem 2.25rem; max-width: 40rem; }
+@media (min-width: 768px) { .carousel--portfolio .work__content { padding: 3rem; } }
+.carousel--portfolio .work__index { display: inline-block; margin-bottom: 0.6rem; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.22em; color: var(--gold-soft); }
+.carousel--portfolio .work__name { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
+.carousel--portfolio .work__content p { font-size: 1rem; max-width: 34rem; color: rgba(241,235,223,0.86); }
+.carousel--portfolio .work__cta { margin-top: 1.4rem; }
+/* larger arrows for the showcase slider */
+.carousel--portfolio .carousel__arrow { width: 3.25rem; height: 3.25rem; }
+
   </style>
 </head>
 <body>
@@ -838,6 +857,83 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
           <li><span class="trust__check"><i data-lucide="check"></i></span> Gratis homepagina-ontwerp</li>
           <li><span class="trust__check"><i data-lucide="check"></i></span> Vast contactpersoon</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO SLIDER (beige) — 1 site per slide ===================== -->
+    <section class="section section--beige" id="werk">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="eyebrow__line"></span>Portfolio</p>
+        <div class="section__head">
+          <h2 class="headline reveal" data-delay="60">Ons <em>Werk</em></h2>
+          <p class="section__aside reveal" data-delay="120">
+            Een greep uit de websites die we bouwden voor Belgische en Europese
+            ondernemers — van groothandel tot toerisme.
+          </p>
+        </div>
+
+        <!-- Real screenshot: set --shot per kaart, bv. style="--shot:url('images/simonta.jpg')". -->
+        <div class="carousel carousel--portfolio mt-lg reveal" data-carousel data-per-view="1" data-autoplay="5500">
+          <div class="carousel__viewport">
+            <div class="carousel__track">
+
+              <article class="work work--simonta">
+                <div class="work__shot" role="img" aria-label="Homepagina van Simonta"></div>
+                <div class="work__scrim" aria-hidden="true"></div>
+                <span class="work__tag">B2B Groothandel</span>
+                <div class="work__content">
+                  <span class="work__index">01 / 04</span>
+                  <h3 class="work__name">Simonta</h3>
+                  <p>Groothandel in verse wortelen, B2B, levering in heel Europa.</p>
+                  <a href="https://simonta.eu" target="_blank" rel="noopener noreferrer" class="btn btn--gold work__cta">Bekijk live <i data-lucide="arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="work work--mergel">
+                <div class="work__shot" role="img" aria-label="Homepagina van Mergelgrotten Zichen"></div>
+                <div class="work__scrim" aria-hidden="true"></div>
+                <span class="work__tag">Toerisme &amp; Cultuur</span>
+                <div class="work__content">
+                  <span class="work__index">02 / 04</span>
+                  <h3 class="work__name">Mergelgrotten Zichen</h3>
+                  <p>Toeristische grottenrondleidingen, sfeervol &amp; historisch.</p>
+                  <a href="https://mergelgrottenzichen.be" target="_blank" rel="noopener noreferrer" class="btn btn--gold work__cta">Bekijk live <i data-lucide="arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="work work--tuin">
+                <div class="work__shot" role="img" aria-label="Homepagina van Tuinwerken Stas"></div>
+                <div class="work__scrim" aria-hidden="true"></div>
+                <span class="work__tag">Tuin &amp; Landschap</span>
+                <div class="work__content">
+                  <span class="work__index">03 / 04</span>
+                  <h3 class="work__name">Tuinwerken Stas</h3>
+                  <p>Tuinaanleg &amp; onderhoud, elegant en groen.</p>
+                  <a href="https://tuinwerkenstas.be" target="_blank" rel="noopener noreferrer" class="btn btn--gold work__cta">Bekijk live <i data-lucide="arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="work work--fadim">
+                <div class="work__shot" role="img" aria-label="Homepagina van Fadim Official"></div>
+                <div class="work__scrim" aria-hidden="true"></div>
+                <span class="work__tag">Artiest &amp; Events</span>
+                <div class="work__content">
+                  <span class="work__index">04 / 04</span>
+                  <h3 class="work__name">Fadim Official</h3>
+                  <p>Artiest/zanger met agenda, fanshop &amp; boekingen.</p>
+                  <a href="https://fadimofficial.be" target="_blank" rel="noopener noreferrer" class="btn btn--gold work__cta">Bekijk live <i data-lucide="arrow-right"></i></a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="carousel__controls">
+            <button class="carousel__arrow" data-dir="-1" aria-label="Vorige website"><i data-lucide="chevron-left"></i></button>
+            <div class="carousel__dots" role="tablist" aria-label="Portfolio navigatie"></div>
+            <button class="carousel__arrow" data-dir="1" aria-label="Volgende website"><i data-lucide="chevron-right"></i></button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -961,68 +1057,6 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
     </section>
 
     <!-- ===================== PORTFOLIO (beige) ===================== -->
-    <section class="section section--beige" id="werk">
-      <div class="container">
-        <p class="eyebrow reveal"><span class="eyebrow__line"></span>Portfolio</p>
-        <div class="section__head">
-          <h2 class="headline reveal" data-delay="60">Ons <em>Werk</em></h2>
-          <p class="section__aside reveal" data-delay="120">
-            Een greep uit de websites die we bouwden voor Belgische en Europese
-            ondernemers — van groothandel tot toerisme.
-          </p>
-        </div>
-
-        <div class="grid grid--4 mt-lg">
-
-          <!-- To use a real screenshot: set --shot to a local/base64 image, e.g.
-               style="--shot:url('images/simonta.jpg')". The branded gradient is a fallback. -->
-          <article class="work work--simonta reveal" data-delay="0">
-            <div class="work__shot" role="img" aria-label="Homepagina van Simonta"></div>
-            <div class="work__scrim" aria-hidden="true"></div>
-            <span class="work__tag">B2B Groothandel</span>
-            <div class="work__content">
-              <h3 class="work__name">Simonta</h3>
-              <p>Groothandel in verse wortelen, B2B, levering in heel Europa.</p>
-              <a href="https://simonta.eu" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
-            </div>
-          </article>
-
-          <article class="work work--mergel reveal" data-delay="80">
-            <div class="work__shot" role="img" aria-label="Homepagina van Mergelgrotten Zichen"></div>
-            <div class="work__scrim" aria-hidden="true"></div>
-            <span class="work__tag">Toerisme &amp; Cultuur</span>
-            <div class="work__content">
-              <h3 class="work__name">Mergelgrotten Zichen</h3>
-              <p>Toeristische grottenrondleidingen, sfeervol &amp; historisch.</p>
-              <a href="https://mergelgrottenzichen.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
-            </div>
-          </article>
-
-          <article class="work work--tuin reveal" data-delay="160">
-            <div class="work__shot" role="img" aria-label="Homepagina van Tuinwerken Stas"></div>
-            <div class="work__scrim" aria-hidden="true"></div>
-            <span class="work__tag">Tuin &amp; Landschap</span>
-            <div class="work__content">
-              <h3 class="work__name">Tuinwerken Stas</h3>
-              <p>Tuinaanleg &amp; onderhoud, elegant en groen.</p>
-              <a href="https://tuinwerkenstas.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
-            </div>
-          </article>
-
-          <article class="work work--fadim reveal" data-delay="240">
-            <div class="work__shot" role="img" aria-label="Homepagina van Fadim Official"></div>
-            <div class="work__scrim" aria-hidden="true"></div>
-            <span class="work__tag">Artiest &amp; Events</span>
-            <div class="work__content">
-              <h3 class="work__name">Fadim Official</h3>
-              <p>Artiest/zanger met agenda, fanshop &amp; boekingen.</p>
-              <a href="https://fadimofficial.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
 
     <!-- ===================== BEFORE / AFTER (navy-deep) ===================== -->
     <section class="section section--navy-deep">
@@ -1698,6 +1732,7 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
   function initTilt() {
     var cards = document.querySelectorAll(".card, .work, .price");
     cards.forEach(function (card) {
+      if (card.closest(".carousel--portfolio")) return; // no tilt on full-width slides
       card.addEventListener("mousemove", function (e) {
         var r = card.getBoundingClientRect();
         var px = (e.clientX - r.left) / r.width;
@@ -1803,6 +1838,8 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
       var timer = null;
 
       function calcPerView() {
+        var forced = parseInt(root.getAttribute("data-per-view") || "0", 10);
+        if (forced > 0) return Math.min(forced, cards.length);
         var w = viewport.clientWidth;
         var n = w >= 1024 ? 3 : w >= 640 ? 2 : 1;
         return Math.min(n, cards.length);
