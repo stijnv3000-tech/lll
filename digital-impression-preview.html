@@ -781,6 +781,47 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .hero__cta { justify-content: center; }
 .hero .trust { justify-content: center; }
 
+/* ==========================================================================
+   LIGHT SECTIONS — cream variant + dark-component overrides
+   (lets mid-page sections be light without breaking dark-styled cards)
+   ========================================================================== */
+.section--cream { background: var(--cream); color: var(--navy); }
+.section--cream .section__aside { color: rgba(14,28,58,0.62); }
+
+/* Services carousel cards on light sections */
+.section--beige .svc-card, .section--cream .svc-card {
+  background: var(--white); border-color: var(--beige-line);
+  box-shadow: 0 18px 40px -30px rgba(14,28,58,0.25); }
+.section--beige .svc-card:hover, .section--cream .svc-card:hover {
+  border-color: rgba(201,162,74,0.55); background: var(--white); }
+.section--beige .svc-card h3, .section--cream .svc-card h3 { color: var(--navy); }
+.section--beige .svc-card > p, .section--cream .svc-card > p { color: rgba(14,28,58,0.7); }
+.section--beige .svc-card__list li, .section--cream .svc-card__list li { color: rgba(14,28,58,0.82); }
+.section--beige .svc-card__link, .section--cream .svc-card__link { color: #9A8246; }
+
+/* carousel controls on light sections */
+.section--beige .carousel__arrow, .section--cream .carousel__arrow {
+  border-color: rgba(14,28,58,0.2); color: var(--navy); background: rgba(14,28,58,0.02); }
+.section--beige .carousel__arrow:hover, .section--cream .carousel__arrow:hover {
+  border-color: var(--gold); color: #9A8246; }
+.section--beige .carousel__dot, .section--cream .carousel__dot { background: rgba(14,28,58,0.22); }
+.section--beige .carousel__dot.is-active, .section--cream .carousel__dot.is-active { background: var(--gold); }
+
+/* before/after on light sections */
+.section--beige .ba__hint, .section--cream .ba__hint { color: rgba(14,28,58,0.6); }
+.section--beige .cmp__col, .section--cream .cmp__col { background: var(--white); }
+.section--beige .cmp__col--before, .section--cream .cmp__col--before {
+  background: rgba(163,42,35,0.05); border-color: rgba(163,42,35,0.25); }
+.section--beige .cmp__col--after, .section--cream .cmp__col--after {
+  background: rgba(201,162,74,0.08); border-color: rgba(201,162,74,0.4); }
+.section--beige .cmp__head, .section--cream .cmp__head { color: #b34a43; }
+.section--beige .cmp__head--good, .section--cream .cmp__head--good { color: #9A8246; }
+.section--beige .cmp__col li, .section--cream .cmp__col li { color: rgba(14,28,58,0.78); }
+.section--beige .cmp__col--before li [data-lucide], .section--cream .cmp__col--before li [data-lucide] { color: #c0564e; }
+.section--beige .cmp__col--after li [data-lucide], .section--cream .cmp__col--after li [data-lucide] { color: #9A8246; }
+.section--beige .cmp__stat-num, .section--cream .cmp__stat-num { color: #9A8246; }
+.section--beige .cmp__stat-label, .section--cream .cmp__stat-label { color: rgba(14,28,58,0.6); }
+
   </style>
 </head>
 <body>
@@ -916,13 +957,13 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
       </div>
     </section>
 
-    <!-- ===================== SERVICES (navy-deep) ===================== -->
-    <section class="section section--navy-deep" id="diensten">
+    <!-- ===================== SERVICES (cream) ===================== -->
+    <section class="section section--cream" id="diensten">
       <div class="container">
         <div class="section__head">
           <div>
-            <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Onze Diensten</p>
-            <h2 class="headline headline--light reveal" data-delay="60">Wat Wij <em>Bouwen</em></h2>
+            <p class="eyebrow reveal"><span class="eyebrow__line"></span>Onze Diensten</p>
+            <h2 class="headline reveal" data-delay="60">Wat Wij <em>Bouwen</em></h2>
           </div>
           <p class="section__aside reveal" data-delay="120">
             Nog niet zeker wat u nodig heeft?<br />
@@ -1067,12 +1108,12 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
       </div>
     </section>
 
-    <!-- ===================== BEFORE / AFTER (navy-deep) ===================== -->
-    <section class="section section--navy-deep">
+    <!-- ===================== BEFORE / AFTER (beige) ===================== -->
+    <section class="section section--beige">
       <div class="container">
         <div class="center-head">
-          <p class="eyebrow eyebrow--light reveal" style="justify-content:center"><span class="eyebrow__line"></span>Het Verschil Van Een Redesign</p>
-          <h2 class="headline headline--light reveal" data-delay="60">Van Verouderd Naar <em>Verbluffend</em></h2>
+          <p class="eyebrow reveal" style="justify-content:center"><span class="eyebrow__line"></span>Het Verschil Van Een Redesign</p>
+          <h2 class="headline reveal" data-delay="60">Van Verouderd Naar <em>Verbluffend</em></h2>
           <p class="ba__hint reveal" data-delay="120">Sleep de knop om het verschil te zien.</p>
         </div>
 
