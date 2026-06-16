@@ -13,6 +13,11 @@
 </head>
 <body>
 
+  <!-- scroll progress + custom cursor -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
   <!-- ===================== HEADER ===================== -->
   <header class="site-header" id="siteHeader">
     <!-- slim top bar -->
@@ -69,6 +74,7 @@
 
     <!-- ===================== HERO ===================== -->
     <section class="hero section--navy" id="home">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
       <div class="hero__grid" aria-hidden="true"></div>
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
@@ -97,6 +103,19 @@
       </div>
     </section>
 
+    <!-- ===================== MARQUEE ===================== -->
+    <section class="marquee section--navy-deep" aria-label="Vertrouwd door ondernemers">
+      <div class="container">
+        <p class="marquee__label">Vertrouwd door ondernemers in heel België &amp; Europa</p>
+      </div>
+      <div class="marquee__track" aria-hidden="true">
+        <div class="marquee__row">
+          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
+          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== FIRST IMPRESSIONS (beige) ===================== -->
     <section class="section section--beige">
       <div class="container">
@@ -108,17 +127,17 @@
         <div class="grid grid--3 mt-lg">
           <article class="card card--cream reveal" data-delay="0">
             <span class="card__icon"><i data-lucide="search"></i></span>
-            <div class="stat">75%</div>
+            <div class="stat" data-count="75" data-suffix="%">0%</div>
             <p>beoordeelt de geloofwaardigheid van een bedrijf op basis van de website, nog vóór ze één woord lezen.</p>
           </article>
           <article class="card card--cream reveal" data-delay="90">
             <span class="card__icon"><i data-lucide="clock"></i></span>
-            <div class="stat">3 sec</div>
+            <div class="stat" data-count="3" data-suffix=" sec">0 sec</div>
             <p>Meer tijd heeft u niet. Een trage of verouderde website stuurt klanten rechtstreeks naar uw concurrenten.</p>
           </article>
           <article class="card card--cream reveal" data-delay="180">
             <span class="card__icon"><i data-lucide="target"></i></span>
-            <div class="stat">1 kans</div>
+            <div class="stat" data-count="1" data-suffix=" kans">0 kans</div>
             <p>U krijgt maar één kans op een goede eerste indruk. Laat die niet liggen.</p>
           </article>
         </div>
@@ -238,6 +257,64 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BEFORE / AFTER (navy-deep) ===================== -->
+    <section class="section section--navy-deep">
+      <div class="container">
+        <div class="center-head">
+          <p class="eyebrow eyebrow--light reveal" style="justify-content:center"><span class="eyebrow__line"></span>Het Verschil Van Een Redesign</p>
+          <h2 class="headline headline--light reveal" data-delay="60">Van Verouderd Naar <em>Verbluffend</em></h2>
+          <p class="ba__hint reveal" data-delay="120">Sleep de knop om het verschil te zien.</p>
+        </div>
+
+        <div class="ba reveal" id="ba" data-delay="120">
+          <!-- AFTER (premium) — full width underneath -->
+          <div class="ba__after">
+            <div class="mock mock--after">
+              <div class="mock__bar">
+                <span class="mock__logo">Digital<em>Impression</em></span>
+                <span class="mock__nav"><b></b><b></b><b></b><b></b></span>
+                <span class="mock__cta"></span>
+              </div>
+              <div class="mock__hero">
+                <span class="mock__kicker"></span>
+                <span class="mock__h1"></span>
+                <span class="mock__h1 mock__h1--gold"></span>
+                <span class="mock__p"></span>
+                <span class="mock__p mock__p--short"></span>
+                <span class="mock__buttons"><b></b><b class="ghost"></b></span>
+              </div>
+              <div class="mock__cards"><b></b><b></b><b></b></div>
+            </div>
+          </div>
+          <!-- BEFORE (dated) — clipped on top -->
+          <div class="ba__before" id="baBefore">
+            <div class="mock mock--before">
+              <div class="mock__bar mock__bar--old">
+                <span class="mock__logo mock__logo--old">UW BEDRIJF BVBA</span>
+                <span class="mock__nav mock__nav--old"><b></b><b></b><b></b></span>
+              </div>
+              <div class="mock__hero mock__hero--old">
+                <span class="mock__h1 mock__h1--old"></span>
+                <span class="mock__p mock__p--old"></span>
+                <span class="mock__p mock__p--old"></span>
+                <span class="mock__p mock__p--old mock__p--short"></span>
+                <span class="mock__button--old"></span>
+              </div>
+              <div class="mock__cards mock__cards--old"><b></b><b></b></div>
+            </div>
+          </div>
+
+          <span class="ba__label ba__label--before">Voor</span>
+          <span class="ba__label ba__label--after">Na</span>
+
+          <button class="ba__handle" id="baHandle" role="slider" aria-label="Voor en na vergelijken"
+                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+            <i data-lucide="chevrons-left-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -389,6 +466,40 @@
           Elk project bevat een gratis homepage-ontwerp — verzonden binnen 24 uur na uw
           aanvraag, zonder enige verplichting.
         </p>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ (navy-deep) ===================== -->
+    <section class="section section--navy-deep">
+      <div class="container faq">
+        <div class="faq__intro">
+          <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Veelgestelde Vragen</p>
+          <h2 class="headline headline--light reveal" data-delay="60">Alles Wat U Wil <em>Weten</em></h2>
+          <p class="faq__lead reveal" data-delay="120">Geen antwoord gevonden? <a href="#contact" class="link-gold">Stel uw vraag</a> — we antwoorden binnen 24 uur.</p>
+        </div>
+
+        <div class="faq__list reveal" data-delay="120">
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Hoe snel staat mijn website online?<i data-lucide="plus"></i></button>
+            <div class="faq__a"><p>De meeste projecten zijn binnen 10 tot 14 dagen live. Na uw aanvraag ontvangt u binnen 24 uur een offerte op maat én een gratis homepagina-ontwerp.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Wat kost een website precies?<i data-lucide="plus"></i></button>
+            <div class="faq__a"><p>Een professionele website start vanaf €999. De exacte prijs hangt af van uw wensen — u krijgt altijd een transparante offerte zonder verborgen kosten of verrassingen.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Is het gratis ontwerp echt vrijblijvend?<i data-lucide="plus"></i></button>
+            <div class="faq__a"><p>Absoluut. Uw gratis homepagina-ontwerp kost niets en verbindt u tot niets. Geen voorschot, geen verplichting — wij verdienen eerst uw vertrouwen.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Kan ik mijn website later zelf aanpassen?<i data-lucide="plus"></i></button>
+            <div class="faq__a"><p>Ja. We bouwen uw site zo dat u eenvoudig teksten en beelden kunt beheren, en u krijgt één vast contactpersoon voor support — ook na de lancering.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Zorgen jullie ook voor hosting en domein?<i data-lucide="plus"></i></button>
+            <div class="faq__a"><p>Zeker. We regelen desgewenst hosting, domeinnaam en de technische opzet, zodat u zich nergens zorgen over hoeft te maken.</p></div>
+          </div>
+        </div>
       </div>
     </section>
 
