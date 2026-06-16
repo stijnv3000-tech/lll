@@ -759,3 +759,12 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
    ========================================================================== */
 .carousel--works .carousel__track { align-items: stretch; }
 .carousel--works .work { flex: 0 0 auto; min-height: 440px; }
+
+/* ==========================================================================
+   HERO — centered layout
+   ========================================================================== */
+.hero__inner { text-align: center; margin-inline: auto; }
+.hero__inner .eyebrow { justify-content: center; }
+.hero__title, .hero__sub { margin-inline: auto; }
+.hero__cta { justify-content: center; }
+.hero .trust { justify-content: center; }
