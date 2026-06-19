@@ -809,3 +809,49 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .section--beige .cmp__col--after li [data-lucide], .section--cream .cmp__col--after li [data-lucide] { color: #9A8246; }
 .section--beige .cmp__stat-num, .section--cream .cmp__stat-num { color: #9A8246; }
 .section--beige .cmp__stat-label, .section--cream .cmp__stat-label { color: rgba(14,28,58,0.6); }
+
+/* ==========================================================================
+   PROCESS — cooler timeline cards with big watermark numerals
+   ========================================================================== */
+.process { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .process { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .process { grid-template-columns: repeat(4, 1fr); } }
+
+.step { position: relative; overflow: hidden; padding: 2.25rem 1.6rem 1.9rem; border-radius: 1.1rem;
+  background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.012));
+  border: 1px solid var(--navy-line);
+  transition: transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease); }
+.step:hover { transform: translateY(-7px); border-color: rgba(201,162,74,0.55);
+  box-shadow: 0 30px 60px -34px rgba(0,0,0,0.75); }
+.step::before { content: attr(data-step); position: absolute; top: -1.4rem; right: 0.3rem;
+  font-family: var(--serif); font-style: italic; font-size: 7rem; line-height: 1;
+  color: rgba(201,162,74,0.12); pointer-events: none; transition: color .4s var(--ease); }
+.step:hover::before { color: rgba(201,162,74,0.24); }
+.step::after { content: ""; position: absolute; top: 0; left: 0; height: 3px; width: 100%;
+  background: linear-gradient(90deg, var(--gold), transparent 72%); opacity: .55; }
+.step__track { display: none; }
+.step__icon { position: relative; z-index: 1; width: 3.4rem; height: 3.4rem; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; border: none;
+  background: linear-gradient(140deg, var(--gold-soft), #a9842f); color: var(--navy);
+  box-shadow: 0 12px 26px -12px rgba(201,162,74,0.8); transition: transform .4s var(--ease); }
+.step:hover .step__icon { transform: scale(1.08) rotate(-4deg); }
+.step__icon [data-lucide] { width: 22px; height: 22px; color: var(--navy); }
+.step__num { display: inline-block; margin-top: 1.4rem; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-soft); }
+.step h3 { margin-top: 0.6rem; font-family: var(--serif); font-size: 1.4rem; font-weight: 500; color: var(--cream); }
+.step p { margin-top: 0.4rem; font-size: 0.875rem; color: rgba(241,235,223,0.62); }
+
+/* ==========================================================================
+   Light featured card (Why-us middle) + FAQ on light sections
+   ========================================================================== */
+.card--feature { border-color: rgba(201,162,74,0.5);
+  background: linear-gradient(165deg, rgba(201,162,74,0.12), rgba(255,255,255,0.65));
+  box-shadow: 0 26px 50px -30px rgba(201,162,74,0.4); }
+
+.section--cream .faq__lead, .section--beige .faq__lead { color: rgba(14,28,58,0.66); }
+.section--cream .faq__item, .section--beige .faq__item { background: var(--white); border-color: var(--beige-line); }
+.section--cream .faq__item.open, .section--beige .faq__item.open {
+  background: rgba(201,162,74,0.07); border-color: rgba(201,162,74,0.5); }
+.section--cream .faq__q, .section--beige .faq__q { color: var(--navy); }
+.section--cream .faq__a p, .section--beige .faq__a p { color: rgba(14,28,58,0.7); }
+.section--cream .faq__q [data-lucide], .section--beige .faq__q [data-lucide] { color: #9A8246; }

@@ -822,6 +822,52 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .section--beige .cmp__stat-num, .section--cream .cmp__stat-num { color: #9A8246; }
 .section--beige .cmp__stat-label, .section--cream .cmp__stat-label { color: rgba(14,28,58,0.6); }
 
+/* ==========================================================================
+   PROCESS — cooler timeline cards with big watermark numerals
+   ========================================================================== */
+.process { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .process { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .process { grid-template-columns: repeat(4, 1fr); } }
+
+.step { position: relative; overflow: hidden; padding: 2.25rem 1.6rem 1.9rem; border-radius: 1.1rem;
+  background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.012));
+  border: 1px solid var(--navy-line);
+  transition: transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease); }
+.step:hover { transform: translateY(-7px); border-color: rgba(201,162,74,0.55);
+  box-shadow: 0 30px 60px -34px rgba(0,0,0,0.75); }
+.step::before { content: attr(data-step); position: absolute; top: -1.4rem; right: 0.3rem;
+  font-family: var(--serif); font-style: italic; font-size: 7rem; line-height: 1;
+  color: rgba(201,162,74,0.12); pointer-events: none; transition: color .4s var(--ease); }
+.step:hover::before { color: rgba(201,162,74,0.24); }
+.step::after { content: ""; position: absolute; top: 0; left: 0; height: 3px; width: 100%;
+  background: linear-gradient(90deg, var(--gold), transparent 72%); opacity: .55; }
+.step__track { display: none; }
+.step__icon { position: relative; z-index: 1; width: 3.4rem; height: 3.4rem; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; border: none;
+  background: linear-gradient(140deg, var(--gold-soft), #a9842f); color: var(--navy);
+  box-shadow: 0 12px 26px -12px rgba(201,162,74,0.8); transition: transform .4s var(--ease); }
+.step:hover .step__icon { transform: scale(1.08) rotate(-4deg); }
+.step__icon [data-lucide] { width: 22px; height: 22px; color: var(--navy); }
+.step__num { display: inline-block; margin-top: 1.4rem; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-soft); }
+.step h3 { margin-top: 0.6rem; font-family: var(--serif); font-size: 1.4rem; font-weight: 500; color: var(--cream); }
+.step p { margin-top: 0.4rem; font-size: 0.875rem; color: rgba(241,235,223,0.62); }
+
+/* ==========================================================================
+   Light featured card (Why-us middle) + FAQ on light sections
+   ========================================================================== */
+.card--feature { border-color: rgba(201,162,74,0.5);
+  background: linear-gradient(165deg, rgba(201,162,74,0.12), rgba(255,255,255,0.65));
+  box-shadow: 0 26px 50px -30px rgba(201,162,74,0.4); }
+
+.section--cream .faq__lead, .section--beige .faq__lead { color: rgba(14,28,58,0.66); }
+.section--cream .faq__item, .section--beige .faq__item { background: var(--white); border-color: var(--beige-line); }
+.section--cream .faq__item.open, .section--beige .faq__item.open {
+  background: rgba(201,162,74,0.07); border-color: rgba(201,162,74,0.5); }
+.section--cream .faq__q, .section--beige .faq__q { color: var(--navy); }
+.section--cream .faq__a p, .section--beige .faq__a p { color: rgba(14,28,58,0.7); }
+.section--cream .faq__q [data-lucide], .section--beige .faq__q [data-lucide] { color: #9A8246; }
+
   </style>
 </head>
 <body>
@@ -916,19 +962,6 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
       </div>
     </section>
 
-    <!-- ===================== MARQUEE ===================== -->
-    <section class="marquee section--navy-deep" aria-label="Vertrouwd door ondernemers">
-      <div class="container">
-        <p class="marquee__label">Vertrouwd door ondernemers in heel België &amp; Europa</p>
-      </div>
-      <div class="marquee__track" aria-hidden="true">
-        <div class="marquee__row">
-          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
-          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== FIRST IMPRESSIONS (beige) ===================== -->
     <section class="section section--beige">
       <div class="container">
@@ -953,6 +986,19 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
             <div class="stat" data-count="1" data-suffix=" kans">0 kans</div>
             <p>U krijgt maar één kans op een goede eerste indruk. Laat die niet liggen.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <section class="marquee section--navy-deep" aria-label="Vertrouwd door ondernemers">
+      <div class="container">
+        <p class="marquee__label">Vertrouwd door ondernemers in heel België &amp; Europa</p>
+      </div>
+      <div class="marquee__track" aria-hidden="true">
+        <div class="marquee__row">
+          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
+          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
         </div>
       </div>
     </section>
@@ -1211,28 +1257,28 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
         </h2>
 
         <div class="process mt-xl">
-          <div class="step reveal" data-delay="0">
-            <span class="step__line" aria-hidden="true"></span>
+          <div class="step reveal" data-step="1" data-delay="0">
+            <span class="step__track" aria-hidden="true"></span>
             <span class="step__icon"><i data-lucide="message-square"></i></span>
             <span class="step__num">Stap 1</span>
             <h3>Vertel ons over uw project</h3>
             <p>Duurt 3 minuten</p>
           </div>
-          <div class="step reveal" data-delay="90">
-            <span class="step__line" aria-hidden="true"></span>
+          <div class="step reveal" data-step="2" data-delay="90">
+            <span class="step__track" aria-hidden="true"></span>
             <span class="step__icon"><i data-lucide="pen-tool"></i></span>
             <span class="step__num">Stap 2</span>
             <h3>Offerte &amp; ontwerp</h3>
             <p>Gratis &amp; binnen 24u</p>
           </div>
-          <div class="step reveal" data-delay="180">
-            <span class="step__line" aria-hidden="true"></span>
+          <div class="step reveal" data-step="3" data-delay="180">
+            <span class="step__track" aria-hidden="true"></span>
             <span class="step__icon"><i data-lucide="hammer"></i></span>
             <span class="step__num">Stap 3</span>
             <h3>Wij bouwen uw website</h3>
             <p>10–14 dagen</p>
           </div>
-          <div class="step reveal" data-delay="270">
+          <div class="step reveal" data-step="4" data-delay="270">
             <span class="step__icon"><i data-lucide="rocket"></i></span>
             <span class="step__num">Stap 4</span>
             <h3>U gaat live</h3>
@@ -1279,43 +1325,31 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
       </div>
     </section>
 
-    <!-- ===================== WHY US + TESTIMONIAL (navy) ===================== -->
-    <section class="section section--navy-deep" id="waarom">
+    <!-- ===================== WHY US (cream) ===================== -->
+    <section class="section section--cream" id="waarom">
       <div class="container">
         <div class="center-head">
-          <p class="eyebrow eyebrow--light reveal" style="justify-content:center"><span class="eyebrow__line"></span>Waarom Kiezen Voor Digital Impression</p>
-          <h2 class="headline headline--light reveal" data-delay="60">Belgische Ondernemers Kiezen Voor <em>Ons</em></h2>
+          <p class="eyebrow reveal" style="justify-content:center"><span class="eyebrow__line"></span>Waarom Kiezen Voor Digital Impression</p>
+          <h2 class="headline reveal" data-delay="60">Belgische Ondernemers Kiezen Voor <em>Ons</em></h2>
         </div>
 
         <div class="grid grid--3 mt-lg">
-          <article class="card card--navy reveal" data-delay="0">
+          <article class="card card--cream reveal" data-delay="0">
             <span class="card__icon card__icon--gold"><i data-lucide="map-pinned"></i></span>
             <h3>Gevestigd in België</h3>
             <p>Een lokaal team dat de Belgische markt en ondernemer begrijpt — geen anonieme buitenlandse leverancier.</p>
           </article>
-          <article class="card card--navy card--navy-feature reveal" data-delay="90">
+          <article class="card card--cream card--feature reveal" data-delay="90">
             <span class="card__icon card__icon--gold"><i data-lucide="zap"></i></span>
             <h3>Snelle oplevering</h3>
             <p>Uw website live in 10–14 dagen, zonder eindeloze wachttijden.</p>
           </article>
-          <article class="card card--navy reveal" data-delay="180">
+          <article class="card card--cream reveal" data-delay="180">
             <span class="card__icon card__icon--gold"><i data-lucide="user-check"></i></span>
             <h3>Persoonlijke aanpak</h3>
             <p>Eén vast contactpersoon, van eerste gesprek tot lancering en daarna.</p>
           </article>
         </div>
-
-        <figure class="testimonial reveal" data-delay="120">
-          <i data-lucide="quote" class="testimonial__mark" aria-hidden="true"></i>
-          <blockquote>"Een slechte website is geen gemiste kans — het is een gesloten deur. Wij zorgen ervoor dat de uwe altijd openstaat."</blockquote>
-          <figcaption>
-            <span class="testimonial__avatar" aria-hidden="true">[N]</span>
-            <span>
-              <span class="testimonial__name">[Naam]</span>
-              <span class="testimonial__role">[Functie]</span>
-            </span>
-          </figcaption>
-        </figure>
       </div>
     </section>
 
@@ -1383,12 +1417,12 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
       </div>
     </section>
 
-    <!-- ===================== FAQ (navy-deep) ===================== -->
-    <section class="section section--navy-deep">
+    <!-- ===================== FAQ (cream) ===================== -->
+    <section class="section section--cream" id="faq">
       <div class="container faq">
         <div class="faq__intro">
-          <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Veelgestelde Vragen</p>
-          <h2 class="headline headline--light reveal" data-delay="60">Alles Wat U Wil <em>Weten</em></h2>
+          <p class="eyebrow reveal"><span class="eyebrow__line"></span>Veelgestelde Vragen</p>
+          <h2 class="headline reveal" data-delay="60">Alles Wat U Wil <em>Weten</em></h2>
           <p class="faq__lead reveal" data-delay="120">Geen antwoord gevonden? <a href="#contact" class="link-gold">Stel uw vraag</a> — we antwoorden binnen 24 uur.</p>
         </div>
 

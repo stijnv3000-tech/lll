@@ -103,19 +103,6 @@
       </div>
     </section>
 
-    <!-- ===================== MARQUEE ===================== -->
-    <section class="marquee section--navy-deep" aria-label="Vertrouwd door ondernemers">
-      <div class="container">
-        <p class="marquee__label">Vertrouwd door ondernemers in heel België &amp; Europa</p>
-      </div>
-      <div class="marquee__track" aria-hidden="true">
-        <div class="marquee__row">
-          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
-          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== FIRST IMPRESSIONS (beige) ===================== -->
     <section class="section section--beige">
       <div class="container">
@@ -140,6 +127,19 @@
             <div class="stat" data-count="1" data-suffix=" kans">0 kans</div>
             <p>U krijgt maar één kans op een goede eerste indruk. Laat die niet liggen.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <section class="marquee section--navy-deep" aria-label="Vertrouwd door ondernemers">
+      <div class="container">
+        <p class="marquee__label">Vertrouwd door ondernemers in heel België &amp; Europa</p>
+      </div>
+      <div class="marquee__track" aria-hidden="true">
+        <div class="marquee__row">
+          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
+          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
         </div>
       </div>
     </section>
@@ -398,28 +398,28 @@
         </h2>
 
         <div class="process mt-xl">
-          <div class="step reveal" data-delay="0">
-            <span class="step__line" aria-hidden="true"></span>
+          <div class="step reveal" data-step="1" data-delay="0">
+            <span class="step__track" aria-hidden="true"></span>
             <span class="step__icon"><i data-lucide="message-square"></i></span>
             <span class="step__num">Stap 1</span>
             <h3>Vertel ons over uw project</h3>
             <p>Duurt 3 minuten</p>
           </div>
-          <div class="step reveal" data-delay="90">
-            <span class="step__line" aria-hidden="true"></span>
+          <div class="step reveal" data-step="2" data-delay="90">
+            <span class="step__track" aria-hidden="true"></span>
             <span class="step__icon"><i data-lucide="pen-tool"></i></span>
             <span class="step__num">Stap 2</span>
             <h3>Offerte &amp; ontwerp</h3>
             <p>Gratis &amp; binnen 24u</p>
           </div>
-          <div class="step reveal" data-delay="180">
-            <span class="step__line" aria-hidden="true"></span>
+          <div class="step reveal" data-step="3" data-delay="180">
+            <span class="step__track" aria-hidden="true"></span>
             <span class="step__icon"><i data-lucide="hammer"></i></span>
             <span class="step__num">Stap 3</span>
             <h3>Wij bouwen uw website</h3>
             <p>10–14 dagen</p>
           </div>
-          <div class="step reveal" data-delay="270">
+          <div class="step reveal" data-step="4" data-delay="270">
             <span class="step__icon"><i data-lucide="rocket"></i></span>
             <span class="step__num">Stap 4</span>
             <h3>U gaat live</h3>
@@ -466,43 +466,31 @@
       </div>
     </section>
 
-    <!-- ===================== WHY US + TESTIMONIAL (navy) ===================== -->
-    <section class="section section--navy-deep" id="waarom">
+    <!-- ===================== WHY US (cream) ===================== -->
+    <section class="section section--cream" id="waarom">
       <div class="container">
         <div class="center-head">
-          <p class="eyebrow eyebrow--light reveal" style="justify-content:center"><span class="eyebrow__line"></span>Waarom Kiezen Voor Digital Impression</p>
-          <h2 class="headline headline--light reveal" data-delay="60">Belgische Ondernemers Kiezen Voor <em>Ons</em></h2>
+          <p class="eyebrow reveal" style="justify-content:center"><span class="eyebrow__line"></span>Waarom Kiezen Voor Digital Impression</p>
+          <h2 class="headline reveal" data-delay="60">Belgische Ondernemers Kiezen Voor <em>Ons</em></h2>
         </div>
 
         <div class="grid grid--3 mt-lg">
-          <article class="card card--navy reveal" data-delay="0">
+          <article class="card card--cream reveal" data-delay="0">
             <span class="card__icon card__icon--gold"><i data-lucide="map-pinned"></i></span>
             <h3>Gevestigd in België</h3>
             <p>Een lokaal team dat de Belgische markt en ondernemer begrijpt — geen anonieme buitenlandse leverancier.</p>
           </article>
-          <article class="card card--navy card--navy-feature reveal" data-delay="90">
+          <article class="card card--cream card--feature reveal" data-delay="90">
             <span class="card__icon card__icon--gold"><i data-lucide="zap"></i></span>
             <h3>Snelle oplevering</h3>
             <p>Uw website live in 10–14 dagen, zonder eindeloze wachttijden.</p>
           </article>
-          <article class="card card--navy reveal" data-delay="180">
+          <article class="card card--cream reveal" data-delay="180">
             <span class="card__icon card__icon--gold"><i data-lucide="user-check"></i></span>
             <h3>Persoonlijke aanpak</h3>
             <p>Eén vast contactpersoon, van eerste gesprek tot lancering en daarna.</p>
           </article>
         </div>
-
-        <figure class="testimonial reveal" data-delay="120">
-          <i data-lucide="quote" class="testimonial__mark" aria-hidden="true"></i>
-          <blockquote>"Een slechte website is geen gemiste kans — het is een gesloten deur. Wij zorgen ervoor dat de uwe altijd openstaat."</blockquote>
-          <figcaption>
-            <span class="testimonial__avatar" aria-hidden="true">[N]</span>
-            <span>
-              <span class="testimonial__name">[Naam]</span>
-              <span class="testimonial__role">[Functie]</span>
-            </span>
-          </figcaption>
-        </figure>
       </div>
     </section>
 
@@ -570,12 +558,12 @@
       </div>
     </section>
 
-    <!-- ===================== FAQ (navy-deep) ===================== -->
-    <section class="section section--navy-deep">
+    <!-- ===================== FAQ (cream) ===================== -->
+    <section class="section section--cream" id="faq">
       <div class="container faq">
         <div class="faq__intro">
-          <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Veelgestelde Vragen</p>
-          <h2 class="headline headline--light reveal" data-delay="60">Alles Wat U Wil <em>Weten</em></h2>
+          <p class="eyebrow reveal"><span class="eyebrow__line"></span>Veelgestelde Vragen</p>
+          <h2 class="headline reveal" data-delay="60">Alles Wat U Wil <em>Weten</em></h2>
           <p class="faq__lead reveal" data-delay="120">Geen antwoord gevonden? <a href="#contact" class="link-gold">Stel uw vraag</a> — we antwoorden binnen 24 uur.</p>
         </div>
 
