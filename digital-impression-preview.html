@@ -932,6 +932,18 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
   .tl-num { right: 0.6rem; font-size: 5rem; }
 }
 
+/* ==========================================================================
+   REDESIGN SECTION — slider + comparison side-by-side (more compact)
+   ========================================================================== */
+.redesign { margin-top: 3rem; display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
+@media (min-width: 980px) { .redesign { grid-template-columns: 1.05fr 0.95fr; gap: 2.5rem; } }
+.redesign__demo { display: flex; flex-direction: column; gap: 1.5rem; }
+.redesign__demo .ba { margin: 0; max-width: none; }
+.redesign__demo .cmp__stats { margin: 0; max-width: none; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.redesign__compare { display: flex; flex-direction: column; gap: 1.25rem; }
+.redesign__compare .cmp__col { padding: 1.4rem 1.6rem; }
+.redesign__compare .cmp__col ul { gap: 0.55rem; }
+
   </style>
 </head>
 <body>
@@ -1227,87 +1239,89 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
           <p class="ba__hint reveal" data-delay="120">Sleep de knop om het verschil te zien.</p>
         </div>
 
-        <div class="ba reveal" id="ba" data-delay="120">
-          <!-- AFTER (premium) — full width underneath -->
-          <div class="ba__after">
-            <div class="mock mock--after">
-              <div class="mock__bar">
-                <span class="mock__logo">Digital<em>Impression</em></span>
-                <span class="mock__nav"><b></b><b></b><b></b><b></b></span>
-                <span class="mock__cta"></span>
+        <div class="redesign">
+          <div class="redesign__demo">
+            <div class="ba reveal" id="ba" data-delay="120">
+              <!-- AFTER (premium) — full width underneath -->
+              <div class="ba__after">
+                <div class="mock mock--after">
+                  <div class="mock__bar">
+                    <span class="mock__logo">Digital<em>Impression</em></span>
+                    <span class="mock__nav"><b></b><b></b><b></b><b></b></span>
+                    <span class="mock__cta"></span>
+                  </div>
+                  <div class="mock__hero">
+                    <span class="mock__kicker"></span>
+                    <span class="mock__h1"></span>
+                    <span class="mock__h1 mock__h1--gold"></span>
+                    <span class="mock__p"></span>
+                    <span class="mock__p mock__p--short"></span>
+                    <span class="mock__buttons"><b></b><b class="ghost"></b></span>
+                  </div>
+                  <div class="mock__cards"><b></b><b></b><b></b></div>
+                </div>
+                <span class="ba__metric ba__metric--good ba__metric--speed"><i data-lucide="zap"></i> 0,9s laadtijd</span>
+                <span class="ba__metric ba__metric--good ba__metric--leads"><i data-lucide="trending-up"></i> +47% aanvragen</span>
               </div>
-              <div class="mock__hero">
-                <span class="mock__kicker"></span>
-                <span class="mock__h1"></span>
-                <span class="mock__h1 mock__h1--gold"></span>
-                <span class="mock__p"></span>
-                <span class="mock__p mock__p--short"></span>
-                <span class="mock__buttons"><b></b><b class="ghost"></b></span>
+              <!-- BEFORE (dated) — clipped on top -->
+              <div class="ba__before" id="baBefore">
+                <div class="mock mock--before">
+                  <div class="mock__bar mock__bar--old">
+                    <span class="mock__logo mock__logo--old">UW BEDRIJF BVBA</span>
+                    <span class="mock__nav mock__nav--old"><b></b><b></b><b></b></span>
+                  </div>
+                  <div class="mock__hero mock__hero--old">
+                    <span class="mock__h1 mock__h1--old"></span>
+                    <span class="mock__p mock__p--old"></span>
+                    <span class="mock__p mock__p--old"></span>
+                    <span class="mock__p mock__p--old mock__p--short"></span>
+                    <span class="mock__button--old"></span>
+                  </div>
+                  <div class="mock__cards mock__cards--old"><b></b><b></b></div>
+                </div>
+                <span class="ba__metric ba__metric--bad ba__metric--speed"><i data-lucide="clock"></i> 8,2s laadtijd</span>
+                <span class="ba__metric ba__metric--bad ba__metric--leads"><i data-lucide="trending-down"></i> Bezoekers haken af</span>
               </div>
-              <div class="mock__cards"><b></b><b></b><b></b></div>
+
+              <span class="ba__label ba__label--before">Voor</span>
+              <span class="ba__label ba__label--after">Na</span>
+
+              <button class="ba__handle" id="baHandle" role="slider" aria-label="Voor en na vergelijken"
+                      aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+                <i data-lucide="chevrons-left-right"></i>
+              </button>
             </div>
-            <span class="ba__metric ba__metric--good ba__metric--speed"><i data-lucide="zap"></i> 0,9s laadtijd</span>
-            <span class="ba__metric ba__metric--good ba__metric--leads"><i data-lucide="trending-up"></i> +47% aanvragen</span>
-          </div>
-          <!-- BEFORE (dated) — clipped on top -->
-          <div class="ba__before" id="baBefore">
-            <div class="mock mock--before">
-              <div class="mock__bar mock__bar--old">
-                <span class="mock__logo mock__logo--old">UW BEDRIJF BVBA</span>
-                <span class="mock__nav mock__nav--old"><b></b><b></b><b></b></span>
-              </div>
-              <div class="mock__hero mock__hero--old">
-                <span class="mock__h1 mock__h1--old"></span>
-                <span class="mock__p mock__p--old"></span>
-                <span class="mock__p mock__p--old"></span>
-                <span class="mock__p mock__p--old mock__p--short"></span>
-                <span class="mock__button--old"></span>
-              </div>
-              <div class="mock__cards mock__cards--old"><b></b><b></b></div>
+
+            <div class="cmp__stats reveal" data-delay="160">
+              <div class="cmp__stat"><span class="cmp__stat-num" data-count="2" data-suffix="x">0x</span><span class="cmp__stat-label">snellere laadtijd</span></div>
+              <div class="cmp__stat"><span class="cmp__stat-num" data-count="47" data-suffix="%">0%</span><span class="cmp__stat-label">meer aanvragen</span></div>
+              <div class="cmp__stat"><span class="cmp__stat-num" data-count="100" data-suffix="%">0%</span><span class="cmp__stat-label">mobiel-vriendelijk</span></div>
+              <div class="cmp__stat"><span class="cmp__stat-num" data-count="14" data-suffix=" dagen">0 dagen</span><span class="cmp__stat-label">tot live</span></div>
             </div>
-            <span class="ba__metric ba__metric--bad ba__metric--speed"><i data-lucide="clock"></i> 8,2s laadtijd</span>
-            <span class="ba__metric ba__metric--bad ba__metric--leads"><i data-lucide="trending-down"></i> Bezoekers haken af</span>
           </div>
 
-          <span class="ba__label ba__label--before">Voor</span>
-          <span class="ba__label ba__label--after">Na</span>
-
-          <button class="ba__handle" id="baHandle" role="slider" aria-label="Voor en na vergelijken"
-                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-            <i data-lucide="chevrons-left-right"></i>
-          </button>
-        </div>
-
-        <!-- USP comparison -->
-        <div class="cmp">
-          <div class="cmp__col cmp__col--before reveal" data-delay="0">
-            <span class="cmp__head"><i data-lucide="x"></i> Voor — wat u tegenhoudt</span>
-            <ul>
-              <li><i data-lucide="x"></i> Traag &amp; verouderd design</li>
-              <li><i data-lucide="x"></i> Niet leesbaar op smartphone</li>
-              <li><i data-lucide="x"></i> Onvindbaar in Google</li>
-              <li><i data-lucide="x"></i> Bezoekers haken af zonder contact</li>
-              <li><i data-lucide="x"></i> Wekt geen vertrouwen</li>
-            </ul>
+          <div class="redesign__compare">
+            <div class="cmp__col cmp__col--before reveal" data-delay="0">
+              <span class="cmp__head"><i data-lucide="x"></i> Voor — wat u tegenhoudt</span>
+              <ul>
+                <li><i data-lucide="x"></i> Traag &amp; verouderd design</li>
+                <li><i data-lucide="x"></i> Niet leesbaar op smartphone</li>
+                <li><i data-lucide="x"></i> Onvindbaar in Google</li>
+                <li><i data-lucide="x"></i> Bezoekers haken af zonder contact</li>
+                <li><i data-lucide="x"></i> Wekt geen vertrouwen</li>
+              </ul>
+            </div>
+            <div class="cmp__col cmp__col--after reveal" data-delay="90">
+              <span class="cmp__head cmp__head--good"><i data-lucide="check"></i> Na — wat u wint</span>
+              <ul>
+                <li><i data-lucide="check"></i> Bliksemsnel &amp; modern design</li>
+                <li><i data-lucide="check"></i> Perfect op elk scherm</li>
+                <li><i data-lucide="check"></i> Hoger in Google gevonden</li>
+                <li><i data-lucide="check"></i> Bezoekers worden klanten</li>
+                <li><i data-lucide="check"></i> Straalt professionaliteit uit</li>
+              </ul>
+            </div>
           </div>
-          <div class="cmp__col cmp__col--after reveal" data-delay="90">
-            <span class="cmp__head cmp__head--good"><i data-lucide="check"></i> Na — wat u wint</span>
-            <ul>
-              <li><i data-lucide="check"></i> Bliksemsnel &amp; modern design</li>
-              <li><i data-lucide="check"></i> Perfect op elk scherm</li>
-              <li><i data-lucide="check"></i> Hoger in Google gevonden</li>
-              <li><i data-lucide="check"></i> Bezoekers worden klanten</li>
-              <li><i data-lucide="check"></i> Straalt professionaliteit uit</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- result metrics -->
-        <div class="cmp__stats reveal" data-delay="120">
-          <div class="cmp__stat"><span class="cmp__stat-num" data-count="2" data-suffix="x">0x</span><span class="cmp__stat-label">snellere laadtijd</span></div>
-          <div class="cmp__stat"><span class="cmp__stat-num" data-count="47" data-suffix="%">0%</span><span class="cmp__stat-label">meer aanvragen</span></div>
-          <div class="cmp__stat"><span class="cmp__stat-num" data-count="100" data-suffix="%">0%</span><span class="cmp__stat-label">mobiel-vriendelijk</span></div>
-          <div class="cmp__stat"><span class="cmp__stat-num" data-count="14" data-suffix=" dagen">0 dagen</span><span class="cmp__stat-label">tot live</span></div>
         </div>
       </div>
     </section>
