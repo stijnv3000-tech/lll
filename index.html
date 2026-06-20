@@ -239,7 +239,7 @@
           <div class="carousel__viewport">
             <div class="carousel__track">
 
-              <article class="work work--simonta">
+              <article class="work work--simonta" style="--shot:url('images/simonta.jpg')">
                 <div class="work__shot" role="img" aria-label="Homepagina van Simonta"></div>
                 <div class="work__scrim" aria-hidden="true"></div>
                 <span class="work__tag">B2B Groothandel</span>
@@ -250,7 +250,7 @@
                 </div>
               </article>
 
-              <article class="work work--mergel">
+              <article class="work work--mergel" style="--shot:url('images/mergelgrotten.jpg')">
                 <div class="work__shot" role="img" aria-label="Homepagina van Mergelgrotten Zichen"></div>
                 <div class="work__scrim" aria-hidden="true"></div>
                 <span class="work__tag">Toerisme &amp; Cultuur</span>
@@ -261,7 +261,7 @@
                 </div>
               </article>
 
-              <article class="work work--tuin">
+              <article class="work work--tuin" style="--shot:url('images/tuinwerken.jpg')">
                 <div class="work__shot" role="img" aria-label="Homepagina van Tuinwerken Stas"></div>
                 <div class="work__scrim" aria-hidden="true"></div>
                 <span class="work__tag">Tuin &amp; Landschap</span>
@@ -272,7 +272,7 @@
                 </div>
               </article>
 
-              <article class="work work--fadim">
+              <article class="work work--fadim" style="--shot:url('images/fadim.jpg')">
                 <div class="work__shot" role="img" aria-label="Homepagina van Fadim Official"></div>
                 <div class="work__scrim" aria-hidden="true"></div>
                 <span class="work__tag">Artiest &amp; Events</span>
@@ -392,38 +392,47 @@
     <!-- ===================== PROCESS (navy) ===================== -->
     <section class="section section--navy">
       <div class="container">
-        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Werkwijze</p>
-        <h2 class="headline headline--light reveal" data-delay="60" style="max-width:48rem">
-          Van Aanvraag Tot Live Website In Minder Dan <em>2 Weken</em>
-        </h2>
+        <div class="center-head">
+          <p class="eyebrow eyebrow--light reveal" style="justify-content:center"><span class="eyebrow__line"></span>Werkwijze</p>
+          <h2 class="headline headline--light reveal" data-delay="60">Van Aanvraag Tot Live Website In Minder Dan <em>2 Weken</em></h2>
+        </div>
 
-        <div class="process mt-xl">
-          <div class="step reveal" data-step="1" data-delay="0">
-            <span class="step__track" aria-hidden="true"></span>
-            <span class="step__icon"><i data-lucide="message-square"></i></span>
-            <span class="step__num">Stap 1</span>
-            <h3>Vertel ons over uw project</h3>
-            <p>Duurt 3 minuten</p>
+        <div class="timeline">
+          <div class="tl-item tl-item--left reveal" data-delay="0">
+            <span class="tl-node"><i data-lucide="message-square"></i></span>
+            <div class="tl-card">
+              <span class="tl-num" aria-hidden="true">01</span>
+              <span class="tl-step">Stap 1</span>
+              <h3>Vertel ons over uw project</h3>
+              <p>Een kort gesprek van 3 minuten — u vertelt ons uw doelen en wensen.</p>
+            </div>
           </div>
-          <div class="step reveal" data-step="2" data-delay="90">
-            <span class="step__track" aria-hidden="true"></span>
-            <span class="step__icon"><i data-lucide="pen-tool"></i></span>
-            <span class="step__num">Stap 2</span>
-            <h3>Offerte &amp; ontwerp</h3>
-            <p>Gratis &amp; binnen 24u</p>
+          <div class="tl-item tl-item--right reveal" data-delay="80">
+            <span class="tl-node"><i data-lucide="pen-tool"></i></span>
+            <div class="tl-card">
+              <span class="tl-num" aria-hidden="true">02</span>
+              <span class="tl-step">Stap 2</span>
+              <h3>Offerte &amp; ontwerp</h3>
+              <p>Binnen 24u ontvangt u een offerte op maat én een gratis homepagina-ontwerp.</p>
+            </div>
           </div>
-          <div class="step reveal" data-step="3" data-delay="180">
-            <span class="step__track" aria-hidden="true"></span>
-            <span class="step__icon"><i data-lucide="hammer"></i></span>
-            <span class="step__num">Stap 3</span>
-            <h3>Wij bouwen uw website</h3>
-            <p>10–14 dagen</p>
+          <div class="tl-item tl-item--left reveal" data-delay="160">
+            <span class="tl-node"><i data-lucide="hammer"></i></span>
+            <div class="tl-card">
+              <span class="tl-num" aria-hidden="true">03</span>
+              <span class="tl-step">Stap 3</span>
+              <h3>Wij bouwen uw website</h3>
+              <p>In 10–14 dagen bouwen we uw site — u blijft op de hoogte bij elke stap.</p>
+            </div>
           </div>
-          <div class="step reveal" data-step="4" data-delay="270">
-            <span class="step__icon"><i data-lucide="rocket"></i></span>
-            <span class="step__num">Stap 4</span>
-            <h3>U gaat live</h3>
-            <p>Doorlopende support</p>
+          <div class="tl-item tl-item--right reveal" data-delay="240">
+            <span class="tl-node"><i data-lucide="rocket"></i></span>
+            <div class="tl-card">
+              <span class="tl-num" aria-hidden="true">04</span>
+              <span class="tl-step">Stap 4</span>
+              <h3>U gaat live</h3>
+              <p>Uw website gaat online — met doorlopende support en één vast aanspreekpunt.</p>
+            </div>
           </div>
         </div>
 

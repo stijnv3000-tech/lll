@@ -868,6 +868,70 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .section--cream .faq__a p, .section--beige .faq__a p { color: rgba(14,28,58,0.7); }
 .section--cream .faq__q [data-lucide], .section--beige .faq__q [data-lucide] { color: #9A8246; }
 
+/* ==========================================================================
+   PORTFOLIO — real screenshot layered over branded gradient fallback
+   (set --shot per card; a missing image gracefully falls back to gradient)
+   ========================================================================== */
+.work--simonta .work__shot { background-image: var(--shot, none),
+  radial-gradient(120% 80% at 70% 95%, #e58a26 0%, #c2701c 30%, transparent 60%),
+  linear-gradient(180deg, #8fb9dd 0%, #a7cba4 34%, #5c7d3f 62%, #3c5a2a 100%); }
+.work--mergel .work__shot { background-image: var(--shot, none),
+  radial-gradient(90% 70% at 50% 40%, rgba(231,194,122,0.35), transparent 60%),
+  linear-gradient(160deg, #3a2a17 0%, #6b4a22 48%, #241910 100%); }
+.work--tuin .work__shot { background-image: var(--shot, none),
+  radial-gradient(100% 80% at 30% 90%, #2f7d4f 0%, transparent 55%),
+  linear-gradient(165deg, #0c2417 0%, #1f5235 45%, #143b28 100%); }
+.work--fadim .work__shot { background-image: var(--shot, none),
+  radial-gradient(80% 70% at 75% 35%, rgba(159,194,240,0.45), transparent 55%),
+  linear-gradient(160deg, #0b1733 0%, #1d3a72 55%, #2c508f 100%); }
+
+/* ==========================================================================
+   PROCESS — extravagant alternating gold timeline
+   ========================================================================== */
+.timeline { position: relative; max-width: 56rem; margin: 3.5rem auto 0; }
+.timeline::before { content: ""; position: absolute; top: 0.5rem; bottom: 0.5rem; left: 50%; width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, var(--gold) 7%, var(--gold-soft) 50%, var(--gold) 93%, transparent);
+  box-shadow: 0 0 26px rgba(201,162,74,0.45); }
+
+.tl-item { position: relative; width: 50%; padding: 0 3.25rem; margin-bottom: 2.75rem; }
+.tl-item:last-child { margin-bottom: 0; }
+.tl-item--left { left: 0; text-align: right; }
+.tl-item--right { left: 50%; text-align: left; }
+
+.tl-node { position: absolute; top: 0.4rem; width: 4rem; height: 4rem; border-radius: 999px; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 30% 28%, var(--gold-soft), #a9842f 80%);
+  box-shadow: 0 0 0 7px var(--navy), 0 0 0 8px rgba(201,162,74,0.5),
+    0 0 30px rgba(201,162,74,0.55), 0 18px 34px -12px rgba(201,162,74,0.7);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.tl-item--left .tl-node { right: -2rem; }
+.tl-item--right .tl-node { left: -2rem; }
+.tl-node [data-lucide] { width: 24px; height: 24px; color: var(--navy); }
+.tl-item:hover .tl-node { transform: scale(1.1); box-shadow: 0 0 0 7px var(--navy), 0 0 0 9px var(--gold),
+    0 0 40px rgba(201,162,74,0.7), 0 18px 34px -12px rgba(201,162,74,0.8); }
+
+.tl-card { position: relative; overflow: hidden; padding: 1.6rem 1.75rem; border-radius: 1rem;
+  background: linear-gradient(165deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
+  border: 1px solid var(--navy-line);
+  transition: transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease); }
+.tl-item:hover .tl-card { transform: translateY(-5px); border-color: rgba(201,162,74,0.5);
+  box-shadow: 0 28px 54px -30px rgba(0,0,0,0.75); }
+.tl-num { position: absolute; top: -1.4rem; right: 0.6rem; font-family: var(--serif); font-style: italic;
+  font-size: 6rem; line-height: 1; color: rgba(201,162,74,0.10); pointer-events: none; }
+.tl-step { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-soft); }
+.tl-card h3 { margin-top: 0.5rem; font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: var(--cream); }
+.tl-card p { margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.55; color: rgba(241,235,223,0.66); }
+
+@media (max-width: 760px) {
+  .timeline { max-width: 32rem; }
+  .timeline::before { left: 1.5rem; }
+  .tl-item, .tl-item--left, .tl-item--right { width: 100%; left: 0; text-align: left; padding: 0 0 0 4.5rem; }
+  .tl-item--left .tl-node, .tl-item--right .tl-node { left: -0.5rem; right: auto; }
+  .tl-num { right: 0.6rem; font-size: 5rem; }
+}
+
   </style>
 </head>
 <body>
@@ -1098,7 +1162,7 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
           <div class="carousel__viewport">
             <div class="carousel__track">
 
-              <article class="work work--simonta">
+              <article class="work work--simonta" style="--shot:url('images/simonta.jpg')">
                 <div class="work__shot" role="img" aria-label="Homepagina van Simonta"></div>
                 <div class="work__scrim" aria-hidden="true"></div>
                 <span class="work__tag">B2B Groothandel</span>
@@ -1109,7 +1173,7 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
                 </div>
               </article>
 
-              <article class="work work--mergel">
+              <article class="work work--mergel" style="--shot:url('images/mergelgrotten.jpg')">
                 <div class="work__shot" role="img" aria-label="Homepagina van Mergelgrotten Zichen"></div>
                 <div class="work__scrim" aria-hidden="true"></div>
                 <span class="work__tag">Toerisme &amp; Cultuur</span>
@@ -1120,7 +1184,7 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
                 </div>
               </article>
 
-              <article class="work work--tuin">
+              <article class="work work--tuin" style="--shot:url('images/tuinwerken.jpg')">
                 <div class="work__shot" role="img" aria-label="Homepagina van Tuinwerken Stas"></div>
                 <div class="work__scrim" aria-hidden="true"></div>
                 <span class="work__tag">Tuin &amp; Landschap</span>
@@ -1131,7 +1195,7 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
                 </div>
               </article>
 
-              <article class="work work--fadim">
+              <article class="work work--fadim" style="--shot:url('images/fadim.jpg')">
                 <div class="work__shot" role="img" aria-label="Homepagina van Fadim Official"></div>
                 <div class="work__scrim" aria-hidden="true"></div>
                 <span class="work__tag">Artiest &amp; Events</span>
@@ -1251,38 +1315,47 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
     <!-- ===================== PROCESS (navy) ===================== -->
     <section class="section section--navy">
       <div class="container">
-        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Werkwijze</p>
-        <h2 class="headline headline--light reveal" data-delay="60" style="max-width:48rem">
-          Van Aanvraag Tot Live Website In Minder Dan <em>2 Weken</em>
-        </h2>
+        <div class="center-head">
+          <p class="eyebrow eyebrow--light reveal" style="justify-content:center"><span class="eyebrow__line"></span>Werkwijze</p>
+          <h2 class="headline headline--light reveal" data-delay="60">Van Aanvraag Tot Live Website In Minder Dan <em>2 Weken</em></h2>
+        </div>
 
-        <div class="process mt-xl">
-          <div class="step reveal" data-step="1" data-delay="0">
-            <span class="step__track" aria-hidden="true"></span>
-            <span class="step__icon"><i data-lucide="message-square"></i></span>
-            <span class="step__num">Stap 1</span>
-            <h3>Vertel ons over uw project</h3>
-            <p>Duurt 3 minuten</p>
+        <div class="timeline">
+          <div class="tl-item tl-item--left reveal" data-delay="0">
+            <span class="tl-node"><i data-lucide="message-square"></i></span>
+            <div class="tl-card">
+              <span class="tl-num" aria-hidden="true">01</span>
+              <span class="tl-step">Stap 1</span>
+              <h3>Vertel ons over uw project</h3>
+              <p>Een kort gesprek van 3 minuten — u vertelt ons uw doelen en wensen.</p>
+            </div>
           </div>
-          <div class="step reveal" data-step="2" data-delay="90">
-            <span class="step__track" aria-hidden="true"></span>
-            <span class="step__icon"><i data-lucide="pen-tool"></i></span>
-            <span class="step__num">Stap 2</span>
-            <h3>Offerte &amp; ontwerp</h3>
-            <p>Gratis &amp; binnen 24u</p>
+          <div class="tl-item tl-item--right reveal" data-delay="80">
+            <span class="tl-node"><i data-lucide="pen-tool"></i></span>
+            <div class="tl-card">
+              <span class="tl-num" aria-hidden="true">02</span>
+              <span class="tl-step">Stap 2</span>
+              <h3>Offerte &amp; ontwerp</h3>
+              <p>Binnen 24u ontvangt u een offerte op maat én een gratis homepagina-ontwerp.</p>
+            </div>
           </div>
-          <div class="step reveal" data-step="3" data-delay="180">
-            <span class="step__track" aria-hidden="true"></span>
-            <span class="step__icon"><i data-lucide="hammer"></i></span>
-            <span class="step__num">Stap 3</span>
-            <h3>Wij bouwen uw website</h3>
-            <p>10–14 dagen</p>
+          <div class="tl-item tl-item--left reveal" data-delay="160">
+            <span class="tl-node"><i data-lucide="hammer"></i></span>
+            <div class="tl-card">
+              <span class="tl-num" aria-hidden="true">03</span>
+              <span class="tl-step">Stap 3</span>
+              <h3>Wij bouwen uw website</h3>
+              <p>In 10–14 dagen bouwen we uw site — u blijft op de hoogte bij elke stap.</p>
+            </div>
           </div>
-          <div class="step reveal" data-step="4" data-delay="270">
-            <span class="step__icon"><i data-lucide="rocket"></i></span>
-            <span class="step__num">Stap 4</span>
-            <h3>U gaat live</h3>
-            <p>Doorlopende support</p>
+          <div class="tl-item tl-item--right reveal" data-delay="240">
+            <span class="tl-node"><i data-lucide="rocket"></i></span>
+            <div class="tl-card">
+              <span class="tl-num" aria-hidden="true">04</span>
+              <span class="tl-step">Stap 4</span>
+              <h3>U gaat live</h3>
+              <p>Uw website gaat online — met doorlopende support en één vast aanspreekpunt.</p>
+            </div>
           </div>
         </div>
 
