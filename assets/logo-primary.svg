@@ -1,8 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 132" width="510" height="132" role="img" aria-label="Digital Impression — Premium Webdesign België">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Inter:wght@600&amp;display=swap');
       .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+      .sans  { font-family: 'Inter', Arial, sans-serif; }
     </style>
   </defs>
 
@@ -17,6 +18,6 @@
     <tspan fill="#0F1B3C">Digital </tspan><tspan font-style="italic" fill="#C9A227">Impression</tspan>
   </text>
 
-  <!-- Tagline — letterspaced small caps, edges aligned to wordmark -->
-  <text x="128" y="93" class="serif" font-size="12.5" font-weight="600" textLength="362" lengthAdjust="spacing" fill="#0F1B3C">PREMIUM WEBDESIGN · BELGIË</text>
+  <!-- Tagline — fine letterspaced sans caps, aligned to the wordmark's left edge -->
+  <text x="129.5" y="95" class="sans" font-size="10.5" font-weight="600" letter-spacing="2.6" fill="#0F1B3C">PREMIUM WEBDESIGN · BELGIË</text>
 </svg>
