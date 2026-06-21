@@ -19,12 +19,11 @@
   .serif{font-family:'Cormorant Garamond',Georgia,serif}
   .sans{font-family:'Inter',Arial,sans-serif}
   .label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#9A7B1E;font-weight:600;margin:2rem 0 .75rem}
-  .card{border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:center;min-height:170px;border:1px solid rgba(0,0,0,.08)}
+  .card{border-radius:16px;padding:2.75rem;display:flex;align-items:center;justify-content:center;min-height:150px;border:1px solid rgba(0,0,0,.08)}
   .card--light{background:var(--cream)}
   .card--navy{background:var(--navy)}
   .icons{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap}
   .chip{display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.7rem;color:#6b6453}
-  .card--navy .chip{color:#cdbf9b}
   svg{display:block;height:auto}
   .foot{margin-top:2.5rem;font-size:.85rem;color:#6b6453}
   code{background:#fff;border:1px solid #ddd1b8;border-radius:6px;padding:.1rem .4rem;font-size:.82rem}
@@ -33,37 +32,32 @@
 <body>
 <div class="wrap">
   <h1>Digital <em>Impression</em> — Logo</h1>
-  <p class="sub">Navy #0F1B3C · Goud #C9A227 · Cream #F7F2E7 — één serif-familie (Cormorant Garamond), unified “DI”-monogram, flat &amp; crisp.</p>
+  <p class="sub">Navy #0F1B3C · Goud #C9A227 · Cream #F7F2E7. Het logo is tekst-only (wordmark + gecentreerde tagline); het “DI”-monogram is een los, optioneel element.</p>
 
-  <!-- LIGHT LOCKUP -->
-  <p class="label">Volledige lockup — lichte achtergrond</p>
+  <!-- LIGHT LOCKUP (text only) -->
+  <p class="label">Logo — lichte achtergrond</p>
   <div class="card card--light">
-    <svg viewBox="0 0 510 132" width="430" role="img" aria-label="Digital Impression">
-      <rect x="8" y="18" width="96" height="96" rx="22" fill="#0F1B3C"/>
-      <rect x="13.2" y="23.2" width="85.6" height="85.6" rx="17" fill="none" stroke="#C9A227" stroke-width="1.4"/>
-      <text x="56.5" y="67" text-anchor="middle" dominant-baseline="central" class="serif" font-size="52" font-weight="600" letter-spacing="-2" fill="#C9A227">DI</text>
-      <text x="128" y="69" class="serif" font-size="46" font-weight="600" textLength="362" lengthAdjust="spacing"><tspan fill="#0F1B3C">Digital </tspan><tspan font-style="italic" fill="#C9A227">Impression</tspan></text>
-      <text x="129.5" y="95" class="sans" font-size="10.5" font-weight="600" letter-spacing="2.6" fill="#0F1B3C">PREMIUM WEBDESIGN · BELGIË</text>
+    <svg viewBox="0 0 440 90" width="360" role="img" aria-label="Digital Impression — Premium Webdesign">
+      <text x="220" y="50" text-anchor="middle" class="serif" font-size="46" font-weight="600"><tspan fill="#0F1B3C">Digital </tspan><tspan font-style="italic" fill="#C9A227">Impression</tspan></text>
+      <text x="221.3" y="73" text-anchor="middle" class="sans" font-size="10.5" font-weight="600" letter-spacing="2.6" fill="#0F1B3C">PREMIUM WEBDESIGN</text>
     </svg>
   </div>
 
-  <!-- DARK LOCKUP -->
-  <p class="label">Volledige lockup — donkere achtergrond</p>
+  <!-- DARK LOCKUP (text only) -->
+  <p class="label">Logo — donkere achtergrond</p>
   <div class="card card--navy">
-    <svg viewBox="0 0 510 132" width="430" role="img" aria-label="Digital Impression">
-      <rect x="8" y="18" width="96" height="96" rx="22" fill="none" stroke="#C9A227" stroke-width="1.6"/>
-      <text x="56.5" y="67" text-anchor="middle" dominant-baseline="central" class="serif" font-size="52" font-weight="600" letter-spacing="-2" fill="#C9A227">DI</text>
-      <text x="128" y="69" class="serif" font-size="46" font-weight="600" textLength="362" lengthAdjust="spacing"><tspan fill="#F7F2E7">Digital </tspan><tspan font-style="italic" fill="#C9A227">Impression</tspan></text>
-      <text x="129.5" y="95" class="sans" font-size="10.5" font-weight="600" letter-spacing="2.6" fill="#C9A227">PREMIUM WEBDESIGN · BELGIË</text>
+    <svg viewBox="0 0 440 90" width="360" role="img" aria-label="Digital Impression — Premium Webdesign">
+      <text x="220" y="50" text-anchor="middle" class="serif" font-size="46" font-weight="600"><tspan fill="#F7F2E7">Digital </tspan><tspan font-style="italic" fill="#C9A227">Impression</tspan></text>
+      <text x="221.3" y="73" text-anchor="middle" class="sans" font-size="10.5" font-weight="600" letter-spacing="2.6" fill="#C9A227">PREMIUM WEBDESIGN</text>
     </svg>
   </div>
 
-  <!-- STANDALONE ICONS -->
-  <p class="label">Standalone monogram — gedetailleerd (rand) &amp; flat (favicon)</p>
+  <!-- STANDALONE MONOGRAM (separate element) -->
+  <p class="label">Monogram — los element (gedetailleerd + flat/favicon)</p>
   <div class="card card--light">
     <div class="icons">
       <span class="chip">
-        <svg viewBox="0 0 120 120" width="104" aria-label="DI monogram detailed"><rect x="2" y="2" width="116" height="116" rx="26" fill="#0F1B3C"/><rect x="9" y="9" width="102" height="102" rx="20" fill="none" stroke="#C9A227" stroke-width="1.8"/><text x="60.5" y="63" text-anchor="middle" dominant-baseline="central" class="serif" font-size="64" font-weight="600" letter-spacing="-2.5" fill="#C9A227">DI</text></svg>
+        <svg viewBox="0 0 120 120" width="100" aria-label="DI monogram detailed"><rect x="2" y="2" width="116" height="116" rx="26" fill="#0F1B3C"/><rect x="9" y="9" width="102" height="102" rx="20" fill="none" stroke="#C9A227" stroke-width="1.8"/><text x="60.5" y="63" text-anchor="middle" dominant-baseline="central" class="serif" font-size="64" font-weight="600" letter-spacing="-2.5" fill="#C9A227">DI</text></svg>
         gedetailleerd
       </span>
       <span class="chip">
@@ -82,8 +76,9 @@
   </div>
 
   <p class="foot">
-    Bestanden: <code>assets/logo-primary.svg</code> · <code>assets/logo-inverted.svg</code> · <code>assets/icon-detailed.svg</code> · <code>assets/icon-flat.svg</code> · <code>assets/favicon.svg</code><br>
-    Eén lettertype: Cormorant Garamond (upright + italic). Voor drukwerk kan ik de tekst naar vectorpaden omzetten zodat het lettertype niet nodig is.
+    Logo: <code>assets/logo-primary.svg</code> · <code>assets/logo-inverted.svg</code><br>
+    Monogram (los): <code>assets/icon-detailed.svg</code> · <code>assets/icon-flat.svg</code> · <code>assets/favicon.svg</code><br>
+    Eén lettertype voor de wordmark: Cormorant Garamond (upright + italic); tagline in Inter caps.
   </p>
 </div>
 </body>
