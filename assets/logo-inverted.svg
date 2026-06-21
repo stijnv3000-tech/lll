@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 132" width="600" height="132" role="img" aria-label="Digital Impression">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Inter:wght@600&amp;display=swap');
+      .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+      .sans  { font-family: 'Inter', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Monogram seal -->
+  <g>
+    <rect x="6" y="16" width="100" height="100" rx="22" fill="#0A1530"/>
+    <rect x="12.5" y="22.5" width="87" height="87" rx="16.5" fill="none" stroke="#C9A24A" stroke-width="1.4"/>
+    <text x="56" y="84" text-anchor="middle" class="serif" font-size="52" font-weight="600">
+      <tspan fill="#FBF8F2">D</tspan><tspan fill="#C9A24A">I</tspan>
+    </text>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="130" y="68" class="serif" font-size="46" font-weight="600">
+    <tspan fill="#FBF8F2">Digital</tspan><tspan dx="10" font-style="italic" fill="#C9A24A">Impression</tspan>
+  </text>
+  <text x="133" y="94" class="sans" font-size="12" letter-spacing="4" fill="#C9A24A" opacity="0.85">PREMIUM WEBDESIGN · BELGIË</text>
+</svg>
