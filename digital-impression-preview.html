@@ -1062,6 +1062,40 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .o-foot { font-size: 0.5rem; }
 @media (prefers-reduced-motion: reduce) { .o-banner { animation: none; } }
 
+/* ==========================================================================
+   AFTER mock v2 — warm wood + ochre brand, with a big project photo
+   (overrides the earlier green/terracotta styling)
+   ========================================================================== */
+.site--new { background: #221a12; padding: 5%; display: flex; flex-direction: column; gap: 0.5rem; }
+.site--new .s-photo { position: relative; flex: 1; min-height: 0; border-radius: 8px; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between; padding: 0.7rem 0.85rem;
+  background-image:
+    linear-gradient(to top, rgba(26,18,11,0.92) 6%, rgba(26,18,11,0.30) 48%, rgba(26,18,11,0.06) 100%),
+    linear-gradient(165deg, #c49a5e 0%, #936f3c 30%, #6b5230 56%, #5a5333 78%, #38402a 100%);
+  background-size: cover; }
+.site--new .s-head { display: flex; align-items: center; gap: 0.6rem; }
+.site--new .s-logo { color: #f4ecdd; font-family: Georgia, "Times New Roman", serif; font-size: 0.92rem;
+  white-space: nowrap; text-shadow: 0 1px 5px rgba(0,0,0,0.55); }
+.site--new .s-logo em { color: #d8b566; font-style: italic; }
+.site--new .s-nav { display: flex; gap: 0.7rem; margin-left: auto; }
+.site--new .s-nav a { color: rgba(244,236,221,0.85); font-size: 0.56rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+.site--new .s-pill { background: #c69a3c; color: #221a12; font-size: 0.55rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 999px; }
+.site--new .s-herotext { display: flex; flex-direction: column; gap: 0.28rem; max-width: 90%; }
+.site--new .s-kicker { color: #e7c987; font-size: 0.52rem; font-weight: 600; letter-spacing: 0.2em; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+.site--new .s-h1 { font-family: Georgia, "Times New Roman", serif; color: #f6efe2; font-size: 1.55rem; line-height: 1.04;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55); }
+.site--new .s-h1 em { color: #e0bd6c; font-style: italic; }
+.site--new .s-sub { color: rgba(244,236,221,0.85); font-size: 0.58rem; text-shadow: 0 1px 4px rgba(0,0,0,0.55); }
+.site--new .s-btns { display: flex; gap: 0.4rem; margin-top: 0.2rem; }
+.site--new .s-btns b { background: #c69a3c; color: #221a12; font-size: 0.55rem; font-weight: 700; padding: 0.33rem 0.65rem; border-radius: 999px; }
+.site--new .s-btns b.ghost { background: rgba(255,255,255,0.14); color: #f4ecdd; border: 1px solid rgba(244,236,221,0.5); }
+.site--new .s-cards { display: flex; gap: 0.45rem; }
+.site--new .s-cards span { flex: 1; height: 1.45rem; border-radius: 5px; border: 1px solid rgba(198,154,60,0.3); }
+.site--new .s-cards span:nth-child(1) { background: linear-gradient(135deg, #876738, #4c3c22); }
+.site--new .s-cards span:nth-child(2) { background: linear-gradient(135deg, #a07f44, #62492a); }
+.site--new .s-cards span:nth-child(3) { background: linear-gradient(135deg, #77764a, #3f4527); }
+.site--new .s-trust { font-size: 0.55rem; color: rgba(244,236,221,0.72); }
+
   </style>
 </head>
 <body>
@@ -1359,22 +1393,23 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
               <div class="ba__after">
                 <div class="mock mock--after">
                   <div class="site site--new">
-                    <div class="s-head">
-                      <span class="s-logo">Jansen<em>&amp; Zoon</em></span>
-                      <span class="s-nav"><a>Poolhouses</a><a>Tuinkantoren</a><a>Projecten</a></span>
-                      <span class="s-pill">Gratis 3D-ontwerp</span>
-                    </div>
-                    <div class="s-hero">
-                      <span class="s-kicker">VAKMANSCHAP SINDS 1998</span>
-                      <span class="s-h1">Luxe houten <em>buitenleven</em></span>
-                      <span class="s-sub">Poolhouses, tuinkantoren &amp; pergola's op maat — van ontwerp tot oplevering.</span>
-                      <span class="s-btns"><b>Vraag offerte</b><b class="ghost">Bekijk projecten</b></span>
+                    <div class="s-photo">
+                      <div class="s-head">
+                        <span class="s-logo">Jansen<em>&amp; Zoon</em></span>
+                        <span class="s-nav"><a>Poolhouses</a><a>Tuinkantoren</a><a>Projecten</a></span>
+                        <span class="s-pill">Offerte aanvragen</span>
+                      </div>
+                      <div class="s-herotext">
+                        <span class="s-kicker">VAKMANSCHAP SINDS 1998</span>
+                        <span class="s-h1">Luxe houten <em>buitenleven</em></span>
+                        <span class="s-sub">Poolhouses, tuinkantoren &amp; pergola's op maat.</span>
+                        <span class="s-btns"><b>Vraag offerte</b><b class="ghost">Bekijk projecten</b></span>
+                      </div>
                     </div>
                     <div class="s-cards"><span></span><span></span><span></span></div>
                     <div class="s-trust">★★★★★ 4,9/5 · 10 jaar garantie · Europees eiken &amp; douglas</div>
                   </div>
                 </div>
-                <span class="ba__metric ba__metric--good ba__metric--speed"><i data-lucide="zap"></i> 0,9s laadtijd</span>
               </div>
               <!-- BEFORE (dated) -->
               <div class="ba__before" id="baBefore">
@@ -1398,7 +1433,6 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
                     <div class="o-foot">Tel: 015 12 34 56 · Beste bekeken in IE6 · © 2008</div>
                   </div>
                 </div>
-                <span class="ba__metric ba__metric--bad ba__metric--speed"><i data-lucide="clock"></i> 8,2s laadtijd</span>
               </div>
 
               <span class="ba__label ba__label--before">Voor</span>
