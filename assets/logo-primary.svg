@@ -1,24 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 132" width="600" height="132" role="img" aria-label="Digital Impression">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 132" width="510" height="132" role="img" aria-label="Digital Impression — Premium Webdesign België">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Inter:wght@600&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;display=swap');
       .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
-      .sans  { font-family: 'Inter', Arial, sans-serif; }
     </style>
   </defs>
 
-  <!-- Monogram seal -->
-  <g>
-    <rect x="6" y="16" width="100" height="100" rx="22" fill="#0E1C3A"/>
-    <rect x="12.5" y="22.5" width="87" height="87" rx="16.5" fill="none" stroke="#C9A24A" stroke-width="1.4" opacity="0.85"/>
-    <text x="56" y="84" text-anchor="middle" class="serif" font-size="52" font-weight="600">
-      <tspan fill="#FBF8F2">D</tspan><tspan fill="#C9A24A">I</tspan>
-    </text>
-  </g>
+  <!-- Monogram — detailed: navy fill, thin gold border, gold DI -->
+  <rect x="8" y="18" width="96" height="96" rx="22" fill="#0F1B3C"/>
+  <rect x="13.2" y="23.2" width="85.6" height="85.6" rx="17" fill="none" stroke="#C9A227" stroke-width="1.4"/>
+  <text x="56.5" y="67" text-anchor="middle" dominant-baseline="central" class="serif"
+        font-size="52" font-weight="600" letter-spacing="-2" fill="#C9A227">DI</text>
 
-  <!-- Wordmark -->
-  <text x="130" y="68" class="serif" font-size="46" font-weight="600">
-    <tspan fill="#0E1C3A">Digital</tspan><tspan dx="10" font-style="italic" fill="#C9A24A">Impression</tspan>
+  <!-- Wordmark — one serif family: Digital upright, Impression italic -->
+  <text x="128" y="69" class="serif" font-size="46" font-weight="600" textLength="362" lengthAdjust="spacing">
+    <tspan fill="#0F1B3C">Digital </tspan><tspan font-style="italic" fill="#C9A227">Impression</tspan>
   </text>
-  <text x="133" y="94" class="sans" font-size="12" letter-spacing="4" fill="#9A8246">PREMIUM WEBDESIGN · BELGIË</text>
+
+  <!-- Tagline — letterspaced small caps, edges aligned to wordmark -->
+  <text x="128" y="93" class="serif" font-size="12.5" font-weight="600" textLength="362" lengthAdjust="spacing" fill="#0F1B3C">PREMIUM WEBDESIGN · BELGIË</text>
 </svg>

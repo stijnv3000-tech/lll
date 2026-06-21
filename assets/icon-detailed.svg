@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Digital Impression monogram">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&amp;display=swap');
+      .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+    </style>
+  </defs>
+  <rect x="2" y="2" width="116" height="116" rx="26" fill="#0F1B3C"/>
+  <rect x="9" y="9" width="102" height="102" rx="20" fill="none" stroke="#C9A227" stroke-width="1.8"/>
+  <text x="60.5" y="63" text-anchor="middle" dominant-baseline="central" class="serif"
+        font-size="64" font-weight="600" letter-spacing="-2.5" fill="#C9A227">DI</text>
+</svg>
