@@ -295,107 +295,85 @@
       </div>
     </section>
 
-    <!-- ===================== BEFORE / AFTER (beige) ===================== -->
-    <section class="section section--beige">
+    <!-- ===================== REDESIGN (beige) — slider + waarde in één ===================== -->
+    <section class="section section--beige" id="redesign">
       <div class="container">
-        <div class="center-head">
-          <p class="eyebrow reveal" style="justify-content:center"><span class="eyebrow__line"></span>Het Verschil Van Een Redesign</p>
-          <h2 class="headline reveal" data-delay="60">Van Verouderd Naar <em>Verbluffend</em></h2>
-          <p class="ba__hint reveal" data-delay="120">Sleep de knop om het verschil te zien.</p>
-        </div>
+        <div class="rd">
+          <!-- LEFT: interactive before / after -->
+          <div class="rd__demo reveal">
+            <div class="ba" id="ba">
+              <!-- AFTER (premium) -->
+              <div class="ba__after">
+                <div class="mock mock--after">
+                  <div class="site site--new">
+                    <div class="s-head">
+                      <span class="s-logo">Jansens<em>&amp; Zoon</em></span>
+                      <span class="s-nav"><a>Werk</a><a>Diensten</a><a>Over</a></span>
+                      <span class="s-pill">Offerte</span>
+                    </div>
+                    <div class="s-hero">
+                      <span class="s-kicker">VAKMANSCHAP SINDS 1985</span>
+                      <span class="s-h1">Bouwen met <em>karakter</em></span>
+                      <span class="s-sub">Van ontwerp tot oplevering — alles onder één dak.</span>
+                      <span class="s-btns"><b>Vraag offerte</b><b class="ghost">Ons werk</b></span>
+                    </div>
+                    <div class="s-cards"><span></span><span></span><span></span></div>
+                  </div>
+                </div>
+                <span class="ba__metric ba__metric--good ba__metric--speed"><i data-lucide="zap"></i> 0,9s laadtijd</span>
+              </div>
+              <!-- BEFORE (dated) -->
+              <div class="ba__before" id="baBefore">
+                <div class="mock mock--before">
+                  <div class="site site--old">
+                    <div class="o-head">
+                      <span class="o-logo">★ JANSENS &amp; ZOON BVBA ★</span>
+                      <span class="o-nav"><a>Home</a> · <a>Producten</a> · <a>Contact</a> · <a>Gastenboek</a></span>
+                    </div>
+                    <div class="o-banner">✦ WELKOM OP ONZE WEBSITE! ✦</div>
+                    <div class="o-body">
+                      <span class="o-text"></span><span class="o-text"></span><span class="o-text o-text--short"></span>
+                      <span class="o-btn">» KLIK HIER «</span>
+                    </div>
+                    <div class="o-foot">Beste bekeken in 1024×768 — © 2009</div>
+                  </div>
+                </div>
+                <span class="ba__metric ba__metric--bad ba__metric--speed"><i data-lucide="clock"></i> 8,2s laadtijd</span>
+              </div>
 
-        <div class="ba reveal" id="ba" data-delay="120">
-          <!-- AFTER (premium) — full width underneath -->
-          <div class="ba__after">
-            <div class="mock mock--after">
-              <div class="mock__bar">
-                <span class="mock__logo">Digital<em>Impression</em></span>
-                <span class="mock__nav"><b></b><b></b><b></b><b></b></span>
-                <span class="mock__cta"></span>
-              </div>
-              <div class="mock__hero">
-                <span class="mock__kicker"></span>
-                <span class="mock__h1"></span>
-                <span class="mock__h1 mock__h1--gold"></span>
-                <span class="mock__p"></span>
-                <span class="mock__p mock__p--short"></span>
-                <span class="mock__buttons"><b></b><b class="ghost"></b></span>
-              </div>
-              <div class="mock__cards"><b></b><b></b><b></b></div>
+              <span class="ba__label ba__label--before">Voor</span>
+              <span class="ba__label ba__label--after">Na</span>
+
+              <button class="ba__handle" id="baHandle" role="slider" aria-label="Voor en na vergelijken"
+                      aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+                <i data-lucide="chevrons-left-right"></i>
+              </button>
             </div>
-            <span class="ba__metric ba__metric--good ba__metric--speed"><i data-lucide="zap"></i> 0,9s laadtijd</span>
-            <span class="ba__metric ba__metric--good ba__metric--leads"><i data-lucide="trending-up"></i> +47% aanvragen</span>
+            <p class="rd__hint"><i data-lucide="move-horizontal"></i> Sleep om voor &amp; na te vergelijken</p>
           </div>
-          <!-- BEFORE (dated) — clipped on top -->
-          <div class="ba__before" id="baBefore">
-            <div class="mock mock--before">
-              <div class="mock__bar mock__bar--old">
-                <span class="mock__logo mock__logo--old">UW BEDRIJF BVBA</span>
-                <span class="mock__nav mock__nav--old"><b></b><b></b><b></b></span>
-              </div>
-              <div class="mock__hero mock__hero--old">
-                <span class="mock__h1 mock__h1--old"></span>
-                <span class="mock__p mock__p--old"></span>
-                <span class="mock__p mock__p--old"></span>
-                <span class="mock__p mock__p--old mock__p--short"></span>
-                <span class="mock__button--old"></span>
-              </div>
-              <div class="mock__cards mock__cards--old"><b></b><b></b></div>
+
+          <!-- RIGHT: copy + proof -->
+          <div class="rd__copy">
+            <p class="eyebrow reveal"><span class="eyebrow__line"></span>Het Verschil Van Een Redesign</p>
+            <h2 class="headline reveal" data-delay="60">Van Verouderd Naar <em>Verbluffend</em></h2>
+            <p class="rd__lead reveal" data-delay="120">Uw website is uw digitale etalage — en bij de meeste bedrijven werkt die tegen hen. Een verouderde site jaagt klanten weg nog vóór ze bellen. Sleep de knop en zie hoe wij dezelfde inhoud omvormen tot iets dat vertrouwen wekt én aanvragen oplevert.</p>
+
+            <ul class="rd__rows reveal" data-delay="180">
+              <li><span class="rd__from">Traag &amp; verouderd</span><i data-lucide="arrow-right"></i><span class="rd__to">Bliksemsnel &amp; modern</span></li>
+              <li><span class="rd__from">Onvindbaar in Google</span><i data-lucide="arrow-right"></i><span class="rd__to">Hoger gevonden</span></li>
+              <li><span class="rd__from">Niet mobielvriendelijk</span><i data-lucide="arrow-right"></i><span class="rd__to">Perfect op elk scherm</span></li>
+              <li><span class="rd__from">Bezoekers haken af</span><i data-lucide="arrow-right"></i><span class="rd__to">Bezoekers worden klanten</span></li>
+            </ul>
+
+            <div class="rd__stats reveal" data-delay="220">
+              <div class="rd__stat"><span class="rd__num" data-count="2" data-suffix="×">0×</span><span class="rd__lbl">sneller laden</span></div>
+              <div class="rd__stat"><span class="rd__num" data-count="47" data-suffix="%">0%</span><span class="rd__lbl">meer aanvragen</span></div>
+              <div class="rd__stat"><span class="rd__num" data-count="14">0</span><span class="rd__lbl">dagen tot live</span></div>
             </div>
-            <span class="ba__metric ba__metric--bad ba__metric--speed"><i data-lucide="clock"></i> 8,2s laadtijd</span>
-            <span class="ba__metric ba__metric--bad ba__metric--leads"><i data-lucide="trending-down"></i> Bezoekers haken af</span>
-          </div>
 
-          <span class="ba__label ba__label--before">Voor</span>
-          <span class="ba__label ba__label--after">Na</span>
-
-          <button class="ba__handle" id="baHandle" role="slider" aria-label="Voor en na vergelijken"
-                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-            <i data-lucide="chevrons-left-right"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== WAT EEN REDESIGN OPLEVERT (cream) ===================== -->
-    <section class="section section--cream">
-      <div class="container">
-        <div class="center-head">
-          <p class="eyebrow reveal" style="justify-content:center"><span class="eyebrow__line"></span>Het Resultaat</p>
-          <h2 class="headline reveal" data-delay="60">Wat Een Redesign U <em>Oplevert</em></h2>
-        </div>
-
-        <div class="cmp">
-          <div class="cmp__col cmp__col--before reveal" data-delay="0">
-            <span class="cmp__head"><i data-lucide="x"></i> Voor — wat u tegenhoudt</span>
-            <ul>
-              <li><i data-lucide="x"></i> Traag &amp; verouderd design</li>
-              <li><i data-lucide="x"></i> Niet leesbaar op smartphone</li>
-              <li><i data-lucide="x"></i> Onvindbaar in Google</li>
-              <li><i data-lucide="x"></i> Bezoekers haken af zonder contact</li>
-              <li><i data-lucide="x"></i> Wekt geen vertrouwen</li>
-            </ul>
-          </div>
-          <div class="cmp__col cmp__col--after reveal" data-delay="90">
-            <span class="cmp__head cmp__head--good"><i data-lucide="check"></i> Na — wat u wint</span>
-            <ul>
-              <li><i data-lucide="check"></i> Bliksemsnel &amp; modern design</li>
-              <li><i data-lucide="check"></i> Perfect op elk scherm</li>
-              <li><i data-lucide="check"></i> Hoger in Google gevonden</li>
-              <li><i data-lucide="check"></i> Bezoekers worden klanten</li>
-              <li><i data-lucide="check"></i> Straalt professionaliteit uit</li>
-            </ul>
+            <a href="#contact" class="btn btn--gold rd__cta reveal" data-delay="260">Vraag een gratis redesign-voorstel <i data-lucide="arrow-right"></i></a>
           </div>
         </div>
-
-        <div class="cmp__stats reveal" data-delay="120">
-          <div class="cmp__stat"><span class="cmp__stat-num" data-count="2" data-suffix="x">0x</span><span class="cmp__stat-label">snellere laadtijd</span></div>
-          <div class="cmp__stat"><span class="cmp__stat-num" data-count="47" data-suffix="%">0%</span><span class="cmp__stat-label">meer aanvragen</span></div>
-          <div class="cmp__stat"><span class="cmp__stat-num" data-count="100" data-suffix="%">0%</span><span class="cmp__stat-label">mobiel-vriendelijk</span></div>
-          <div class="cmp__stat"><span class="cmp__stat-num" data-count="14" data-suffix=" dagen">0 dagen</span><span class="cmp__stat-label">tot live</span></div>
-        </div>
-      </div>
-    </section>
       </div>
     </section>
 
