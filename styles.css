@@ -931,3 +931,9 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .redesign__compare { display: flex; flex-direction: column; gap: 1.25rem; }
 .redesign__compare .cmp__col { padding: 1.4rem 1.6rem; }
 .redesign__compare .cmp__col ul { gap: 0.55rem; }
+
+/* ==========================================================================
+   PORTFOLIO crop — landscape tiles, anchored to the top of the screenshot
+   ========================================================================== */
+.carousel--works .work { min-height: 0; aspect-ratio: 16 / 9; }
+.carousel--works .work__shot { background-size: cover; background-position: top center; }
