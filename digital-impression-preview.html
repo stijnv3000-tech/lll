@@ -1041,6 +1041,27 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .rd__from { font-size: 0.95rem; }
 .rd__to { font-size: 1.05rem; }
 
+/* ==========================================================================
+   JANSEN & ZOON themed mockups (luxe houten buitenconstructies)
+   ========================================================================== */
+/* after: project-photo thumbnails (wood/green) + review line */
+.site--new .s-hero { margin: 0.7rem 0 0; }
+.site--new .s-cards { margin-top: auto; }
+.site--new .s-cards span { background: linear-gradient(135deg, #5e7448, #34503a); border: 1px solid rgba(255,255,255,0.12); }
+.site--new .s-trust { margin-top: 0.5rem; font-size: 0.55rem; letter-spacing: 0.01em; color: rgba(244,239,228,0.74); }
+
+/* before: garish blinking banner, cluttered nav, long text + tiny photo, hidden contact */
+.o-banner { background: #c0140e; color: #fff200; border: 3px ridge #ff9a1f; text-shadow: 1px 1px 0 rgba(0,0,0,0.6);
+  animation: oldblink 1.1s steps(2, start) infinite; }
+@keyframes oldblink { 50% { opacity: 0.4; } }
+.o-body { flex-direction: row; gap: 0.6rem; align-items: flex-start; }
+.o-col { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.o-thumb { width: 30%; flex-shrink: 0; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
+  font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.12em; color: #6a6a6a; border: 1px solid #9a9a9a;
+  background: repeating-linear-gradient(45deg, #cfccc3 0, #cfccc3 4px, #c3c0b7 4px, #c3c0b7 8px); }
+.o-foot { font-size: 0.5rem; }
+@media (prefers-reduced-motion: reduce) { .o-banner { animation: none; } }
+
   </style>
 </head>
 <body>
@@ -1339,17 +1360,18 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
                 <div class="mock mock--after">
                   <div class="site site--new">
                     <div class="s-head">
-                      <span class="s-logo">Jansens<em>&amp; Zoon</em></span>
-                      <span class="s-nav"><a>Werk</a><a>Diensten</a><a>Over</a></span>
-                      <span class="s-pill">Offerte</span>
+                      <span class="s-logo">Jansen<em>&amp; Zoon</em></span>
+                      <span class="s-nav"><a>Poolhouses</a><a>Tuinkantoren</a><a>Projecten</a></span>
+                      <span class="s-pill">Gratis 3D-ontwerp</span>
                     </div>
                     <div class="s-hero">
-                      <span class="s-kicker">VAKMANSCHAP SINDS 1985</span>
-                      <span class="s-h1">Bouwen met <em>karakter</em></span>
-                      <span class="s-sub">Van ontwerp tot oplevering — alles onder één dak.</span>
-                      <span class="s-btns"><b>Vraag offerte</b><b class="ghost">Ons werk</b></span>
+                      <span class="s-kicker">VAKMANSCHAP SINDS 1998</span>
+                      <span class="s-h1">Luxe houten <em>buitenleven</em></span>
+                      <span class="s-sub">Poolhouses, tuinkantoren &amp; pergola's op maat — van ontwerp tot oplevering.</span>
+                      <span class="s-btns"><b>Vraag offerte</b><b class="ghost">Bekijk projecten</b></span>
                     </div>
                     <div class="s-cards"><span></span><span></span><span></span></div>
+                    <div class="s-trust">★★★★★ 4,9/5 · 10 jaar garantie · Europees eiken &amp; douglas</div>
                   </div>
                 </div>
                 <span class="ba__metric ba__metric--good ba__metric--speed"><i data-lucide="zap"></i> 0,9s laadtijd</span>
@@ -1359,15 +1381,21 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
                 <div class="mock mock--before">
                   <div class="site site--old">
                     <div class="o-head">
-                      <span class="o-logo">★ JANSENS &amp; ZOON BVBA ★</span>
-                      <span class="o-nav"><a>Home</a> · <a>Producten</a> · <a>Contact</a> · <a>Gastenboek</a></span>
+                      <span class="o-logo">JANSEN &amp; ZOON B.V.B.A.</span>
+                      <span class="o-nav"><a>Home</a> | <a>Producten</a> | <a>Foto's</a> | <a>Prijzen</a> | <a>Gastenboek</a> | <a>Links</a> | <a>Contact</a></span>
                     </div>
-                    <div class="o-banner">✦ WELKOM OP ONZE WEBSITE! ✦</div>
+                    <div class="o-banner">★ NIEUW!! GRATIS OFFERTE — BEL NU! ★</div>
                     <div class="o-body">
-                      <span class="o-text"></span><span class="o-text"></span><span class="o-text o-text--short"></span>
-                      <span class="o-btn">» KLIK HIER «</span>
+                      <div class="o-col">
+                        <span class="o-text"></span>
+                        <span class="o-text"></span>
+                        <span class="o-text"></span>
+                        <span class="o-text"></span>
+                        <span class="o-text o-text--short"></span>
+                      </div>
+                      <div class="o-thumb">foto</div>
                     </div>
-                    <div class="o-foot">Beste bekeken in 1024×768 — © 2009</div>
+                    <div class="o-foot">Tel: 015 12 34 56 · Beste bekeken in IE6 · © 2008</div>
                   </div>
                 </div>
                 <span class="ba__metric ba__metric--bad ba__metric--speed"><i data-lucide="clock"></i> 8,2s laadtijd</span>
