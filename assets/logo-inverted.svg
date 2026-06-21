@@ -9,7 +9,7 @@
 
   <!-- Wordmark — same serif as the site header (Cormorant Garamond) -->
   <text x="220" y="50" text-anchor="middle" class="serif" font-size="46" font-weight="600">
-    <tspan fill="#F7F2E7">Digital </tspan><tspan font-style="italic" fill="#C9A227">Impression</tspan>
+    <tspan fill="#F7F2E7">Digital </tspan><tspan fill="#C9A227">Impression</tspan>
   </text>
 
   <!-- Tagline — light, thin, generously spaced, centered -->
