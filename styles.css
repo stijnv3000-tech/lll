@@ -1059,8 +1059,9 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
   display: flex; flex-direction: column; justify-content: space-between; padding: 0.7rem 0.85rem;
   background-image:
     linear-gradient(to top, rgba(26,18,11,0.92) 6%, rgba(26,18,11,0.30) 48%, rgba(26,18,11,0.06) 100%),
+    url("images/jansen-hero.jpg"),
     linear-gradient(165deg, #c49a5e 0%, #936f3c 30%, #6b5230 56%, #5a5333 78%, #38402a 100%);
-  background-size: cover; }
+  background-size: cover; background-position: center; background-repeat: no-repeat; }
 .site--new .s-head { display: flex; align-items: center; gap: 0.6rem; }
 .site--new .s-logo { color: #f4ecdd; font-family: Georgia, "Times New Roman", serif; font-size: 0.92rem;
   white-space: nowrap; text-shadow: 0 1px 5px rgba(0,0,0,0.55); }
