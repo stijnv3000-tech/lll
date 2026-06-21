@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 90" width="440" height="90" role="img" aria-label="Digital Impression — Premium Webdesign">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 98" width="440" height="98" role="img" aria-label="Digital Impression — Premium Webdesign">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Inter:wght@600&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Inter:wght@500&amp;display=swap');
       .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
       .sans  { font-family: 'Inter', Arial, sans-serif; }
     </style>
   </defs>
 
-  <!-- Wordmark — one serif family: Digital upright, Impression italic -->
+  <!-- Wordmark — same serif as the site header (Cormorant Garamond) -->
   <text x="220" y="50" text-anchor="middle" class="serif" font-size="46" font-weight="600">
     <tspan fill="#0F1B3C">Digital </tspan><tspan font-style="italic" fill="#C9A227">Impression</tspan>
   </text>
 
-  <!-- Tagline — fine letterspaced sans caps, centered under the wordmark -->
-  <text x="221.3" y="73" text-anchor="middle" class="sans" font-size="10.5" font-weight="600" letter-spacing="2.6" fill="#0F1B3C">PREMIUM WEBDESIGN</text>
+  <!-- Tagline — light, thin, generously spaced, centered -->
+  <text x="221.8" y="82" text-anchor="middle" class="sans" font-size="10" font-weight="500" letter-spacing="3.4" fill="#0F1B3C" opacity="0.55">PREMIUM WEBDESIGN</text>
 </svg>
