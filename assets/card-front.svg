@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="61mm" viewBox="0 0 91 61" role="img" aria-label="Digital Impression visitekaart voorzijde">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&amp;family=Inter:wght@500&amp;display=swap');
+      .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+      .sans  { font-family: 'Inter', Arial, sans-serif; }
+    </style>
+  </defs>
+  <!-- full-bleed navy (3mm bleed included; trim at 85×55mm) -->
+  <rect width="91" height="61" fill="#0E1B3C"/>
+  <rect x="5" y="5" width="81" height="51" rx="2.4" fill="none" stroke="#C9A227" stroke-width="0.3"/>
+
+  <!-- monogram -->
+  <rect x="38.4" y="11" width="14.2" height="14.2" rx="3.1" fill="#0A1530" stroke="#C9A227" stroke-width="0.38"/>
+  <rect x="39.7" y="12.3" width="11.6" height="11.6" rx="2.2" fill="none" stroke="#C9A227" stroke-width="0.18"/>
+  <text x="45.5" y="18.1" text-anchor="middle" dominant-baseline="central" class="serif" font-size="7.8" font-weight="600" letter-spacing="-0.35"><tspan fill="#F7F2E7">D</tspan><tspan fill="#C9A227">I</tspan></text>
+
+  <!-- wordmark -->
+  <text x="45.5" y="37.2" text-anchor="middle" class="serif" font-size="8.2" font-weight="600"><tspan fill="#F7F2E7">Digital </tspan><tspan fill="#C9A227">Impression</tspan></text>
+
+  <!-- tagline -->
+  <text x="46" y="43.6" text-anchor="middle" class="sans" font-size="2.5" font-weight="500" letter-spacing="0.95" fill="#C9A227">PREMIUM WEBDESIGN</text>
+</svg>

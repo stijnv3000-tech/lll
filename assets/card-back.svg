@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="61mm" viewBox="0 0 91 61" role="img" aria-label="Digital Impression visitekaart achterzijde">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&amp;family=Inter:wght@500&amp;display=swap');
+      .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+      .sans  { font-family: 'Inter', Arial, sans-serif; }
+    </style>
+  </defs>
+  <!-- full-bleed cream (3mm bleed included; trim at 85×55mm) -->
+  <rect width="91" height="61" fill="#F7F2E7"/>
+  <rect x="5" y="5" width="81" height="51" rx="2.4" fill="none" stroke="#C9A227" stroke-width="0.3"/>
+
+  <!-- monogram -->
+  <rect x="39.5" y="10.5" width="12" height="12" rx="2.7" fill="#0E1B3C" stroke="#C9A227" stroke-width="0.34"/>
+  <text x="45.5" y="16.6" text-anchor="middle" dominant-baseline="central" class="serif" font-size="6.6" font-weight="600" letter-spacing="-0.3"><tspan fill="#F7F2E7">D</tspan><tspan fill="#C9A227">I</tspan></text>
+
+  <line x1="34" y1="26" x2="57" y2="26" stroke="#C9A227" stroke-width="0.2"/>
+
+  <!-- contact -->
+  <g class="sans" font-size="2.9" font-weight="500" text-anchor="middle">
+    <text x="45.5" y="33.5" fill="#0E1B3C">Brabançonnestraat 32, 3000 Leuven</text>
+    <text x="45.5" y="39.2" fill="#0E1B3C">+32 496 25 14 45</text>
+    <text x="45.5" y="44.9" fill="#0E1B3C">info@digital-impression.be</text>
+    <text x="45.5" y="50.6" fill="#C9A227" font-weight="600">www.digital-impression.be</text>
+  </g>
+</svg>
