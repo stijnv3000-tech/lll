@@ -1097,3 +1097,28 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .lang-toggle:hover { color: var(--gold); border-color: var(--gold); }
 .lang-toggle [data-lucide] { width: 15px; height: 15px; }
 .lang-toggle--mobile { width: 100%; justify-content: center; margin-top: 0.75rem; color: var(--cream); }
+
+/* ==========================================================================
+   PRICING v2 — old/new price, included + ideal-for blocks
+   ========================================================================== */
+.pricing { align-items: start; }
+@media (min-width: 1024px) { .pricing { align-items: start; } }
+.price { display: flex; flex-direction: column; }
+.price__amount { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; font-family: var(--serif); }
+.price__old { font-size: 1.15rem; text-decoration: line-through; color: rgba(14,28,58,0.4); }
+.price__now { font-size: clamp(2rem, 3vw, 2.6rem); line-height: 1; color: var(--navy); }
+.price--featured .price__old { color: rgba(241,235,223,0.5); }
+.price--featured .price__now { color: var(--cream); }
+
+.price__block { margin-top: 1.4rem; }
+.price__blocktitle { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: #9A8246; margin-bottom: 0.75rem; }
+.price--featured .price__blocktitle { color: var(--gold-soft); }
+.price__block .price__features { margin-top: 0; }
+
+.price__ideal { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.price__ideal li { font-size: 0.75rem; font-weight: 500; padding: 0.28rem 0.7rem; border-radius: 999px;
+  color: rgba(14,28,58,0.72); background: rgba(14,28,58,0.05); border: 1px solid rgba(14,28,58,0.10); }
+.price--featured .price__ideal li { color: rgba(241,235,223,0.82); background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); }
+
+.price__cta { margin-top: 1.75rem; width: 100%; }

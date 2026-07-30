@@ -1111,6 +1111,31 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .lang-toggle [data-lucide] { width: 15px; height: 15px; }
 .lang-toggle--mobile { width: 100%; justify-content: center; margin-top: 0.75rem; color: var(--cream); }
 
+/* ==========================================================================
+   PRICING v2 — old/new price, included + ideal-for blocks
+   ========================================================================== */
+.pricing { align-items: start; }
+@media (min-width: 1024px) { .pricing { align-items: start; } }
+.price { display: flex; flex-direction: column; }
+.price__amount { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; font-family: var(--serif); }
+.price__old { font-size: 1.15rem; text-decoration: line-through; color: rgba(14,28,58,0.4); }
+.price__now { font-size: clamp(2rem, 3vw, 2.6rem); line-height: 1; color: var(--navy); }
+.price--featured .price__old { color: rgba(241,235,223,0.5); }
+.price--featured .price__now { color: var(--cream); }
+
+.price__block { margin-top: 1.4rem; }
+.price__blocktitle { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: #9A8246; margin-bottom: 0.75rem; }
+.price--featured .price__blocktitle { color: var(--gold-soft); }
+.price__block .price__features { margin-top: 0; }
+
+.price__ideal { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.price__ideal li { font-size: 0.75rem; font-weight: 500; padding: 0.28rem 0.7rem; border-radius: 999px;
+  color: rgba(14,28,58,0.72); background: rgba(14,28,58,0.05); border: 1px solid rgba(14,28,58,0.10); }
+.price--featured .price__ideal li { color: rgba(241,235,223,0.82); background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); }
+
+.price__cta { margin-top: 1.75rem; width: 100%; }
+
   </style>
 </head>
 <body>
@@ -1611,49 +1636,82 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
         <div class="grid grid--3 pricing mt-lg">
 
           <article class="price reveal" data-delay="0">
-            <span class="price__name">Starter</span>
-            <div class="price__amount"><span data-i18n="price_from">vanaf</span> €999</div>
-            <p class="price__sub" data-i18n="price1_sub">Voor wie professioneel online wil starten.</p>
-            <ul class="price__features">
-              <li><i data-lucide="check"></i> <span data-i18n="feat_pages">Tot 5 pagina's</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_responsive">Mobiel-responsief design</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_form">Contactformulier</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_seo">Basis SEO</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_online">Online binnen 10–14 dagen</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_free">Gratis homepagina-ontwerp</span></li>
-            </ul>
+            <span class="price__name">Website Basic</span>
+            <div class="price__amount" data-i18n="price1_amount"><span class="price__old">€1.200</span><span class="price__now">€999</span></div>
+            <p class="price__sub" data-i18n="price1_sub">Perfect voor freelancers, lokale bedrijven en starters die een professionele online aanwezigheid nodig hebben.</p>
+            <div class="price__block">
+              <span class="price__blocktitle" data-i18n="price_incl">Inbegrepen</span>
+              <ul class="price__features">
+                <li><i data-lucide="check"></i> <span data-i18n="b_incl1">Website op maat</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="b_incl2">Tot 3 pagina's</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="b_incl3">Mobiel-responsief design</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="b_incl4">Contactformulier</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="b_incl5">Basis SEO-setup</span></li>
+              </ul>
+            </div>
+            <div class="price__block">
+              <span class="price__blocktitle" data-i18n="price_ideal">Ideaal voor</span>
+              <ul class="price__ideal">
+                <li data-i18n="b_ideal1">Restaurants</li>
+                <li data-i18n="b_ideal2">Consultants</li>
+                <li data-i18n="b_ideal3">Kleine bedrijven</li>
+                <li data-i18n="b_ideal4">Persoonlijke merken</li>
+              </ul>
+            </div>
             <a href="#contact" class="btn btn--outline-dark price__cta" data-i18n="cta_request">Offerte aanvragen</a>
           </article>
 
           <article class="price price--featured reveal" data-delay="90">
-            <span class="price__badge" data-i18n="price_badge">Meest gekozen</span>
-            <span class="price__name">Groei</span>
-            <div class="price__amount"><span data-i18n="price_from">vanaf</span> €1.799</div>
-            <p class="price__sub" data-i18n="price2_sub">Voor bedrijven die willen groeien online.</p>
-            <ul class="price__features">
-              <li><i data-lucide="check"></i> <span data-i18n="feat_pages">Tot 5 pagina's</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_responsive">Mobiel-responsief design</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_form">Contactformulier</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_seo">Basis SEO</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_online">Online binnen 10–14 dagen</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_free">Gratis homepagina-ontwerp</span></li>
-            </ul>
+            <span class="price__badge" data-i18n="price_badge">⭐ Meest gekozen</span>
+            <span class="price__name">Website Premium</span>
+            <div class="price__amount" data-i18n="price2_amount"><span class="price__old">€1.799</span><span class="price__now">€1.249</span></div>
+            <p class="price__sub" data-i18n="price2_sub">Ontworpen voor bedrijven die leads willen genereren en bezoekers willen omzetten in klanten.</p>
+            <div class="price__block">
+              <span class="price__blocktitle" data-i18n="price_incl">Inbegrepen</span>
+              <ul class="price__features">
+                <li><i data-lucide="check"></i> <span data-i18n="p_incl1">Alles uit Website Basic</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="p_incl2">Tot 5 pagina's</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="p_incl3">Geavanceerde SEO-setup</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="p_incl4">Blog/nieuws-sectie</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="p_incl5">Boekings- of offertesysteem</span></li>
+              </ul>
+            </div>
+            <div class="price__block">
+              <span class="price__blocktitle" data-i18n="price_ideal">Ideaal voor</span>
+              <ul class="price__ideal">
+                <li data-i18n="p_ideal1">Groeiende bedrijven</li>
+                <li data-i18n="p_ideal2">Dienstverlenende bedrijven</li>
+                <li data-i18n="p_ideal3">Bureaus</li>
+                <li data-i18n="p_ideal4">Professionele kantoren</li>
+              </ul>
+            </div>
             <a href="#contact" class="btn btn--gold price__cta" data-i18n="cta_request">Offerte aanvragen</a>
           </article>
 
           <article class="price reveal" data-delay="180">
-            <span class="price__name">Op Maat</span>
-            <div class="price__amount">Let's talk</div>
-            <p class="price__sub" data-i18n="price3_sub">Voor uw uniek project.</p>
-            <ul class="price__features">
-              <li><i data-lucide="check"></i> <span data-i18n="feat_pages">Tot 5 pagina's</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_responsive">Mobiel-responsief design</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_form">Contactformulier</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_seo">Basis SEO</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_online">Online binnen 10–14 dagen</span></li>
-              <li><i data-lucide="check"></i> <span data-i18n="feat_free">Gratis homepagina-ontwerp</span></li>
-            </ul>
-            <a href="#contact" class="btn btn--outline-dark price__cta" data-i18n="cta_contact">Neem contact op</a>
+            <span class="price__name">Webshop</span>
+            <div class="price__amount" data-i18n="price3_amount"><span class="price__old">€2.499</span><span class="price__now">€1.899</span></div>
+            <p class="price__sub" data-i18n="price3_sub">Een complete e-commerce-oplossing gebouwd om online verkoop te maximaliseren.</p>
+            <div class="price__block">
+              <span class="price__blocktitle" data-i18n="price_incl">Inbegrepen</span>
+              <ul class="price__features">
+                <li><i data-lucide="check"></i> <span data-i18n="s_incl1">Alles uit Website Premium</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="s_incl2">Online winkel-setup</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="s_incl3">Tot 50 producten geüpload</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="s_incl4">Betaalintegratie</span></li>
+                <li><i data-lucide="check"></i> <span data-i18n="s_incl5">Winkelwagen en afrekenen</span></li>
+              </ul>
+            </div>
+            <div class="price__block">
+              <span class="price__blocktitle" data-i18n="price_ideal">Ideaal voor</span>
+              <ul class="price__ideal">
+                <li data-i18n="s_ideal1">Kledingmerken</li>
+                <li data-i18n="s_ideal2">Voedings- en drankmerken</li>
+                <li data-i18n="s_ideal3">Beautyproducten</li>
+                <li data-i18n="s_ideal4">E-commercebedrijven</li>
+              </ul>
+            </div>
+            <a href="#contact" class="btn btn--outline-dark price__cta" data-i18n="cta_request">Offerte aanvragen</a>
           </article>
 
         </div>
@@ -2391,10 +2449,20 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
     why2_title: "Fast delivery", why2_body: "Your website live in 10–14 days, without endless waiting.",
     why3_title: "Personal approach", why3_body: "One dedicated contact, from first conversation to launch and beyond.",
     price_eyebrow: "Pricing", price_title: "Simple, Transparent <em>Pricing</em>", price_lead: "No hidden costs. No surprises.",
-    price_from: "from", price_badge: "Most chosen",
-    price1_sub: "For those who want to start professionally online.",
-    price2_sub: "For businesses that want to grow online.",
-    price3_sub: "For your unique project.",
+    price_from: "from", price_badge: "⭐ Most Popular",
+    price_incl: "Included", price_ideal: "Ideal for",
+    price1_amount: "<span class=\"price__old\">€1,200</span><span class=\"price__now\">€999</span>",
+    price2_amount: "<span class=\"price__old\">€1,799</span><span class=\"price__now\">€1,249</span>",
+    price3_amount: "<span class=\"price__old\">€2,499</span><span class=\"price__now\">€1,899</span>",
+    price1_sub: "Perfect for freelancers, local businesses and startups that need a professional online presence.",
+    price2_sub: "Designed for businesses that want to generate leads and convert visitors into customers.",
+    price3_sub: "A complete e-commerce solution built to maximize online sales.",
+    b_incl1: "Custom website design", b_incl2: "Up to 3 pages", b_incl3: "Mobile-responsive design", b_incl4: "Contact form", b_incl5: "Basic SEO setup",
+    b_ideal1: "Restaurants", b_ideal2: "Consultants", b_ideal3: "Small businesses", b_ideal4: "Personal brands",
+    p_incl1: "Everything from Website Basic", p_incl2: "Up to 5 pages", p_incl3: "Advanced SEO setup", p_incl4: "Blog/news section", p_incl5: "Booking or quote system",
+    p_ideal1: "Growing companies", p_ideal2: "Service businesses", p_ideal3: "Agencies", p_ideal4: "Professional firms",
+    s_incl1: "Everything from Website Premium", s_incl2: "Online store setup", s_incl3: "Up to 50 products uploaded", s_incl4: "Payment integration", s_incl5: "Shopping cart and checkout",
+    s_ideal1: "Clothing brands", s_ideal2: "Food and beverage brands", s_ideal3: "Beauty products", s_ideal4: "E-commerce businesses",
     feat_pages: "Up to 5 pages", feat_responsive: "Mobile-responsive design", feat_form: "Contact form",
     feat_seo: "Basic SEO", feat_online: "Online within 10–14 days", feat_free: "Free homepage design",
     cta_request: "Request a quote", cta_contact: "Get in touch",
