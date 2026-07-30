@@ -11,6 +11,12 @@
   var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var FINE = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
 
+  /* ---- Contact form endpoint ----
+     Paste your Formspree endpoint here to receive submissions by e-mail,
+     e.g. "https://formspree.io/f/abcdwxyz". Leave empty to keep demo mode
+     (shows the success message without sending). */
+  var FORM_ENDPOINT = "";
+
   /* ---- Language state (used by count-up + i18n) ---- */
   var currentLang = "nl";
   function sufOf(el) {
@@ -451,16 +457,41 @@
     var showError = function (m) { if (errorEl) { errorEl.textContent = m; errorEl.hidden = false; } };
     var clearError = function () { if (errorEl) errorEl.hidden = true; };
 
+    var msg = function (nl, en) { return currentLang === "en" ? en : nl; };
+    var showSuccess = function () {
+      fields.hidden = true;
+      success.hidden = false;
+      success.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "nearest" });
+    };
+
     btn.addEventListener("click", function () {
       var naam = (document.getElementById("naam").value || "").trim();
       var email = (document.getElementById("email").value || "").trim();
       var bericht = (document.getElementById("bericht").value || "").trim();
-      if (!naam || !email || !bericht) { showError("Vul a.u.b. uw naam, e-mailadres en bericht in."); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError("Vul a.u.b. een geldig e-mailadres in."); return; }
+      if (!naam || !email || !bericht) { showError(msg("Vul a.u.b. uw naam, e-mailadres en bericht in.", "Please fill in your name, email and message.")); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError(msg("Vul a.u.b. een geldig e-mailadres in.", "Please enter a valid email address.")); return; }
       clearError();
-      fields.hidden = true;
-      success.hidden = false;
-      success.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "nearest" });
+
+      if (!FORM_ENDPOINT) { showSuccess(); return; } // demo mode
+
+      var payload = {};
+      ids.forEach(function (id) { var el = document.getElementById(id); if (el) payload[id] = el.value; });
+      btn.disabled = true;
+      var original = btn.textContent;
+      btn.textContent = msg("Verzenden…", "Sending…");
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }).then(function (r) {
+        if (!r.ok) throw new Error("bad status");
+        showSuccess();
+      }).catch(function () {
+        showError(msg("Er ging iets mis. Probeer opnieuw of mail ons rechtstreeks.", "Something went wrong. Please try again or email us directly."));
+      }).finally(function () {
+        btn.disabled = false;
+        btn.textContent = original;
+      });
     });
 
     if (resetBtn) {
