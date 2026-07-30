@@ -31,9 +31,13 @@ Lever ze aan als aparte spotlaag met de naam **"FOIL"** (of als los bestand naas
 - Zet bij export **alle tekst om naar vectorpaden** (outlines), zodat de fonts niet nodig zijn.
 
 ## QR-code
-- Doel: **https://digital-impression.be**, foutcorrectie **niveau H**.
+- Doel: **https://digital-impression.be/#contact** (offerteaanvraag → gratis homepagina-ontwerp), foutcorrectie **niveau H**.
 - Marineblauw op crème, **15 × 15 mm**, ~4 mm rustzone, subtiel gouden kaderlijntje (folie).
 - **Even testscannen** op de fysieke proef voor definitieve druk.
 
-## Afwerking (aanrader)
-- Mat **350 g/m²** met **soft-touch laminaat**; goudfolie apart nadrukken voor maximaal contrast.
+## Afwerking
+- **Matte look:** mat **350 g/m²** met **soft-touch (matte) laminaat** op beide zijden.
+- **Goudfolie** apart nadrukken voor maximaal contrast tegen het matte oppervlak.
+
+## Persoon op de kaart
+- **Stijn Vranken** (achterzijde, in marineblauw, niet in folie).

@@ -6,6 +6,6 @@
         .sans  { font-family: 'Inter', Arial, sans-serif; }
       </style>
     </defs>
-  <text x="11" y="50" class="serif" font-style="italic" font-size="2.8" font-weight="500" fill="#000000">Websites die klanten opleveren.</text>
-  <rect x="62.80" y="29.80" width="19.40" height="19.40" rx="1.2" fill="none" stroke="#000000" stroke-width="0.3"/>
+  <text x="11" y="49.6" class="serif" font-style="italic" font-size="2.8" font-weight="500" fill="#000000">Websites die klanten opleveren.</text>
+  <rect x="62.80" y="30.30" width="19.40" height="19.40" rx="1.2" fill="none" stroke="#000000" stroke-width="0.3"/>
 </svg>
