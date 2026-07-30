@@ -6,6 +6,8 @@
         .sans  { font-family: 'Inter', Arial, sans-serif; }
       </style>
     </defs>
-  <text x="11" y="49.6" class="serif" font-style="italic" font-size="2.8" font-weight="500" fill="#000000">Websites die klanten opleveren.</text>
-  <rect x="62.80" y="30.30" width="19.40" height="19.40" rx="1.2" fill="none" stroke="#000000" stroke-width="0.3"/>
+  <rect x="8" y="8" width="75" height="45" rx="2.4" fill="none" stroke="#000000" stroke-width="0.3"/>
+  <text x="45.5" y="15" text-anchor="middle" class="serif" font-size="4.4" font-weight="600"><tspan fill="none">Een website die </tspan><tspan fill="#000000">klanten</tspan><tspan fill="none"> oplevert.</tspan></text>
+  <line x1="39" y1="36.5" x2="52" y2="36.5" stroke="#000000" stroke-width="0.3"/>
+  <text x="45.5" y="40.3" text-anchor="middle" class="sans" font-size="2.5" font-weight="500" letter-spacing="0.9" fill="#000000">STIJN VRANKEN</text>
 </svg>

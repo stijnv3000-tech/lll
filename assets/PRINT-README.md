@@ -20,8 +20,8 @@ Lever ze aan als aparte spotlaag met de naam **"FOIL"** (of als los bestand naas
 - Goud = **goudfolie (hot foil stamping)**, dus een **spot/PMS-metallic** (bv. PMS 871) — **niet** als CMYK-goud drukken.
 
 ## Goudfolie-elementen
-- **Voorzijde:** "Impression", "WEBDESIGN", de dubbele kaderlijn.
-- **Achterzijde:** de afsluiter "Websites die klanten opleveren." en het kaderlijntje rond de QR-code.
+- **Voorzijde:** "Impression", "PREMIUM WEBDESIGN", de kaderlijn.
+- **Achterzijde:** "klanten" in de kop, de scheidingslijn, "STIJN VRANKEN" en de kaderlijn.
 - Foliedetails **≥ 0,3 pt**; **geen folietekst < 6 pt**; alle tekst op de kaart **≥ 7 pt**.
 - De zware folie (wordmark voor) staat niet recht tegenover folie op de achterzijde (doordruk vermeden).
 
@@ -40,4 +40,4 @@ Lever ze aan als aparte spotlaag met de naam **"FOIL"** (of als los bestand naas
 - **Goudfolie** apart nadrukken voor maximaal contrast tegen het matte oppervlak.
 
 ## Persoon op de kaart
-- **Stijn Vranken** (achterzijde, in marineblauw, niet in folie).
+- **Stijn Vranken** — de naam "STIJN VRANKEN" staat in goudfolie; telefoon +32 470 55 21 03 en e-mail info@digital-impression.be in marineblauw.
