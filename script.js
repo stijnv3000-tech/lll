@@ -15,7 +15,7 @@
      Paste your Formspree endpoint here to receive submissions by e-mail,
      e.g. "https://formspree.io/f/abcdwxyz". Leave empty to keep demo mode
      (shows the success message without sending). */
-  var FORM_ENDPOINT = "";
+  var FORM_ENDPOINT = "https://formspree.io/f/xlgqkgbd";
 
   /* ---- Language state (used by count-up + i18n) ---- */
   var currentLang = "nl";
@@ -476,6 +476,7 @@
 
       var payload = {};
       ids.forEach(function (id) { var el = document.getElementById(id); if (el) payload[id] = el.value; });
+      payload._subject = "Nieuwe aanvraag via digital-impression.be" + (payload.naam ? " — " + payload.naam : "");
       btn.disabled = true;
       var original = btn.textContent;
       btn.textContent = msg("Verzenden…", "Sending…");
