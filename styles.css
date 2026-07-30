@@ -1084,3 +1084,16 @@ body.has-cursor.cursor-hot .cursor-dot { opacity: 0; }
 .site--new .s-cards span:nth-child(2) { background: linear-gradient(135deg, #a07f44, #62492a); }
 .site--new .s-cards span:nth-child(3) { background: linear-gradient(135deg, #77764a, #3f4527); }
 .site--new .s-trust { font-size: 0.55rem; color: rgba(244,236,221,0.72); }
+
+/* ==========================================================================
+   LANGUAGE TOGGLE (NL / EN)
+   ========================================================================== */
+.nav__actions { display: none; align-items: center; gap: 1rem; }
+@media (min-width: 1024px) { .nav__actions { display: flex; } }
+.lang-toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--sans);
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; color: rgba(241,235,223,0.82);
+  background: transparent; border: 1px solid var(--navy-line); padding: 0.42rem 0.75rem; border-radius: 999px;
+  transition: color 0.2s ease, border-color 0.2s ease; }
+.lang-toggle:hover { color: var(--gold); border-color: var(--gold); }
+.lang-toggle [data-lucide] { width: 15px; height: 15px; }
+.lang-toggle--mobile { width: 100%; justify-content: center; margin-top: 0.75rem; color: var(--cream); }

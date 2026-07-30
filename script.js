@@ -11,6 +11,13 @@
   var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var FINE = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
 
+  /* ---- Language state (used by count-up + i18n) ---- */
+  var currentLang = "nl";
+  function sufOf(el) {
+    if (currentLang === "en" && el.getAttribute("data-suffix-en") != null) return el.getAttribute("data-suffix-en");
+    return el.getAttribute("data-suffix") || "";
+  }
+
   /* ---- Lucide icons ---- */
   function renderIcons() {
     if (window.lucide && typeof window.lucide.createIcons === "function") {
@@ -88,16 +95,15 @@
 
     var run = function (el) {
       var target = parseFloat(el.getAttribute("data-count"));
-      var suffix = el.getAttribute("data-suffix") || "";
-      if (REDUCED) { el.textContent = target + suffix; return; }
+      if (REDUCED) { el.textContent = target + sufOf(el); el.classList.add("counted"); return; }
       var dur = 1500, start = null;
       var step = function (ts) {
         if (!start) start = ts;
         var p = Math.min((ts - start) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(eased * target) + suffix;
+        el.textContent = Math.round(eased * target) + sufOf(el);
         if (p < 1) requestAnimationFrame(step);
-        else el.textContent = target + suffix;
+        else { el.textContent = target + sufOf(el); el.classList.add("counted"); }
       };
       requestAnimationFrame(step);
     };
@@ -467,6 +473,157 @@
     }
   }
 
+  /* ---- i18n: NL default in the DOM, EN from dictionary ---- */
+  var I18N_EN = {
+    meta_title: "Digital Impression — Premium Websites for Belgian Entrepreneurs",
+    meta_desc: "We build professional websites for Belgian entrepreneurs — fast, beautiful and built to attract customers. Get a tailored quote within 24h plus a free homepage design.",
+    ph_address: "[Address]", ph_email: "[Email]", ph_phone: "[Phone]",
+    nav_home: "Home", nav_services: "Services", nav_work: "Work", nav_pricing: "Pricing", nav_about: "About",
+    cta_quote: "Get a Quote",
+    hero_eyebrow: "Belgian Web Design Studio",
+    hero_title: "Your Business Deserves A Website That Works <em>As Hard As You Do</em>",
+    hero_sub: "We build professional websites for Belgian entrepreneurs — fast, beautiful and built to attract customers. Get a tailored quote within 24h plus a free homepage design.",
+    hero_cta1: "Get a Quote &amp; Free Design",
+    hero_cta2: "See Our Work",
+    hero_trust1: "Website live in 2 weeks", hero_trust2: "Free homepage design", hero_trust3: "Dedicated contact person",
+    rd_eyebrow: "The Difference A Redesign Makes",
+    rd_title: "From Outdated To <em>Stunning</em>",
+    rd_lead: "Your website is your digital storefront — and for most businesses it works against them. An outdated site drives customers away before they ever call. Drag the handle and see how we turn the same content into something that builds trust and wins enquiries.",
+    rd_hint: "Drag to compare before &amp; after",
+    rd_from1: "Slow &amp; outdated", rd_to1: "Lightning-fast &amp; modern",
+    rd_from2: "Invisible on Google", rd_to2: "Found higher up",
+    rd_from3: "Not mobile-friendly", rd_to3: "Perfect on every screen",
+    rd_from4: "Visitors bounce", rd_to4: "Visitors become customers",
+    rd_cta: "Request a free redesign proposal",
+    ba_before: "Before", ba_after: "After",
+    marquee_label: "Trusted by entrepreneurs across Belgium &amp; Europe",
+    svc_eyebrow: "Our Services", svc_title: "What We <em>Build</em>",
+    svc_aside: "Not sure what you need?<br /><a href=\"#contact\" class=\"link-gold\">We'll figure it out together</a>",
+    svc_cta: "Request a quote",
+    svc1_title: "Business websites", svc1_body: "Sleek, professional websites that build trust and generate leads.",
+    svc1_f1: "Trust-building design", svc1_f2: "Built SEO-ready", svc1_f3: "Smart lead forms",
+    svc2_title: "Landing pages", svc2_body: "Single pages designed for one goal: conversions. Perfect for campaigns and product launches.",
+    svc2_f1: "One clear goal", svc2_f2: "Built for conversion", svc2_f3: "Ideal for campaigns",
+    svc3_title: "Webshops", svc3_body: "Sell online with a webshop built to convert — beautiful product pages and seamless checkout.",
+    svc3_f1: "Beautiful product pages", svc3_f2: "Seamless checkout", svc3_f3: "Secure payments",
+    svc4_title: "Redesigns", svc4_body: "Transform your existing website into something you're proud of. Same content, a completely new impression.",
+    svc4_f1: "Fresh, modern look", svc4_f2: "Keep your content", svc4_f3: "Faster &amp; mobile",
+    work_eyebrow: "Portfolio", work_title: "Our <em>Work</em>",
+    work_aside: "A selection of the websites we built for Belgian and European entrepreneurs — from wholesale to tourism.",
+    work_live: "View live",
+    work_tag_simonta: "B2B Wholesale", work_desc_simonta: "Wholesale in fresh carrots, B2B, delivery across Europe.",
+    work_tag_mergel: "Tourism &amp; Culture", work_desc_mergel: "Guided cave tours, atmospheric &amp; historic.",
+    work_tag_tuin: "Garden &amp; Landscape", work_desc_tuin: "Garden design &amp; maintenance, elegant and green.",
+    work_tag_fadim: "Artist &amp; Events", work_desc_fadim: "Artist/singer with agenda, fan shop &amp; bookings.",
+    fi_eyebrow: "First Impressions",
+    fi_title: "First Impressions Happen Online, Before You Even Pick Up The <em>Phone</em>",
+    fi_stat1: "judge a company's credibility based on its website, before reading a single word.",
+    fi_stat2: "That's all the time you get. A slow or outdated website sends customers straight to your competitors.",
+    fi_stat3: "You only get one shot at a great first impression. Don't waste it.",
+    proc_eyebrow: "How It Works", proc_title: "From Request To Live Website In Less Than <em>2 Weeks</em>",
+    proc_step: "Step 1", proc_step2: "Step 2", proc_step3: "Step 3", proc_step4: "Step 4",
+    proc1_title: "Tell us about your project", proc1_body: "A short 3-minute chat — you tell us your goals and wishes.",
+    proc2_title: "Quote &amp; design", proc2_body: "Within 24h you receive a tailored quote plus a free homepage design.",
+    proc3_title: "We build your website", proc3_body: "In 10–14 days we build your site — you're kept in the loop at every step.",
+    proc4_title: "You go live", proc4_body: "Your website goes online — with ongoing support and one dedicated contact.",
+    proc_band: "<strong>No obligation, no deposit.</strong> Your free homepage design costs nothing and commits you to nothing. We earn your trust before we ask for anything.",
+    about_badge: "Based in Belgium", about_eyebrow: "About Us", about_title: "Who's Behind <em>Digital Impression?</em>",
+    about_intro: "Digital Impression is a Belgian web design studio, founded by <strong>[Name]</strong>. We help local entrepreneurs get a website that doesn't just look beautiful, but actually wins customers. No anonymous supplier — one familiar face who thinks along with you, from first conversation to launch and beyond.",
+    about_l1: "One dedicated contact", about_l2: "Transparent pricing", about_l3: "Local &amp; involved", about_l4: "Results-driven",
+    about_cta: "Discuss your project",
+    why_eyebrow: "Why Choose Digital Impression", why_title: "Belgian Entrepreneurs Choose <em>Us</em>",
+    why1_title: "Based in Belgium", why1_body: "A local team that understands the Belgian market and entrepreneur — no anonymous foreign supplier.",
+    why2_title: "Fast delivery", why2_body: "Your website live in 10–14 days, without endless waiting.",
+    why3_title: "Personal approach", why3_body: "One dedicated contact, from first conversation to launch and beyond.",
+    price_eyebrow: "Pricing", price_title: "Simple, Transparent <em>Pricing</em>", price_lead: "No hidden costs. No surprises.",
+    price_from: "from", price_badge: "Most chosen",
+    price1_sub: "For those who want to start professionally online.",
+    price2_sub: "For businesses that want to grow online.",
+    price3_sub: "For your unique project.",
+    feat_pages: "Up to 5 pages", feat_responsive: "Mobile-responsive design", feat_form: "Contact form",
+    feat_seo: "Basic SEO", feat_online: "Online within 10–14 days", feat_free: "Free homepage design",
+    cta_request: "Request a quote", cta_contact: "Get in touch",
+    price_note: "Every project includes a free homepage design — sent within 24 hours of your request, with no obligation whatsoever.",
+    faq_eyebrow: "Frequently Asked Questions", faq_title: "Everything You Want To <em>Know</em>",
+    faq_lead: "No answer found? <a href=\"#contact\" class=\"link-gold\">Ask your question</a> — we reply within 24 hours.",
+    faq_q1: "How fast will my website be online?",
+    faq_a1: "Most projects go live within 10 to 14 days. After your request you receive a tailored quote plus a free homepage design within 24 hours.",
+    faq_q2: "How much does a website cost exactly?",
+    faq_a2: "A professional website starts from €999. The exact price depends on your wishes — you always get a transparent quote with no hidden costs or surprises.",
+    faq_q3: "Is the free design really no-obligation?",
+    faq_a3: "Absolutely. Your free homepage design costs nothing and commits you to nothing. No deposit, no obligation — we earn your trust first.",
+    faq_q4: "Can I update my website myself later?",
+    faq_a4: "Yes. We build your site so you can easily manage text and images, and you get one dedicated contact for support — even after launch.",
+    faq_q5: "Do you also handle hosting and domain?",
+    faq_a5: "Certainly. If you wish, we arrange hosting, domain name and the technical setup, so you don't have to worry about anything.",
+    contact_eyebrow: "Start Your Project Today", contact_title: "Let's Build Something <em>Beautiful Together</em>",
+    contact_lead: "Tell us about your project and we'll send you a tailored quote plus a free <span class=\"gold\">homepage design</span> within 24 hours. Completely without obligation.",
+    contact_pt1: "Tailored quote + free design within 24 hours",
+    contact_pt2: "No deposit — you only pay when you're 100% satisfied",
+    f_naam: "Name", f_naam_ph: "Your name", f_bedrijf: "Company name", f_bedrijf_ph: "Your company",
+    f_email: "Email", f_email_ph: "you@company.be", f_tel: "Phone number",
+    f_bericht: "Message", f_bericht_ph: "How can we help you?",
+    f_type: "Website type", f_select: "Select...",
+    f_opt1: "Business website", f_opt2: "Landing page", f_opt3: "Webshop", f_opt4: "Redesign", f_opt5: "Other",
+    f_project: "Tell us about your project", f_project_ph: "Goals, examples, deadlines...",
+    f_found: "How did you find us?", f_found_ph: "Google, referral, social media...",
+    f_submit: "Send", f_fine: "By submitting you agree to a no-obligation contact.",
+    f_success_title: "Thank you for your request!",
+    f_success_body: "We've received your message. You'll hear from us within 24 hours with a tailored quote plus your free homepage design.",
+    f_again: "Send another request",
+    footer_tagline: "Premium websites for Belgian entrepreneurs — fast, beautiful and built to attract customers.",
+    footer_company: "Company", footer_contact: "Contact",
+    footer_stay: "Stay In The Loop", footer_stay_sub: "Tips &amp; insights on web design for entrepreneurs.",
+    footer_rights: "© 2026 Digital Impression — All rights reserved.",
+    footer_privacy: "Privacy policy", footer_terms: "Terms & conditions"
+  };
+
+  function initI18n() {
+    var nl = {};
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      nl[el.getAttribute("data-i18n")] = el.innerHTML;
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+      nl["__ph_" + el.getAttribute("data-i18n-ph")] = el.getAttribute("placeholder") || "";
+    });
+    nl.meta_title = document.title;
+    var metaDesc = document.querySelector('meta[name="description"]');
+    nl.meta_desc = metaDesc ? metaDesc.getAttribute("content") : "";
+
+    function apply(lang, isToggle) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(function (el) {
+        var k = el.getAttribute("data-i18n");
+        var val = lang === "en" ? I18N_EN[k] : nl[k];
+        if (val != null) el.innerHTML = val;
+      });
+      document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+        var k = el.getAttribute("data-i18n-ph");
+        var val = lang === "en" ? I18N_EN[k] : nl["__ph_" + k];
+        if (val != null) el.setAttribute("placeholder", val);
+      });
+      document.title = lang === "en" ? I18N_EN.meta_title : nl.meta_title;
+      if (metaDesc) metaDesc.setAttribute("content", lang === "en" ? I18N_EN.meta_desc : nl.meta_desc);
+      // already-counted stats: re-render with the right suffix
+      document.querySelectorAll("[data-count].counted").forEach(function (el) {
+        el.textContent = el.getAttribute("data-count") + sufOf(el);
+      });
+      var dl = document.getElementById("langLabel"); if (dl) dl.textContent = lang === "nl" ? "EN" : "NL";
+      var ml = document.getElementById("langLabelMobile"); if (ml) ml.textContent = lang === "nl" ? "English" : "Nederlands";
+      try { localStorage.setItem("di_lang", lang); } catch (e) {}
+      renderIcons();
+    }
+
+    var saved = "nl";
+    try { saved = localStorage.getItem("di_lang") || "nl"; } catch (e) {}
+    if (saved === "en") apply("en", false); else currentLang = "nl";
+
+    function toggle() { apply(currentLang === "nl" ? "en" : "nl", true); }
+    var t1 = document.getElementById("langToggle"); if (t1) t1.addEventListener("click", toggle);
+    var t2 = document.getElementById("langToggleMobile"); if (t2) t2.addEventListener("click", toggle);
+  }
+
   /* ---- init ---- */
   function init() {
     renderIcons();
@@ -474,6 +631,7 @@
     initHeader();
     initMobileMenu();
     initReveal();
+    initI18n();
     initCountUp();
     initHeroCanvas();
     initCursor();

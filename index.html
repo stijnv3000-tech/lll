@@ -6,6 +6,7 @@
   <title>Digital Impression — Premium Websites Voor Belgische Ondernemers</title>
   <meta name="description" content="Wij bouwen professionele websites voor Belgische ondernemers — snel, mooi en gebouwd om klanten aan te trekken. Ontvang binnen 24u een offerte op maat én een gratis homepagina-ontwerp." />
 
+  <link rel="icon" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -23,9 +24,9 @@
     <!-- slim top bar -->
     <div class="topbar">
       <div class="container topbar__inner">
-        <span class="topbar__item"><i data-lucide="map-pin"></i> [Adres]</span>
-        <span class="topbar__item"><i data-lucide="mail"></i> [E-mailadres]</span>
-        <span class="topbar__item"><i data-lucide="phone"></i> [Telefoonnummer]</span>
+        <span class="topbar__item"><i data-lucide="map-pin"></i> <span data-i18n="ph_address">[Adres]</span></span>
+        <span class="topbar__item"><i data-lucide="mail"></i> <span data-i18n="ph_email">[E-mailadres]</span></span>
+        <span class="topbar__item"><i data-lucide="phone"></i> <span data-i18n="ph_phone">[Telefoonnummer]</span></span>
       </div>
     </div>
 
@@ -37,14 +38,19 @@
         </a>
 
         <nav class="nav" aria-label="Hoofdnavigatie">
-          <a href="#home">Home</a>
-          <a href="#diensten">Diensten</a>
-          <a href="#werk">Werk</a>
-          <a href="#prijzen">Prijzen</a>
-          <a href="#over-ons">Over Ons</a>
+          <a href="#home" data-i18n="nav_home">Home</a>
+          <a href="#diensten" data-i18n="nav_services">Diensten</a>
+          <a href="#werk" data-i18n="nav_work">Werk</a>
+          <a href="#prijzen" data-i18n="nav_pricing">Prijzen</a>
+          <a href="#over-ons" data-i18n="nav_about">Over Ons</a>
         </nav>
 
-        <a href="#contact" class="btn btn--gold nav__cta">Ontvang Offerte</a>
+        <div class="nav__actions">
+          <button class="lang-toggle" id="langToggle" type="button" aria-label="Taal wisselen / Switch language">
+            <i data-lucide="globe"></i><span id="langLabel">EN</span>
+          </button>
+          <a href="#contact" class="btn btn--gold nav__cta" data-i18n="cta_quote">Ontvang Offerte</a>
+        </div>
 
         <button class="nav__toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
           <i data-lucide="menu"></i>
@@ -54,17 +60,20 @@
       <!-- mobile drawer -->
       <div class="mobile-menu" id="mobileMenu" hidden>
         <div class="container">
-          <a href="#home">Home</a>
-          <a href="#diensten">Diensten</a>
-          <a href="#werk">Werk</a>
-          <a href="#prijzen">Prijzen</a>
-          <a href="#over-ons">Over Ons</a>
+          <a href="#home" data-i18n="nav_home">Home</a>
+          <a href="#diensten" data-i18n="nav_services">Diensten</a>
+          <a href="#werk" data-i18n="nav_work">Werk</a>
+          <a href="#prijzen" data-i18n="nav_pricing">Prijzen</a>
+          <a href="#over-ons" data-i18n="nav_about">Over Ons</a>
+          <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile" type="button">
+            <i data-lucide="globe"></i> <span id="langLabelMobile">English</span>
+          </button>
           <div class="mobile-menu__contact">
-            <span><i data-lucide="map-pin"></i> [Adres]</span>
-            <span><i data-lucide="mail"></i> [E-mailadres]</span>
-            <span><i data-lucide="phone"></i> [Telefoonnummer]</span>
+            <span><i data-lucide="map-pin"></i> <span data-i18n="ph_address">[Adres]</span></span>
+            <span><i data-lucide="mail"></i> <span data-i18n="ph_email">[E-mailadres]</span></span>
+            <span><i data-lucide="phone"></i> <span data-i18n="ph_phone">[Telefoonnummer]</span></span>
           </div>
-          <a href="#contact" class="btn btn--gold mobile-menu__cta">Ontvang Offerte</a>
+          <a href="#contact" class="btn btn--gold mobile-menu__cta" data-i18n="cta_quote">Ontvang Offerte</a>
         </div>
       </div>
     </div>
@@ -78,220 +87,28 @@
       <div class="hero__grid" aria-hidden="true"></div>
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Belgisch Webdesignbureau</p>
+        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span><span data-i18n="hero_eyebrow">Belgisch Webdesignbureau</span></p>
 
-        <h1 class="hero__title reveal" data-delay="60">
+        <h1 class="hero__title reveal" data-delay="60" data-i18n="hero_title">
           Uw Bedrijf Verdient Een Website Die Even <em>Hard Werkt Als U</em>
         </h1>
 
-        <p class="hero__sub reveal" data-delay="140">
+        <p class="hero__sub reveal" data-delay="140" data-i18n="hero_sub">
           Wij bouwen professionele websites voor Belgische ondernemers — snel, mooi en
           gebouwd om klanten aan te trekken. Ontvang binnen 24u een offerte op maat én
           een gratis homepagina-ontwerp.
         </p>
 
         <div class="hero__cta reveal" data-delay="220">
-          <a href="#contact" class="btn btn--gold">Ontvang Offerte &amp; Gratis Ontwerp <i data-lucide="arrow-right"></i></a>
-          <a href="#werk" class="btn btn--outline-light">Bekijk Ons Werk</a>
+          <a href="#contact" class="btn btn--gold"><span data-i18n="hero_cta1">Ontvang Offerte &amp; Gratis Ontwerp</span> <i data-lucide="arrow-right"></i></a>
+          <a href="#werk" class="btn btn--outline-light" data-i18n="hero_cta2">Bekijk Ons Werk</a>
         </div>
 
         <ul class="trust reveal" data-delay="300">
-          <li><span class="trust__check"><i data-lucide="check"></i></span> Website live in 2 weken</li>
-          <li><span class="trust__check"><i data-lucide="check"></i></span> Gratis homepagina-ontwerp</li>
-          <li><span class="trust__check"><i data-lucide="check"></i></span> Vast contactpersoon</li>
+          <li><span class="trust__check"><i data-lucide="check"></i></span> <span data-i18n="hero_trust1">Website live in 2 weken</span></li>
+          <li><span class="trust__check"><i data-lucide="check"></i></span> <span data-i18n="hero_trust2">Gratis homepagina-ontwerp</span></li>
+          <li><span class="trust__check"><i data-lucide="check"></i></span> <span data-i18n="hero_trust3">Vast contactpersoon</span></li>
         </ul>
-      </div>
-    </section>
-
-    <!-- ===================== FIRST IMPRESSIONS (beige) ===================== -->
-    <section class="section section--beige">
-      <div class="container">
-        <p class="eyebrow reveal"><span class="eyebrow__line"></span>Eerste Indrukken</p>
-        <h2 class="headline reveal" data-delay="60" style="max-width:48rem">
-          Eerste Indrukken Gebeuren Online, Nog Voor U De Telefoon <em>Opneemt</em>
-        </h2>
-
-        <div class="grid grid--3 mt-lg">
-          <article class="card card--cream reveal" data-delay="0">
-            <span class="card__icon"><i data-lucide="search"></i></span>
-            <div class="stat" data-count="75" data-suffix="%">0%</div>
-            <p>beoordeelt de geloofwaardigheid van een bedrijf op basis van de website, nog vóór ze één woord lezen.</p>
-          </article>
-          <article class="card card--cream reveal" data-delay="90">
-            <span class="card__icon"><i data-lucide="clock"></i></span>
-            <div class="stat" data-count="3" data-suffix=" sec">0 sec</div>
-            <p>Meer tijd heeft u niet. Een trage of verouderde website stuurt klanten rechtstreeks naar uw concurrenten.</p>
-          </article>
-          <article class="card card--cream reveal" data-delay="180">
-            <span class="card__icon"><i data-lucide="target"></i></span>
-            <div class="stat" data-count="1" data-suffix=" kans">0 kans</div>
-            <p>U krijgt maar één kans op een goede eerste indruk. Laat die niet liggen.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== MARQUEE ===================== -->
-    <section class="marquee section--navy-deep" aria-label="Vertrouwd door ondernemers">
-      <div class="container">
-        <p class="marquee__label">Vertrouwd door ondernemers in heel België &amp; Europa</p>
-      </div>
-      <div class="marquee__track" aria-hidden="true">
-        <div class="marquee__row">
-          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
-          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Atelier Noord</span><i></i><span>Bouwwerken Daniëls</span><i></i><span>De Smaakmakerij</span><i></i><span>Kliniek Vesalius</span><i></i>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== SERVICES (cream) ===================== -->
-    <section class="section section--cream" id="diensten">
-      <div class="container">
-        <div class="section__head">
-          <div>
-            <p class="eyebrow reveal"><span class="eyebrow__line"></span>Onze Diensten</p>
-            <h2 class="headline reveal" data-delay="60">Wat Wij <em>Bouwen</em></h2>
-          </div>
-          <p class="section__aside reveal" data-delay="120">
-            Nog niet zeker wat u nodig heeft?<br />
-            <a href="#contact" class="link-gold">We zoeken het samen uit</a>
-          </p>
-        </div>
-
-        <div class="carousel mt-lg reveal" data-carousel data-autoplay="4500" data-delay="0">
-          <div class="carousel__viewport">
-            <div class="carousel__track">
-
-              <article class="svc-card">
-                <span class="card__icon card__icon--gold"><i data-lucide="layout"></i></span>
-                <h3>Bedrijfswebsites</h3>
-                <p>Strakke, professionele websites die vertrouwen wekken en leads genereren.</p>
-                <ul class="svc-card__list">
-                  <li><i data-lucide="check"></i> Vertrouwenwekkend design</li>
-                  <li><i data-lucide="check"></i> SEO-klaar opgebouwd</li>
-                  <li><i data-lucide="check"></i> Slimme leadformulieren</li>
-                </ul>
-                <a href="#contact" class="svc-card__link">Vraag offerte <i data-lucide="arrow-right"></i></a>
-              </article>
-
-              <article class="svc-card">
-                <span class="card__icon card__icon--gold"><i data-lucide="mouse-pointer-click"></i></span>
-                <h3>Landingpagina's</h3>
-                <p>Enkelvoudige pagina's ontworpen voor één doel: conversies. Perfect voor campagnes en productlanceringen.</p>
-                <ul class="svc-card__list">
-                  <li><i data-lucide="check"></i> Eén duidelijk doel</li>
-                  <li><i data-lucide="check"></i> Gebouwd voor conversie</li>
-                  <li><i data-lucide="check"></i> Ideaal voor campagnes</li>
-                </ul>
-                <a href="#contact" class="svc-card__link">Vraag offerte <i data-lucide="arrow-right"></i></a>
-              </article>
-
-              <article class="svc-card">
-                <span class="card__icon card__icon--gold"><i data-lucide="shopping-cart"></i></span>
-                <h3>Webshops</h3>
-                <p>Verkoop online met een webshop gebouwd om te converteren — mooie productpagina's en naadloos afrekenen.</p>
-                <ul class="svc-card__list">
-                  <li><i data-lucide="check"></i> Mooie productpagina's</li>
-                  <li><i data-lucide="check"></i> Naadloos afrekenen</li>
-                  <li><i data-lucide="check"></i> Veilige betalingen</li>
-                </ul>
-                <a href="#contact" class="svc-card__link">Vraag offerte <i data-lucide="arrow-right"></i></a>
-              </article>
-
-              <article class="svc-card">
-                <span class="card__icon card__icon--gold"><i data-lucide="sparkles"></i></span>
-                <h3>Redesigns</h3>
-                <p>Transformeer uw bestaande website in iets waar u trots op bent. Zelfde inhoud, compleet nieuwe indruk.</p>
-                <ul class="svc-card__list">
-                  <li><i data-lucide="check"></i> Frisse, moderne look</li>
-                  <li><i data-lucide="check"></i> Behoud uw inhoud</li>
-                  <li><i data-lucide="check"></i> Sneller &amp; mobiel</li>
-                </ul>
-                <a href="#contact" class="svc-card__link">Vraag offerte <i data-lucide="arrow-right"></i></a>
-              </article>
-
-            </div>
-          </div>
-
-          <div class="carousel__controls">
-            <button class="carousel__arrow" data-dir="-1" aria-label="Vorige diensten"><i data-lucide="chevron-left"></i></button>
-            <div class="carousel__dots" role="tablist" aria-label="Diensten navigatie"></div>
-            <button class="carousel__arrow" data-dir="1" aria-label="Volgende diensten"><i data-lucide="chevron-right"></i></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== PORTFOLIO (navy) — 2 zichtbaar, rest via slider ===================== -->
-    <section class="section section--navy" id="werk">
-      <div class="container">
-        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Portfolio</p>
-        <div class="section__head">
-          <h2 class="headline headline--light reveal" data-delay="60">Ons <em>Werk</em></h2>
-          <p class="section__aside reveal" data-delay="120">
-            Een greep uit de websites die we bouwden voor Belgische en Europese
-            ondernemers — van groothandel tot toerisme.
-          </p>
-        </div>
-
-        <!-- Real screenshot: set --shot per kaart, bv. style="--shot:url('images/simonta.png')". -->
-        <div class="carousel carousel--works mt-lg reveal" data-carousel data-per-view="2" data-autoplay="5500">
-          <div class="carousel__viewport">
-            <div class="carousel__track">
-
-              <article class="work work--simonta" style="--shot:url('images/simonta.png')">
-                <div class="work__shot" role="img" aria-label="Homepagina van Simonta"></div>
-                <div class="work__scrim" aria-hidden="true"></div>
-                <span class="work__tag">B2B Groothandel</span>
-                <div class="work__content">
-                  <h3 class="work__name">Simonta</h3>
-                  <p>Groothandel in verse wortelen, B2B, levering in heel Europa.</p>
-                  <a href="https://simonta.eu" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
-                </div>
-              </article>
-
-              <article class="work work--mergel" style="--shot:url('images/mergelgrotten.png')">
-                <div class="work__shot" role="img" aria-label="Homepagina van Mergelgrotten Zichen"></div>
-                <div class="work__scrim" aria-hidden="true"></div>
-                <span class="work__tag">Toerisme &amp; Cultuur</span>
-                <div class="work__content">
-                  <h3 class="work__name">Mergelgrotten Zichen</h3>
-                  <p>Toeristische grottenrondleidingen, sfeervol &amp; historisch.</p>
-                  <a href="https://mergelgrottenzichen.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
-                </div>
-              </article>
-
-              <article class="work work--tuin" style="--shot:url('images/tuinwerken.png')">
-                <div class="work__shot" role="img" aria-label="Homepagina van Tuinwerken Stas"></div>
-                <div class="work__scrim" aria-hidden="true"></div>
-                <span class="work__tag">Tuin &amp; Landschap</span>
-                <div class="work__content">
-                  <h3 class="work__name">Tuinwerken Stas</h3>
-                  <p>Tuinaanleg &amp; onderhoud, elegant en groen.</p>
-                  <a href="https://tuinwerkenstas.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
-                </div>
-              </article>
-
-              <article class="work work--fadim" style="--shot:url('images/fadim.png')">
-                <div class="work__shot" role="img" aria-label="Homepagina van Fadim Official"></div>
-                <div class="work__scrim" aria-hidden="true"></div>
-                <span class="work__tag">Artiest &amp; Events</span>
-                <div class="work__content">
-                  <h3 class="work__name">Fadim Official</h3>
-                  <p>Artiest/zanger met agenda, fanshop &amp; boekingen.</p>
-                  <a href="https://fadimofficial.be" target="_blank" rel="noopener noreferrer" class="work__link">Bekijk live <i data-lucide="arrow-right"></i></a>
-                </div>
-              </article>
-
-            </div>
-          </div>
-
-          <div class="carousel__controls">
-            <button class="carousel__arrow" data-dir="-1" aria-label="Vorige projecten"><i data-lucide="chevron-left"></i></button>
-            <div class="carousel__dots" role="tablist" aria-label="Portfolio navigatie"></div>
-            <button class="carousel__arrow" data-dir="1" aria-label="Volgende projecten"><i data-lucide="chevron-right"></i></button>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -348,32 +165,223 @@
                 </div>
               </div>
 
-              <span class="ba__label ba__label--before">Voor</span>
-              <span class="ba__label ba__label--after">Na</span>
+              <span class="ba__label ba__label--before" data-i18n="ba_before">Voor</span>
+              <span class="ba__label ba__label--after" data-i18n="ba_after">Na</span>
 
               <button class="ba__handle" id="baHandle" role="slider" aria-label="Voor en na vergelijken"
                       aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
                 <i data-lucide="chevrons-left-right"></i>
               </button>
             </div>
-            <p class="rd__hint"><i data-lucide="move-horizontal"></i> Sleep om voor &amp; na te vergelijken</p>
+            <p class="rd__hint"><i data-lucide="move-horizontal"></i> <span data-i18n="rd_hint">Sleep om voor &amp; na te vergelijken</span></p>
           </div>
 
           <!-- RIGHT: copy + proof -->
           <div class="rd__copy">
-            <p class="eyebrow reveal"><span class="eyebrow__line"></span>Het Verschil Van Een Redesign</p>
-            <h2 class="headline reveal" data-delay="60">Van Verouderd Naar <em>Verbluffend</em></h2>
-            <p class="rd__lead reveal" data-delay="120">Uw website is uw digitale etalage — en bij de meeste bedrijven werkt die tegen hen. Een verouderde site jaagt klanten weg nog vóór ze bellen. Sleep de knop en zie hoe wij dezelfde inhoud omvormen tot iets dat vertrouwen wekt én aanvragen oplevert.</p>
+            <p class="eyebrow reveal"><span class="eyebrow__line"></span><span data-i18n="rd_eyebrow">Het Verschil Van Een Redesign</span></p>
+            <h2 class="headline reveal" data-delay="60" data-i18n="rd_title">Van Verouderd Naar <em>Verbluffend</em></h2>
+            <p class="rd__lead reveal" data-delay="120" data-i18n="rd_lead">Uw website is uw digitale etalage — en bij de meeste bedrijven werkt die tegen hen. Een verouderde site jaagt klanten weg nog vóór ze bellen. Sleep de knop en zie hoe wij dezelfde inhoud omvormen tot iets dat vertrouwen wekt én aanvragen oplevert.</p>
 
             <ul class="rd__rows reveal" data-delay="180">
-              <li><span class="rd__from">Traag &amp; verouderd</span><i data-lucide="arrow-right"></i><span class="rd__to">Bliksemsnel &amp; modern</span></li>
-              <li><span class="rd__from">Onvindbaar in Google</span><i data-lucide="arrow-right"></i><span class="rd__to">Hoger gevonden</span></li>
-              <li><span class="rd__from">Niet mobielvriendelijk</span><i data-lucide="arrow-right"></i><span class="rd__to">Perfect op elk scherm</span></li>
-              <li><span class="rd__from">Bezoekers haken af</span><i data-lucide="arrow-right"></i><span class="rd__to">Bezoekers worden klanten</span></li>
+              <li><span class="rd__from" data-i18n="rd_from1">Traag &amp; verouderd</span><i data-lucide="arrow-right"></i><span class="rd__to" data-i18n="rd_to1">Bliksemsnel &amp; modern</span></li>
+              <li><span class="rd__from" data-i18n="rd_from2">Onvindbaar in Google</span><i data-lucide="arrow-right"></i><span class="rd__to" data-i18n="rd_to2">Hoger gevonden</span></li>
+              <li><span class="rd__from" data-i18n="rd_from3">Niet mobielvriendelijk</span><i data-lucide="arrow-right"></i><span class="rd__to" data-i18n="rd_to3">Perfect op elk scherm</span></li>
+              <li><span class="rd__from" data-i18n="rd_from4">Bezoekers haken af</span><i data-lucide="arrow-right"></i><span class="rd__to" data-i18n="rd_to4">Bezoekers worden klanten</span></li>
             </ul>
 
-            <a href="#contact" class="btn btn--gold rd__cta reveal" data-delay="220">Vraag een gratis redesign-voorstel <i data-lucide="arrow-right"></i></a>
+            <a href="#contact" class="btn btn--gold rd__cta reveal" data-delay="220"><span data-i18n="rd_cta">Vraag een gratis redesign-voorstel</span> <i data-lucide="arrow-right"></i></a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <section class="marquee section--navy-deep" aria-label="Vertrouwd door ondernemers">
+      <div class="container">
+        <p class="marquee__label" data-i18n="marquee_label">Vertrouwd door ondernemers in heel België &amp; Europa</p>
+      </div>
+      <div class="marquee__track" aria-hidden="true">
+        <div class="marquee__row">
+          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Fleetreview</span><i></i><span>Digital Impression</span><i></i>
+          <span>Simonta</span><i></i><span>Mergelgrotten Zichen</span><i></i><span>Tuinwerken Stas</span><i></i><span>Fadim Official</span><i></i><span>Fleetreview</span><i></i><span>Digital Impression</span><i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES (cream) ===================== -->
+    <section class="section section--cream" id="diensten">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow reveal"><span class="eyebrow__line"></span><span data-i18n="svc_eyebrow">Onze Diensten</span></p>
+            <h2 class="headline reveal" data-delay="60" data-i18n="svc_title">Wat Wij <em>Bouwen</em></h2>
+          </div>
+          <p class="section__aside reveal" data-delay="120" data-i18n="svc_aside">
+            Nog niet zeker wat u nodig heeft?<br />
+            <a href="#contact" class="link-gold">We zoeken het samen uit</a>
+          </p>
+        </div>
+
+        <div class="carousel mt-lg reveal" data-carousel data-autoplay="4500" data-delay="0">
+          <div class="carousel__viewport">
+            <div class="carousel__track">
+
+              <article class="svc-card">
+                <span class="card__icon card__icon--gold"><i data-lucide="layout"></i></span>
+                <h3 data-i18n="svc1_title">Bedrijfswebsites</h3>
+                <p data-i18n="svc1_body">Strakke, professionele websites die vertrouwen wekken en leads genereren.</p>
+                <ul class="svc-card__list">
+                  <li><i data-lucide="check"></i> <span data-i18n="svc1_f1">Vertrouwenwekkend design</span></li>
+                  <li><i data-lucide="check"></i> <span data-i18n="svc1_f2">SEO-klaar opgebouwd</span></li>
+                  <li><i data-lucide="check"></i> <span data-i18n="svc1_f3">Slimme leadformulieren</span></li>
+                </ul>
+                <a href="#contact" class="svc-card__link"><span data-i18n="svc_cta">Vraag offerte</span> <i data-lucide="arrow-right"></i></a>
+              </article>
+
+              <article class="svc-card">
+                <span class="card__icon card__icon--gold"><i data-lucide="mouse-pointer-click"></i></span>
+                <h3 data-i18n="svc2_title">Landingpagina's</h3>
+                <p data-i18n="svc2_body">Enkelvoudige pagina's ontworpen voor één doel: conversies. Perfect voor campagnes en productlanceringen.</p>
+                <ul class="svc-card__list">
+                  <li><i data-lucide="check"></i> <span data-i18n="svc2_f1">Eén duidelijk doel</span></li>
+                  <li><i data-lucide="check"></i> <span data-i18n="svc2_f2">Gebouwd voor conversie</span></li>
+                  <li><i data-lucide="check"></i> <span data-i18n="svc2_f3">Ideaal voor campagnes</span></li>
+                </ul>
+                <a href="#contact" class="svc-card__link"><span data-i18n="svc_cta">Vraag offerte</span> <i data-lucide="arrow-right"></i></a>
+              </article>
+
+              <article class="svc-card">
+                <span class="card__icon card__icon--gold"><i data-lucide="shopping-cart"></i></span>
+                <h3 data-i18n="svc3_title">Webshops</h3>
+                <p data-i18n="svc3_body">Verkoop online met een webshop gebouwd om te converteren — mooie productpagina's en naadloos afrekenen.</p>
+                <ul class="svc-card__list">
+                  <li><i data-lucide="check"></i> <span data-i18n="svc3_f1">Mooie productpagina's</span></li>
+                  <li><i data-lucide="check"></i> <span data-i18n="svc3_f2">Naadloos afrekenen</span></li>
+                  <li><i data-lucide="check"></i> <span data-i18n="svc3_f3">Veilige betalingen</span></li>
+                </ul>
+                <a href="#contact" class="svc-card__link"><span data-i18n="svc_cta">Vraag offerte</span> <i data-lucide="arrow-right"></i></a>
+              </article>
+
+              <article class="svc-card">
+                <span class="card__icon card__icon--gold"><i data-lucide="sparkles"></i></span>
+                <h3 data-i18n="svc4_title">Redesigns</h3>
+                <p data-i18n="svc4_body">Transformeer uw bestaande website in iets waar u trots op bent. Zelfde inhoud, compleet nieuwe indruk.</p>
+                <ul class="svc-card__list">
+                  <li><i data-lucide="check"></i> <span data-i18n="svc4_f1">Frisse, moderne look</span></li>
+                  <li><i data-lucide="check"></i> <span data-i18n="svc4_f2">Behoud uw inhoud</span></li>
+                  <li><i data-lucide="check"></i> <span data-i18n="svc4_f3">Sneller &amp; mobiel</span></li>
+                </ul>
+                <a href="#contact" class="svc-card__link"><span data-i18n="svc_cta">Vraag offerte</span> <i data-lucide="arrow-right"></i></a>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="carousel__controls">
+            <button class="carousel__arrow" data-dir="-1" aria-label="Vorige diensten"><i data-lucide="chevron-left"></i></button>
+            <div class="carousel__dots" role="tablist" aria-label="Diensten navigatie"></div>
+            <button class="carousel__arrow" data-dir="1" aria-label="Volgende diensten"><i data-lucide="chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO (navy) — 2 zichtbaar, rest via slider ===================== -->
+    <section class="section section--navy" id="werk">
+      <div class="container">
+        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span><span data-i18n="work_eyebrow">Portfolio</span></p>
+        <div class="section__head">
+          <h2 class="headline headline--light reveal" data-delay="60" data-i18n="work_title">Ons <em>Werk</em></h2>
+          <p class="section__aside reveal" data-delay="120" data-i18n="work_aside">
+            Een greep uit de websites die we bouwden voor Belgische en Europese
+            ondernemers — van groothandel tot toerisme.
+          </p>
+        </div>
+
+        <div class="carousel carousel--works mt-lg reveal" data-carousel data-per-view="2" data-autoplay="5500">
+          <div class="carousel__viewport">
+            <div class="carousel__track">
+
+              <article class="work work--simonta" style="--shot:url('images/simonta.png')">
+                <div class="work__shot" role="img" aria-label="Homepagina van Simonta"></div>
+                <div class="work__scrim" aria-hidden="true"></div>
+                <span class="work__tag" data-i18n="work_tag_simonta">B2B Groothandel</span>
+                <div class="work__content">
+                  <h3 class="work__name">Simonta</h3>
+                  <p data-i18n="work_desc_simonta">Groothandel in verse wortelen, B2B, levering in heel Europa.</p>
+                  <a href="https://simonta.eu" target="_blank" rel="noopener noreferrer" class="work__link"><span data-i18n="work_live">Bekijk live</span> <i data-lucide="arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="work work--mergel" style="--shot:url('images/mergelgrotten.png')">
+                <div class="work__shot" role="img" aria-label="Homepagina van Mergelgrotten Zichen"></div>
+                <div class="work__scrim" aria-hidden="true"></div>
+                <span class="work__tag" data-i18n="work_tag_mergel">Toerisme &amp; Cultuur</span>
+                <div class="work__content">
+                  <h3 class="work__name">Mergelgrotten Zichen</h3>
+                  <p data-i18n="work_desc_mergel">Toeristische grottenrondleidingen, sfeervol &amp; historisch.</p>
+                  <a href="https://mergelgrottenzichen.be" target="_blank" rel="noopener noreferrer" class="work__link"><span data-i18n="work_live">Bekijk live</span> <i data-lucide="arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="work work--tuin" style="--shot:url('images/tuinwerken.png')">
+                <div class="work__shot" role="img" aria-label="Homepagina van Tuinwerken Stas"></div>
+                <div class="work__scrim" aria-hidden="true"></div>
+                <span class="work__tag" data-i18n="work_tag_tuin">Tuin &amp; Landschap</span>
+                <div class="work__content">
+                  <h3 class="work__name">Tuinwerken Stas</h3>
+                  <p data-i18n="work_desc_tuin">Tuinaanleg &amp; onderhoud, elegant en groen.</p>
+                  <a href="https://tuinwerkenstas.be" target="_blank" rel="noopener noreferrer" class="work__link"><span data-i18n="work_live">Bekijk live</span> <i data-lucide="arrow-right"></i></a>
+                </div>
+              </article>
+
+              <article class="work work--fadim" style="--shot:url('images/fadim.png')">
+                <div class="work__shot" role="img" aria-label="Homepagina van Fadim Official"></div>
+                <div class="work__scrim" aria-hidden="true"></div>
+                <span class="work__tag" data-i18n="work_tag_fadim">Artiest &amp; Events</span>
+                <div class="work__content">
+                  <h3 class="work__name">Fadim Official</h3>
+                  <p data-i18n="work_desc_fadim">Artiest/zanger met agenda, fanshop &amp; boekingen.</p>
+                  <a href="https://fadimofficial.be" target="_blank" rel="noopener noreferrer" class="work__link"><span data-i18n="work_live">Bekijk live</span> <i data-lucide="arrow-right"></i></a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="carousel__controls">
+            <button class="carousel__arrow" data-dir="-1" aria-label="Vorige projecten"><i data-lucide="chevron-left"></i></button>
+            <div class="carousel__dots" role="tablist" aria-label="Portfolio navigatie"></div>
+            <button class="carousel__arrow" data-dir="1" aria-label="Volgende projecten"><i data-lucide="chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FIRST IMPRESSIONS (beige) — 3 stats ===================== -->
+    <section class="section section--beige">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="eyebrow__line"></span><span data-i18n="fi_eyebrow">Eerste Indrukken</span></p>
+        <h2 class="headline reveal" data-delay="60" style="max-width:48rem" data-i18n="fi_title">
+          Eerste Indrukken Gebeuren Online, Nog Voor U De Telefoon <em>Opneemt</em>
+        </h2>
+
+        <div class="grid grid--3 mt-lg">
+          <article class="card card--cream reveal" data-delay="0">
+            <span class="card__icon"><i data-lucide="search"></i></span>
+            <div class="stat" data-count="75" data-suffix="%" data-suffix-en="%">0%</div>
+            <p data-i18n="fi_stat1">beoordeelt de geloofwaardigheid van een bedrijf op basis van de website, nog vóór ze één woord lezen.</p>
+          </article>
+          <article class="card card--cream reveal" data-delay="90">
+            <span class="card__icon"><i data-lucide="clock"></i></span>
+            <div class="stat" data-count="3" data-suffix=" sec" data-suffix-en=" sec">0 sec</div>
+            <p data-i18n="fi_stat2">Meer tijd heeft u niet. Een trage of verouderde website stuurt klanten rechtstreeks naar uw concurrenten.</p>
+          </article>
+          <article class="card card--cream reveal" data-delay="180">
+            <span class="card__icon"><i data-lucide="target"></i></span>
+            <div class="stat" data-count="1" data-suffix=" kans" data-suffix-en=" chance">0 kans</div>
+            <p data-i18n="fi_stat3">U krijgt maar één kans op een goede eerste indruk. Laat die niet liggen.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -382,8 +390,8 @@
     <section class="section section--navy">
       <div class="container">
         <div class="center-head">
-          <p class="eyebrow eyebrow--light reveal" style="justify-content:center"><span class="eyebrow__line"></span>Werkwijze</p>
-          <h2 class="headline headline--light reveal" data-delay="60">Van Aanvraag Tot Live Website In Minder Dan <em>2 Weken</em></h2>
+          <p class="eyebrow eyebrow--light reveal" style="justify-content:center"><span class="eyebrow__line"></span><span data-i18n="proc_eyebrow">Werkwijze</span></p>
+          <h2 class="headline headline--light reveal" data-delay="60" data-i18n="proc_title">Van Aanvraag Tot Live Website In Minder Dan <em>2 Weken</em></h2>
         </div>
 
         <div class="timeline">
@@ -391,36 +399,36 @@
             <span class="tl-node"><i data-lucide="message-square"></i></span>
             <div class="tl-card">
               <span class="tl-num" aria-hidden="true">01</span>
-              <span class="tl-step">Stap 1</span>
-              <h3>Vertel ons over uw project</h3>
-              <p>Een kort gesprek van 3 minuten — u vertelt ons uw doelen en wensen.</p>
+              <span class="tl-step" data-i18n="proc_step">Stap 1</span>
+              <h3 data-i18n="proc1_title">Vertel ons over uw project</h3>
+              <p data-i18n="proc1_body">Een kort gesprek van 3 minuten — u vertelt ons uw doelen en wensen.</p>
             </div>
           </div>
           <div class="tl-item tl-item--right reveal" data-delay="80">
             <span class="tl-node"><i data-lucide="pen-tool"></i></span>
             <div class="tl-card">
               <span class="tl-num" aria-hidden="true">02</span>
-              <span class="tl-step">Stap 2</span>
-              <h3>Offerte &amp; ontwerp</h3>
-              <p>Binnen 24u ontvangt u een offerte op maat én een gratis homepagina-ontwerp.</p>
+              <span class="tl-step" data-i18n="proc_step2">Stap 2</span>
+              <h3 data-i18n="proc2_title">Offerte &amp; ontwerp</h3>
+              <p data-i18n="proc2_body">Binnen 24u ontvangt u een offerte op maat én een gratis homepagina-ontwerp.</p>
             </div>
           </div>
           <div class="tl-item tl-item--left reveal" data-delay="160">
             <span class="tl-node"><i data-lucide="hammer"></i></span>
             <div class="tl-card">
               <span class="tl-num" aria-hidden="true">03</span>
-              <span class="tl-step">Stap 3</span>
-              <h3>Wij bouwen uw website</h3>
-              <p>In 10–14 dagen bouwen we uw site — u blijft op de hoogte bij elke stap.</p>
+              <span class="tl-step" data-i18n="proc_step3">Stap 3</span>
+              <h3 data-i18n="proc3_title">Wij bouwen uw website</h3>
+              <p data-i18n="proc3_body">In 10–14 dagen bouwen we uw site — u blijft op de hoogte bij elke stap.</p>
             </div>
           </div>
           <div class="tl-item tl-item--right reveal" data-delay="240">
             <span class="tl-node"><i data-lucide="rocket"></i></span>
             <div class="tl-card">
               <span class="tl-num" aria-hidden="true">04</span>
-              <span class="tl-step">Stap 4</span>
-              <h3>U gaat live</h3>
-              <p>Uw website gaat online — met doorlopende support en één vast aanspreekpunt.</p>
+              <span class="tl-step" data-i18n="proc_step4">Stap 4</span>
+              <h3 data-i18n="proc4_title">U gaat live</h3>
+              <p data-i18n="proc4_body">Uw website gaat online — met doorlopende support en één vast aanspreekpunt.</p>
             </div>
           </div>
         </div>
@@ -428,7 +436,7 @@
         <!-- no-obligation band -->
         <div class="band reveal" data-delay="120">
           <span class="band__icon"><i data-lucide="shield-check"></i></span>
-          <p><strong>Geen verplichting, geen voorschot.</strong> Uw gratis homepage-ontwerp kost niets en verbindt u tot niets. Wij verdienen uw vertrouwen vóórdat we om iets vragen.</p>
+          <p data-i18n="proc_band"><strong>Geen verplichting, geen voorschot.</strong> Uw gratis homepage-ontwerp kost niets en verbindt u tot niets. Wij verdienen uw vertrouwen vóórdat we om iets vragen.</p>
         </div>
       </div>
     </section>
@@ -440,25 +448,25 @@
           <div class="about__photo" role="img" aria-label="Foto van het team achter Digital Impression">
             <span class="about__initials" aria-hidden="true">DI</span>
           </div>
-          <span class="about__badge"><i data-lucide="map-pin"></i> Gevestigd in België</span>
+          <span class="about__badge"><i data-lucide="map-pin"></i> <span data-i18n="about_badge">Gevestigd in België</span></span>
         </div>
         <div class="about__body">
-          <p class="eyebrow reveal"><span class="eyebrow__line"></span>Over Ons</p>
-          <h2 class="headline reveal" data-delay="60">Wie Zit Achter <em>Digital Impression?</em></h2>
-          <p class="about__intro reveal" data-delay="120">
+          <p class="eyebrow reveal"><span class="eyebrow__line"></span><span data-i18n="about_eyebrow">Over Ons</span></p>
+          <h2 class="headline reveal" data-delay="60" data-i18n="about_title">Wie Zit Achter <em>Digital Impression?</em></h2>
+          <p class="about__intro reveal" data-delay="120" data-i18n="about_intro">
             Digital Impression is een Belgisch webdesignbureau, opgericht door <strong>[Naam]</strong>.
             Wij helpen lokale ondernemers aan een website die er niet alleen prachtig uitziet, maar
             ook écht klanten oplevert. Geen anonieme leverancier — wel een vast gezicht dat met u
             meedenkt, van eerste gesprek tot lancering en daarna.
           </p>
           <ul class="about__list reveal" data-delay="180">
-            <li><span class="about__ico"><i data-lucide="user-check"></i></span> Eén vast aanspreekpunt</li>
-            <li><span class="about__ico"><i data-lucide="badge-euro"></i></span> Transparante prijzen</li>
-            <li><span class="about__ico"><i data-lucide="map-pinned"></i></span> Lokaal &amp; betrokken</li>
-            <li><span class="about__ico"><i data-lucide="trending-up"></i></span> Resultaatgericht</li>
+            <li><span class="about__ico"><i data-lucide="user-check"></i></span> <span data-i18n="about_l1">Eén vast aanspreekpunt</span></li>
+            <li><span class="about__ico"><i data-lucide="badge-euro"></i></span> <span data-i18n="about_l2">Transparante prijzen</span></li>
+            <li><span class="about__ico"><i data-lucide="map-pinned"></i></span> <span data-i18n="about_l3">Lokaal &amp; betrokken</span></li>
+            <li><span class="about__ico"><i data-lucide="trending-up"></i></span> <span data-i18n="about_l4">Resultaatgericht</span></li>
           </ul>
           <div class="reveal" data-delay="240">
-            <a href="#contact" class="btn btn--gold">Bespreek uw project <i data-lucide="arrow-right"></i></a>
+            <a href="#contact" class="btn btn--gold"><span data-i18n="about_cta">Bespreek uw project</span> <i data-lucide="arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -468,25 +476,25 @@
     <section class="section section--cream" id="waarom">
       <div class="container">
         <div class="center-head">
-          <p class="eyebrow reveal" style="justify-content:center"><span class="eyebrow__line"></span>Waarom Kiezen Voor Digital Impression</p>
-          <h2 class="headline reveal" data-delay="60">Belgische Ondernemers Kiezen Voor <em>Ons</em></h2>
+          <p class="eyebrow reveal" style="justify-content:center"><span class="eyebrow__line"></span><span data-i18n="why_eyebrow">Waarom Kiezen Voor Digital Impression</span></p>
+          <h2 class="headline reveal" data-delay="60" data-i18n="why_title">Belgische Ondernemers Kiezen Voor <em>Ons</em></h2>
         </div>
 
         <div class="grid grid--3 mt-lg">
           <article class="card card--cream reveal" data-delay="0">
             <span class="card__icon card__icon--gold"><i data-lucide="map-pinned"></i></span>
-            <h3>Gevestigd in België</h3>
-            <p>Een lokaal team dat de Belgische markt en ondernemer begrijpt — geen anonieme buitenlandse leverancier.</p>
+            <h3 data-i18n="why1_title">Gevestigd in België</h3>
+            <p data-i18n="why1_body">Een lokaal team dat de Belgische markt en ondernemer begrijpt — geen anonieme buitenlandse leverancier.</p>
           </article>
           <article class="card card--cream card--feature reveal" data-delay="90">
             <span class="card__icon card__icon--gold"><i data-lucide="zap"></i></span>
-            <h3>Snelle oplevering</h3>
-            <p>Uw website live in 10–14 dagen, zonder eindeloze wachttijden.</p>
+            <h3 data-i18n="why2_title">Snelle oplevering</h3>
+            <p data-i18n="why2_body">Uw website live in 10–14 dagen, zonder eindeloze wachttijden.</p>
           </article>
           <article class="card card--cream reveal" data-delay="180">
             <span class="card__icon card__icon--gold"><i data-lucide="user-check"></i></span>
-            <h3>Persoonlijke aanpak</h3>
-            <p>Eén vast contactpersoon, van eerste gesprek tot lancering en daarna.</p>
+            <h3 data-i18n="why3_title">Persoonlijke aanpak</h3>
+            <p data-i18n="why3_body">Eén vast contactpersoon, van eerste gesprek tot lancering en daarna.</p>
           </article>
         </div>
       </div>
@@ -495,61 +503,61 @@
     <!-- ===================== PRICING (beige) ===================== -->
     <section class="section section--beige" id="prijzen">
       <div class="container">
-        <p class="eyebrow reveal"><span class="eyebrow__line"></span>Prijzen</p>
-        <h2 class="headline reveal" data-delay="60">Eenvoudige, Transparante <em>Prijzen</em></h2>
-        <p class="lead reveal" data-delay="120">Geen verborgen kosten. Geen verrassingen.</p>
+        <p class="eyebrow reveal"><span class="eyebrow__line"></span><span data-i18n="price_eyebrow">Prijzen</span></p>
+        <h2 class="headline reveal" data-delay="60" data-i18n="price_title">Eenvoudige, Transparante <em>Prijzen</em></h2>
+        <p class="lead reveal" data-delay="120" data-i18n="price_lead">Geen verborgen kosten. Geen verrassingen.</p>
 
         <div class="grid grid--3 pricing mt-lg">
 
           <article class="price reveal" data-delay="0">
             <span class="price__name">Starter</span>
-            <div class="price__amount">vanaf €999</div>
-            <p class="price__sub">Voor wie professioneel online wil starten.</p>
+            <div class="price__amount"><span data-i18n="price_from">vanaf</span> €999</div>
+            <p class="price__sub" data-i18n="price1_sub">Voor wie professioneel online wil starten.</p>
             <ul class="price__features">
-              <li><i data-lucide="check"></i> Tot 5 pagina's</li>
-              <li><i data-lucide="check"></i> Mobiel-responsief design</li>
-              <li><i data-lucide="check"></i> Contactformulier</li>
-              <li><i data-lucide="check"></i> Basis SEO</li>
-              <li><i data-lucide="check"></i> Online binnen 10–14 dagen</li>
-              <li><i data-lucide="check"></i> Gratis homepagina-ontwerp</li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_pages">Tot 5 pagina's</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_responsive">Mobiel-responsief design</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_form">Contactformulier</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_seo">Basis SEO</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_online">Online binnen 10–14 dagen</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_free">Gratis homepagina-ontwerp</span></li>
             </ul>
-            <a href="#contact" class="btn btn--outline-dark price__cta">Offerte aanvragen</a>
+            <a href="#contact" class="btn btn--outline-dark price__cta" data-i18n="cta_request">Offerte aanvragen</a>
           </article>
 
           <article class="price price--featured reveal" data-delay="90">
-            <span class="price__badge">Meest gekozen</span>
+            <span class="price__badge" data-i18n="price_badge">Meest gekozen</span>
             <span class="price__name">Groei</span>
-            <div class="price__amount">vanaf €1.799</div>
-            <p class="price__sub">Voor bedrijven die willen groeien online.</p>
+            <div class="price__amount"><span data-i18n="price_from">vanaf</span> €1.799</div>
+            <p class="price__sub" data-i18n="price2_sub">Voor bedrijven die willen groeien online.</p>
             <ul class="price__features">
-              <li><i data-lucide="check"></i> Tot 5 pagina's</li>
-              <li><i data-lucide="check"></i> Mobiel-responsief design</li>
-              <li><i data-lucide="check"></i> Contactformulier</li>
-              <li><i data-lucide="check"></i> Basis SEO</li>
-              <li><i data-lucide="check"></i> Online binnen 10–14 dagen</li>
-              <li><i data-lucide="check"></i> Gratis homepagina-ontwerp</li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_pages">Tot 5 pagina's</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_responsive">Mobiel-responsief design</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_form">Contactformulier</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_seo">Basis SEO</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_online">Online binnen 10–14 dagen</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_free">Gratis homepagina-ontwerp</span></li>
             </ul>
-            <a href="#contact" class="btn btn--gold price__cta">Offerte aanvragen</a>
+            <a href="#contact" class="btn btn--gold price__cta" data-i18n="cta_request">Offerte aanvragen</a>
           </article>
 
           <article class="price reveal" data-delay="180">
             <span class="price__name">Op Maat</span>
             <div class="price__amount">Let's talk</div>
-            <p class="price__sub">Voor uw uniek project.</p>
+            <p class="price__sub" data-i18n="price3_sub">Voor uw uniek project.</p>
             <ul class="price__features">
-              <li><i data-lucide="check"></i> Tot 5 pagina's</li>
-              <li><i data-lucide="check"></i> Mobiel-responsief design</li>
-              <li><i data-lucide="check"></i> Contactformulier</li>
-              <li><i data-lucide="check"></i> Basis SEO</li>
-              <li><i data-lucide="check"></i> Online binnen 10–14 dagen</li>
-              <li><i data-lucide="check"></i> Gratis homepagina-ontwerp</li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_pages">Tot 5 pagina's</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_responsive">Mobiel-responsief design</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_form">Contactformulier</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_seo">Basis SEO</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_online">Online binnen 10–14 dagen</span></li>
+              <li><i data-lucide="check"></i> <span data-i18n="feat_free">Gratis homepagina-ontwerp</span></li>
             </ul>
-            <a href="#contact" class="btn btn--outline-dark price__cta">Neem contact op</a>
+            <a href="#contact" class="btn btn--outline-dark price__cta" data-i18n="cta_contact">Neem contact op</a>
           </article>
 
         </div>
 
-        <p class="price__note reveal" data-delay="120">
+        <p class="price__note reveal" data-delay="120" data-i18n="price_note">
           Elk project bevat een gratis homepage-ontwerp — verzonden binnen 24 uur na uw
           aanvraag, zonder enige verplichting.
         </p>
@@ -560,31 +568,31 @@
     <section class="section section--cream" id="faq">
       <div class="container faq">
         <div class="faq__intro">
-          <p class="eyebrow reveal"><span class="eyebrow__line"></span>Veelgestelde Vragen</p>
-          <h2 class="headline reveal" data-delay="60">Alles Wat U Wil <em>Weten</em></h2>
-          <p class="faq__lead reveal" data-delay="120">Geen antwoord gevonden? <a href="#contact" class="link-gold">Stel uw vraag</a> — we antwoorden binnen 24 uur.</p>
+          <p class="eyebrow reveal"><span class="eyebrow__line"></span><span data-i18n="faq_eyebrow">Veelgestelde Vragen</span></p>
+          <h2 class="headline reveal" data-delay="60" data-i18n="faq_title">Alles Wat U Wil <em>Weten</em></h2>
+          <p class="faq__lead reveal" data-delay="120" data-i18n="faq_lead">Geen antwoord gevonden? <a href="#contact" class="link-gold">Stel uw vraag</a> — we antwoorden binnen 24 uur.</p>
         </div>
 
         <div class="faq__list reveal" data-delay="120">
           <div class="faq__item">
-            <button class="faq__q" aria-expanded="false">Hoe snel staat mijn website online?<i data-lucide="plus"></i></button>
-            <div class="faq__a"><p>De meeste projecten zijn binnen 10 tot 14 dagen live. Na uw aanvraag ontvangt u binnen 24 uur een offerte op maat én een gratis homepagina-ontwerp.</p></div>
+            <button class="faq__q" aria-expanded="false"><span data-i18n="faq_q1">Hoe snel staat mijn website online?</span><i data-lucide="plus"></i></button>
+            <div class="faq__a"><p data-i18n="faq_a1">De meeste projecten zijn binnen 10 tot 14 dagen live. Na uw aanvraag ontvangt u binnen 24 uur een offerte op maat én een gratis homepagina-ontwerp.</p></div>
           </div>
           <div class="faq__item">
-            <button class="faq__q" aria-expanded="false">Wat kost een website precies?<i data-lucide="plus"></i></button>
-            <div class="faq__a"><p>Een professionele website start vanaf €999. De exacte prijs hangt af van uw wensen — u krijgt altijd een transparante offerte zonder verborgen kosten of verrassingen.</p></div>
+            <button class="faq__q" aria-expanded="false"><span data-i18n="faq_q2">Wat kost een website precies?</span><i data-lucide="plus"></i></button>
+            <div class="faq__a"><p data-i18n="faq_a2">Een professionele website start vanaf €999. De exacte prijs hangt af van uw wensen — u krijgt altijd een transparante offerte zonder verborgen kosten of verrassingen.</p></div>
           </div>
           <div class="faq__item">
-            <button class="faq__q" aria-expanded="false">Is het gratis ontwerp echt vrijblijvend?<i data-lucide="plus"></i></button>
-            <div class="faq__a"><p>Absoluut. Uw gratis homepagina-ontwerp kost niets en verbindt u tot niets. Geen voorschot, geen verplichting — wij verdienen eerst uw vertrouwen.</p></div>
+            <button class="faq__q" aria-expanded="false"><span data-i18n="faq_q3">Is het gratis ontwerp echt vrijblijvend?</span><i data-lucide="plus"></i></button>
+            <div class="faq__a"><p data-i18n="faq_a3">Absoluut. Uw gratis homepagina-ontwerp kost niets en verbindt u tot niets. Geen voorschot, geen verplichting — wij verdienen eerst uw vertrouwen.</p></div>
           </div>
           <div class="faq__item">
-            <button class="faq__q" aria-expanded="false">Kan ik mijn website later zelf aanpassen?<i data-lucide="plus"></i></button>
-            <div class="faq__a"><p>Ja. We bouwen uw site zo dat u eenvoudig teksten en beelden kunt beheren, en u krijgt één vast contactpersoon voor support — ook na de lancering.</p></div>
+            <button class="faq__q" aria-expanded="false"><span data-i18n="faq_q4">Kan ik mijn website later zelf aanpassen?</span><i data-lucide="plus"></i></button>
+            <div class="faq__a"><p data-i18n="faq_a4">Ja. We bouwen uw site zo dat u eenvoudig teksten en beelden kunt beheren, en u krijgt één vast contactpersoon voor support — ook na de lancering.</p></div>
           </div>
           <div class="faq__item">
-            <button class="faq__q" aria-expanded="false">Zorgen jullie ook voor hosting en domein?<i data-lucide="plus"></i></button>
-            <div class="faq__a"><p>Zeker. We regelen desgewenst hosting, domeinnaam en de technische opzet, zodat u zich nergens zorgen over hoeft te maken.</p></div>
+            <button class="faq__q" aria-expanded="false"><span data-i18n="faq_q5">Zorgen jullie ook voor hosting en domein?</span><i data-lucide="plus"></i></button>
+            <div class="faq__a"><p data-i18n="faq_a5">Zeker. We regelen desgewenst hosting, domeinnaam en de technische opzet, zodat u zich nergens zorgen over hoeft te maken.</p></div>
           </div>
         </div>
       </div>
@@ -596,22 +604,22 @@
       <div class="container contact__grid">
 
         <div class="contact__pitch">
-          <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span>Start Uw Project Vandaag</p>
-          <h2 class="headline headline--light reveal" data-delay="60">Laten We Samen Iets <em>Moois Bouwen</em></h2>
-          <p class="contact__lead reveal" data-delay="120">
+          <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__line"></span><span data-i18n="contact_eyebrow">Start Uw Project Vandaag</span></p>
+          <h2 class="headline headline--light reveal" data-delay="60" data-i18n="contact_title">Laten We Samen Iets <em>Moois Bouwen</em></h2>
+          <p class="contact__lead reveal" data-delay="120" data-i18n="contact_lead">
             Vertel ons over uw project en wij sturen u binnen 24 uur een offerte op maat
             én een gratis <span class="gold">homepagina-ontwerp</span>. Helemaal vrijblijvend.
           </p>
 
           <ul class="contact__points reveal" data-delay="180">
-            <li><span class="contact__pt-icon"><i data-lucide="pen-tool"></i></span> Offerte op maat + gratis ontwerp binnen 24 uur</li>
-            <li><span class="contact__pt-icon"><i data-lucide="shield-check"></i></span> Geen voorschot — u betaalt pas als u 100% tevreden bent</li>
+            <li><span class="contact__pt-icon"><i data-lucide="pen-tool"></i></span> <span data-i18n="contact_pt1">Offerte op maat + gratis ontwerp binnen 24 uur</span></li>
+            <li><span class="contact__pt-icon"><i data-lucide="shield-check"></i></span> <span data-i18n="contact_pt2">Geen voorschot — u betaalt pas als u 100% tevreden bent</span></li>
           </ul>
 
           <div class="contact__details reveal" data-delay="240">
-            <span><i data-lucide="mail"></i> [E-mailadres]</span>
-            <span><i data-lucide="phone"></i> [Telefoonnummer]</span>
-            <span><i data-lucide="map-pin"></i> [Adres]</span>
+            <span><i data-lucide="mail"></i> <span data-i18n="ph_email">[E-mailadres]</span></span>
+            <span><i data-lucide="phone"></i> <span data-i18n="ph_phone">[Telefoonnummer]</span></span>
+            <span><i data-lucide="map-pin"></i> <span data-i18n="ph_address">[Adres]</span></span>
           </div>
         </div>
 
@@ -620,64 +628,64 @@
           <div id="formFields" class="form">
             <div class="form__row">
               <label class="field">
-                <span class="field__label">Naam <span class="req">*</span></span>
-                <input type="text" id="naam" placeholder="Uw naam" />
+                <span class="field__label"><span data-i18n="f_naam">Naam</span> <span class="req">*</span></span>
+                <input type="text" id="naam" placeholder="Uw naam" data-i18n-ph="f_naam_ph" />
               </label>
               <label class="field">
-                <span class="field__label">Bedrijfsnaam</span>
-                <input type="text" id="bedrijf" placeholder="Uw bedrijf" />
+                <span class="field__label" data-i18n="f_bedrijf">Bedrijfsnaam</span>
+                <input type="text" id="bedrijf" placeholder="Uw bedrijf" data-i18n-ph="f_bedrijf_ph" />
               </label>
             </div>
 
             <div class="form__row">
               <label class="field">
-                <span class="field__label">E-mail <span class="req">*</span></span>
-                <input type="email" id="email" placeholder="u@bedrijf.be" />
+                <span class="field__label"><span data-i18n="f_email">E-mail</span> <span class="req">*</span></span>
+                <input type="email" id="email" placeholder="u@bedrijf.be" data-i18n-ph="f_email_ph" />
               </label>
               <label class="field">
-                <span class="field__label">Telefoonnummer</span>
+                <span class="field__label" data-i18n="f_tel">Telefoonnummer</span>
                 <input type="tel" id="telefoon" placeholder="+32 ..." />
               </label>
             </div>
 
             <label class="field">
-              <span class="field__label">Bericht <span class="req">*</span></span>
-              <textarea id="bericht" rows="3" placeholder="Waar kunnen we u mee helpen?"></textarea>
+              <span class="field__label"><span data-i18n="f_bericht">Bericht</span> <span class="req">*</span></span>
+              <textarea id="bericht" rows="3" placeholder="Waar kunnen we u mee helpen?" data-i18n-ph="f_bericht_ph"></textarea>
             </label>
 
             <label class="field">
-              <span class="field__label">Type website</span>
+              <span class="field__label" data-i18n="f_type">Type website</span>
               <select id="type">
-                <option value="">Selecteer...</option>
-                <option>Bedrijfswebsite</option>
-                <option>Landingpagina</option>
-                <option>Webshop</option>
-                <option>Redesign</option>
-                <option>Anders</option>
+                <option value="" data-i18n="f_select">Selecteer...</option>
+                <option data-i18n="f_opt1">Bedrijfswebsite</option>
+                <option data-i18n="f_opt2">Landingpagina</option>
+                <option data-i18n="f_opt3">Webshop</option>
+                <option data-i18n="f_opt4">Redesign</option>
+                <option data-i18n="f_opt5">Anders</option>
               </select>
             </label>
 
             <label class="field">
-              <span class="field__label">Vertel ons over uw project</span>
-              <textarea id="project" rows="3" placeholder="Doelen, voorbeelden, deadlines..."></textarea>
+              <span class="field__label" data-i18n="f_project">Vertel ons over uw project</span>
+              <textarea id="project" rows="3" placeholder="Doelen, voorbeelden, deadlines..." data-i18n-ph="f_project_ph"></textarea>
             </label>
 
             <label class="field">
-              <span class="field__label">Hoe heeft u ons gevonden?</span>
-              <input type="text" id="gevonden" placeholder="Google, doorverwijzing, social media..." />
+              <span class="field__label" data-i18n="f_found">Hoe heeft u ons gevonden?</span>
+              <input type="text" id="gevonden" placeholder="Google, doorverwijzing, social media..." data-i18n-ph="f_found_ph" />
             </label>
 
             <p class="form__error" id="formError" hidden></p>
 
-            <button type="button" class="btn btn--gold form__submit" id="submitBtn">Verzenden</button>
-            <p class="form__fine">Door te verzenden gaat u akkoord met een vrijblijvend contact.</p>
+            <button type="button" class="btn btn--gold form__submit" id="submitBtn" data-i18n="f_submit">Verzenden</button>
+            <p class="form__fine" data-i18n="f_fine">Door te verzenden gaat u akkoord met een vrijblijvend contact.</p>
           </div>
 
           <div id="formSuccess" class="form-success" hidden>
             <span class="form-success__icon"><i data-lucide="check"></i></span>
-            <h3>Bedankt voor uw aanvraag!</h3>
-            <p>We hebben uw bericht goed ontvangen. U hoort binnen 24 uur van ons met een offerte op maat én uw gratis homepagina-ontwerp.</p>
-            <button type="button" class="form-success__again" id="resetBtn">Nog een aanvraag versturen</button>
+            <h3 data-i18n="f_success_title">Bedankt voor uw aanvraag!</h3>
+            <p data-i18n="f_success_body">We hebben uw bericht goed ontvangen. U hoort binnen 24 uur van ons met een offerte op maat én uw gratis homepagina-ontwerp.</p>
+            <button type="button" class="form-success__again" id="resetBtn" data-i18n="f_again">Nog een aanvraag versturen</button>
           </div>
         </div>
 
@@ -693,7 +701,7 @@
         <a href="#home" class="wordmark">
           <span class="wordmark__a">Digital</span><span class="wordmark__b">Impression</span>
         </a>
-        <p>Premium websites voor Belgische ondernemers — snel, mooi en gebouwd om klanten aan te trekken.</p>
+        <p data-i18n="footer_tagline">Premium websites voor Belgische ondernemers — snel, mooi en gebouwd om klanten aan te trekken.</p>
         <div class="footer__social">
           <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
           <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
@@ -703,40 +711,40 @@
       </div>
 
       <div class="footer__col">
-        <h4>Diensten</h4>
+        <h4 data-i18n="nav_services">Diensten</h4>
         <ul>
-          <li><a href="#diensten">Bedrijfswebsites</a></li>
-          <li><a href="#diensten">Landingpagina's</a></li>
-          <li><a href="#diensten">Webshops</a></li>
-          <li><a href="#diensten">Redesigns</a></li>
+          <li><a href="#diensten" data-i18n="svc1_title">Bedrijfswebsites</a></li>
+          <li><a href="#diensten" data-i18n="svc2_title">Landingpagina's</a></li>
+          <li><a href="#diensten" data-i18n="svc3_title">Webshops</a></li>
+          <li><a href="#diensten" data-i18n="svc4_title">Redesigns</a></li>
         </ul>
       </div>
 
       <div class="footer__col">
-        <h4>Bedrijf</h4>
+        <h4 data-i18n="footer_company">Bedrijf</h4>
         <ul>
-          <li><a href="#werk">Werk</a></li>
-          <li><a href="#prijzen">Prijzen</a></li>
-          <li><a href="#over-ons">Over Ons</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#werk" data-i18n="nav_work">Werk</a></li>
+          <li><a href="#prijzen" data-i18n="nav_pricing">Prijzen</a></li>
+          <li><a href="#over-ons" data-i18n="nav_about">Over Ons</a></li>
+          <li><a href="#contact" data-i18n="footer_contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer__signup">
-        <h4>Blijf Op De Hoogte</h4>
-        <p>Tips &amp; inzichten over webdesign voor ondernemers.</p>
+        <h4 data-i18n="footer_stay">Blijf Op De Hoogte</h4>
+        <p data-i18n="footer_stay_sub">Tips &amp; inzichten over webdesign voor ondernemers.</p>
         <div class="footer__signup-row">
-          <input type="email" aria-label="E-mailadres voor nieuwsbrief" placeholder="[E-mailadres]" />
+          <input type="email" aria-label="E-mailadres voor nieuwsbrief" placeholder="[E-mailadres]" data-i18n-ph="ph_email" />
           <button type="button" aria-label="Inschrijven"><i data-lucide="send"></i></button>
         </div>
       </div>
     </div>
 
     <div class="container footer__bottom">
-      <p>© 2026 Digital Impression — Alle rechten voorbehouden.</p>
+      <p data-i18n="footer_rights">© 2026 Digital Impression — Alle rechten voorbehouden.</p>
       <div class="footer__legal">
-        <a href="#">Privacybeleid</a>
-        <a href="#">Algemene voorwaarden</a>
+        <a href="#" data-i18n="footer_privacy">Privacybeleid</a>
+        <a href="#" data-i18n="footer_terms">Algemene voorwaarden</a>
       </div>
     </div>
   </footer>
