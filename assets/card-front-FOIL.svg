@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="61mm" viewBox="0 0 91 61">
+    <defs>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Inter:wght@500&amp;display=swap');
+        .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+        .sans  { font-family: 'Inter', Arial, sans-serif; }
+      </style>
+    </defs>
+  <rect x="8" y="8" width="75" height="45" rx="2.4" fill="none" stroke="#000000" stroke-width="0.3"/>
+  <rect x="9.4" y="9.4" width="72.2" height="42.2" rx="1.8" fill="none" stroke="#000000" stroke-width="0.3"/>
+  <text x="45.7" y="30.3" text-anchor="middle" class="serif" font-size="7.2" font-weight="500" letter-spacing="0.35"><tspan fill="none">Digital </tspan><tspan fill="#000000">Impression</tspan></text>
+  <text x="46" y="36.2" text-anchor="middle" class="sans" font-size="2.6" font-weight="500" letter-spacing="2.3" fill="#000000">WEBDESIGN</text>
+</svg>

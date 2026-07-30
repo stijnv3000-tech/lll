@@ -1,15 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="61mm" viewBox="0 0 91 61" role="img" aria-label="Digital Impression visitekaart voorzijde">
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&amp;family=Inter:wght@500&amp;display=swap');
-      .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-      .sans  { font-family: 'Inter', Arial, sans-serif; }
-    </style>
-  </defs>
-  <!-- full-bleed navy (3mm bleed; trim at 85×55mm) -->
-  <rect width="91" height="61" fill="#0E1B3C"/>
-  <rect x="5" y="5" width="81" height="51" rx="2.4" fill="none" stroke="#C9A227" stroke-width="0.3"/>
-
-  <text x="45.7" y="30.2" text-anchor="middle" class="serif" font-size="7.4" font-weight="500" letter-spacing="0.35"><tspan fill="#F7F2E7">Digital </tspan><tspan fill="#C9A227">Impression</tspan></text>
-  <text x="46" y="36.6" text-anchor="middle" class="sans" font-size="2.4" font-weight="500" letter-spacing="1.15" fill="#C9A227">PREMIUM WEBDESIGN</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="61mm" viewBox="0 0 91 61">
+    <defs>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Inter:wght@500&amp;display=swap');
+        .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+        .sans  { font-family: 'Inter', Arial, sans-serif; }
+      </style>
+    </defs>
+  <rect width="91" height="61" fill="#1a2a4a"/>
+  <rect x="8" y="8" width="75" height="45" rx="2.4" fill="none" stroke="#C9A227" stroke-width="0.3"/>
+  <rect x="9.4" y="9.4" width="72.2" height="42.2" rx="1.8" fill="none" stroke="#C9A227" stroke-width="0.3"/>
+  <text x="45.7" y="30.3" text-anchor="middle" class="serif" font-size="7.2" font-weight="500" letter-spacing="0.35"><tspan fill="#f2ede0">Digital </tspan><tspan fill="#C9A227">Impression</tspan></text>
+  <text x="46" y="36.2" text-anchor="middle" class="sans" font-size="2.6" font-weight="500" letter-spacing="2.3" fill="#C9A227">WEBDESIGN</text>
 </svg>
